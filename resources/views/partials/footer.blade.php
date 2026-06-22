@@ -1,6 +1,6 @@
 <footer class="site-footer">
 
-    {{-- Main grid --}}
+    {{-- ── Main grid ── --}}
     <div class="container footer-main">
 
         {{-- Col 1: Brand --}}
@@ -20,34 +20,50 @@
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2h3.27l-7.14 8.16L22.78 22h-6.58l-5.15-6.74L4.78 22H1.5l7.64-8.73L1.22 2h6.74l4.65 6.09L18.24 2zm-1.15 17.98h1.81L7.01 3.85H5.07l12.02 16.13z"/></svg>
                 </a>
             </div>
+            <div class="footer-badges">
+                <span class="footer-badge">AWS Partner</span>
+                <span class="footer-badge">ISO 9001</span>
+            </div>
         </div>
 
-        {{-- Col 2: Company links --}}
+        {{-- Col 2: Company --}}
         <div class="footer-col">
             <h5 class="footer-col-title">Company</h5>
             <ul class="footer-links">
-                @foreach ($navigation as $item)
-                    <li>
-                        <a href="{{ route($item['route']) }}">{{ $item['label'] }}</a>
-                    </li>
-                @endforeach
+                <li><a href="{{ route('about') }}">About Us</a></li>
+                <li><a href="{{ route('history') }}">Our History</a></li>
+                <li><a href="{{ route('mission-vision') }}">Mission & Vision</a></li>
+                <li><a href="">Culture</a></li>
+                <li><a href="{{ route('careers') }}">Careers</a></li>
+                <li><a href="{{ route('contact') }}">Contact Us</a></li>
             </ul>
         </div>
 
-        {{-- Col 3: Services --}}
+        {{-- Col 3: Work --}}
         <div class="footer-col">
-            <h5 class="footer-col-title">Services</h5>
+            <h5 class="footer-col-title">Work</h5>
             <ul class="footer-links">
-                <li><a href="{{ route('services') }}">Cognitive IoT Systems</a></li>
-                <li><a href="{{ route('services') }}">AI/ML Analytics</a></li>
-                <li><a href="{{ route('services') }}">AI-Enabled Firmware</a></li>
-                <li><a href="{{ route('services') }}">Cloud Services</a></li>
-                <li><a href="{{ route('services') }}">Mobile Development</a></li>
-                <li><a href="{{ route('services') }}">Web Applications</a></li>
+                <li><a href="{{ route('services') }}">Services</a></li>
+                <li><a href="{{ route('projects') }}">Projects</a></li>
+                <li><a href="{{ route('case-studies') }}">Case Studies</a></li>
+                <li><a href="{{ route('technologies') }}">Technologies</a></li>
+                <li><a href="{{ route('industries') }}">Industries</a></li>
             </ul>
         </div>
 
-        {{-- Col 4: Contact --}}
+        {{-- Col 4: Insights --}}
+        <div class="footer-col">
+            <h5 class="footer-col-title">Insights</h5>
+            <ul class="footer-links">
+                <li><a href="">Blog & News</a></li>
+                <li><a href="">Social Feed</a></li>
+                <li><a href="">Gallery</a></li>
+                <li><a href="{{ route('testimonials') }}">Testimonials</a></li>
+                <li><a href="{{ route('faq') }}">FAQ</a></li>
+            </ul>
+        </div>
+
+        {{-- Col 5: Contact --}}
         <div class="footer-col">
             <h5 class="footer-col-title">Contact</h5>
             <ul class="footer-contact-list">
@@ -64,23 +80,19 @@
                     <a href="mailto:sales@cosmosalgos.com" class="fc-value fc-link">sales@cosmosalgos.com</a>
                 </li>
             </ul>
-            <div class="footer-badges">
-                <span class="footer-badge">AWS Partner</span>
-                <span class="footer-badge">ISO 9001</span>
-            </div>
         </div>
 
     </div>
 
-    {{-- Bottom bar --}}
+    {{-- ── Bottom bar ── --}}
     <div class="footer-bottom">
         <div class="container footer-bottom-wrap">
             <p class="footer-copy">
                 &copy; {{ date('Y') }} {{ $company['name'] }}. All rights reserved.
             </p>
             <div class="footer-legal">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Use</a>
+                <a href="{{ route('privacy') }}">Privacy Policy</a>
+                <a href="{{ route('terms') }}">Terms of Use</a>
             </div>
         </div>
     </div>

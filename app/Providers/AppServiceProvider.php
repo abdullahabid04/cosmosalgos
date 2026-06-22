@@ -12,6 +12,7 @@ use App\Repositories\Eloquent\EloquentProjectRepository;
 use App\Repositories\Eloquent\EloquentServiceRepository;
 use App\Repositories\Eloquent\EloquentTechnologyRepository;
 use App\Repositories\Eloquent\EloquentTestimonialRepository;
+use App\Services\SettingsService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -21,6 +22,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+        $this->app->singleton(SettingsService::class);
+
         $this->app->bind(ServiceRepositoryInterface::class, EloquentServiceRepository::class);
         $this->app->bind(ProjectRepositoryInterface::class, EloquentProjectRepository::class);
         $this->app->bind(TechnologyRepositoryInterface::class, EloquentTechnologyRepository::class);
