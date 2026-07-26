@@ -1,0 +1,205 @@
+.tl-year {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--brand);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.4rem;
+    transition: text-shadow 0.3s;
+}
+
+.tl-item:hover .tl-year {
+    text-shadow: 0 0 12px rgba(224, 37, 26, 0.55);
+}
+
+.careers-perks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.careers-perk {
+    padding: 2rem 1.5rem;
+    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+
+.careers-perk:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 24px rgba(224, 37, 26, .12);
+    border-color: rgba(224, 37, 26, .3);
+}
+
+.careers-perk-icon {
+    font-size: 2.2rem;
+    display: block;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 8px rgba(224, 37, 26, .25));
+}
+
+.careers-perk h4 {
+    font-size: .95rem;
+    margin-bottom: .5rem;
+}
+
+.careers-perk p {
+    font-size: .84rem;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+/* Role cards */
+.careers-roles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+}
+
+.careers-role-card {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem;
+    transition: border-color .25s, box-shadow .25s;
+}
+
+.careers-role-card:hover {
+    border-color: rgba(224, 37, 26, .35);
+    box-shadow: 0 0 24px rgba(224, 37, 26, .1);
+}
+
+.careers-role-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    flex: 1;
+}
+
+.careers-role-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    margin-top: .15rem;
+    filter: drop-shadow(0 0 8px rgba(224, 37, 26, .2));
+}
+
+.careers-role-title {
+    font-size: 1.1rem;
+    margin: 0 0 .6rem;
+}
+
+.careers-role-desc {
+    font-size: .84rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: .85rem;
+}
+
+.careers-role-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+}
+
+.careers-role-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-shrink: 0;
+    gap: .4rem;
+}
+
+.careers-role-type {
+    font-size: .75rem;
+    color: var(--brand);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    font-weight: 600;
+}
+
+.careers-role-level {
+    font-size: .78rem;
+    color: var(--muted);
+}
+
+/* Open application card */
+.careers-open-app {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.75rem 2rem;
+    margin-top: 2rem;
+    border-style: dashed;
+    border-color: rgba(224, 37, 26, .25);
+}
+
+.careers-open-icon {
+    font-size: 2.2rem;
+    flex-shrink: 0;
+}
+
+.careers-open-app h4 {
+    margin: 0 0 .3rem;
+    font-size: .95rem;
+}
+
+.careers-open-app p {
+    font-size: .83rem;
+    color: var(--muted);
+    margin: 0;
+}
+
+.careers-open-app .btn-ghost {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* Hiring process steps */
+.careers-process-steps {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.careers-process-step {
+    flex: 1;
+    min-width: 160px;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.careers-process-num {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(224, 37, 26, .1);
+    border: 1px solid rgba(224, 37, 26, .3);
+    color: var(--brand);
+    font-size: 1rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.careers-process-step h4 {
+    font-size: .9rem;
+    margin-bottom: .5rem;
+}
+
+.careers-process-step p {
+    font-size: .82rem;
+    color: var(--muted);
+    line-height: 1.65;
+}
+
+.careers-process-connector {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(224, 37, 26, .4), rgba(224, 37, 26, .1));
+    margin-top: 24px;
+    flex-shrink: 0;
+}

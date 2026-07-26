@@ -1,0 +1,354 @@
+.tl-content {
+    max-width: 160px;
+    text-align: center;
+}
+
+.tl-content p {
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.55;
+    margin: 0;
+}
+
+.tl-content p strong {
+    color: var(--text);
+}
+
+.tl-content-above {
+    margin-bottom: 1rem;
+    order: -1;
+}
+
+.tl-content-below {
+    margin-top: 1rem;
+}
+
+.mv-hero {
+    padding: 7rem 0 5rem;
+}
+
+/* Mission + Vision duo */
+.mv-duo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.mv-large-card {
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.mv-large-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 40px rgba(224, 37, 26, .14), 0 16px 40px rgba(0, 0, 0, .4);
+}
+
+.mv-large-card-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at top left, rgba(224, 37, 26, .06), transparent 60%);
+    pointer-events: none;
+}
+
+.mv-large-card-inner {
+    padding: 2.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.mv-large-icon {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    display: block;
+    filter: drop-shadow(0 0 16px rgba(224, 37, 26, .35));
+}
+
+.mv-large-label {
+    font-size: .7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--brand);
+    margin-bottom: 1rem;
+}
+
+.mv-large-heading {
+    font-size: 1.35rem;
+    line-height: 1.4;
+    margin-bottom: 1.25rem;
+}
+
+.mv-large-card p {
+    font-size: .875rem;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.mv-large-card-line {
+    height: 3px;
+    background: linear-gradient(90deg, var(--brand), transparent);
+    margin-top: 2rem;
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .4s ease;
+}
+
+.mv-large-card:hover .mv-large-card-line {
+    transform: scaleX(1);
+}
+
+/* Story visual timeline */
+.mv-story-visual {
+    padding: 2rem;
+}
+
+.mv-story-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.mv-story-point {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: .9rem 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+}
+
+.mv-story-point:last-child {
+    border-bottom: none;
+}
+
+.mv-story-year {
+    font-size: .75rem;
+    font-weight: 700;
+    color: var(--brand);
+    min-width: 36px;
+    opacity: .6;
+}
+
+.mv-story-point--active .mv-story-year {
+    opacity: 1;
+}
+
+.mv-story-event {
+    font-size: .84rem;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+.mv-story-event--key {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.mv-story-point--active .mv-story-event {
+    color: var(--text);
+}
+
+.mv-story-point--active::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--brand);
+    box-shadow: 0 0 8px var(--brand);
+}
+
+/* Values grid */
+.mv-values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.mv-value-card {
+    padding: 2rem 1.75rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+
+.mv-value-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(224, 37, 26, .3);
+    box-shadow: 0 0 24px rgba(224, 37, 26, .1);
+}
+
+.mv-value-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--brand);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s ease;
+}
+
+.mv-value-card:hover::before {
+    transform: scaleX(1);
+}
+
+.mv-value-num {
+    font-size: .7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--brand);
+    opacity: .5;
+    margin-bottom: .75rem;
+}
+
+.mv-value-card h4 {
+    font-size: .95rem;
+    margin-bottom: .6rem;
+}
+
+.mv-value-card p {
+    font-size: .83rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Beliefs grid */
+.mv-beliefs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.mv-belief {
+    padding: 2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    position: relative;
+    transition: border-color .25s, transform .25s;
+}
+
+.mv-belief:hover {
+    border-color: rgba(224, 37, 26, .3);
+    transform: translateY(-3px);
+}
+
+.mv-belief-quote {
+    font-size: 3.5rem;
+    color: var(--brand);
+    opacity: .2;
+    line-height: .6;
+    display: block;
+    margin-bottom: .75rem;
+    font-family: Georgia, serif;
+}
+
+.mv-belief p {
+    font-size: .9rem;
+    color: var(--muted);
+    line-height: 1.75;
+    font-style: italic;
+    margin: 0;
+}
+
+/* ── Responsive — all three pages ── */
+@media (max-width: 1100px) {
+    .ind-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .careers-perks-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mv-values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 860px) {
+    .ind-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mv-duo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .careers-role-card {
+        flex-direction: column;
+    }
+
+    .careers-role-meta {
+        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: .75rem;
+    }
+
+    .careers-open-app {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ind-process-arrow {
+        display: none;
+    }
+
+    .ind-process-row {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 680px) {
+    .ind-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .careers-perks-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mv-values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mv-beliefs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .careers-process-steps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .careers-process-connector {
+        width: 1px;
+        height: 32px;
+        background: linear-gradient(180deg, rgba(224, 37, 26, .4), transparent);
+        margin: 0;
+    }
+
+    .ind-intro-divider {
+        display: none;
+    }
+
+    .ind-intro-row {
+        gap: 2rem;
+    }
+}

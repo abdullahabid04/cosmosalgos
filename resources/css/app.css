@@ -339,9 +339,15 @@ h1 {
 .nav-list {
     list-style: none;
     display: flex;
-    gap: 0.15rem;
+    align-items: center;
+    gap: 0.4rem;
     margin: 0;
     padding: 0;
+}
+
+.nav-list li {
+    display: flex;
+    align-items: center;
 }
 
 .nav-list a {
@@ -741,18 +747,22 @@ h1 {
     gap: 0.3rem;
     background: none;
     border: none;
-    padding: 0;
+    padding: 0.45rem 0.8rem;
+    border-radius: 0.5rem;
     cursor: pointer;
     font-family: inherit;
-    font-size: 0.95rem;
+    font-size: 0.88rem;
+    font-weight: 500;
     color: var(--muted);
-    transition: color 0.2s;
+    transition: color 0.2s, background 0.2s;
     line-height: inherit;
+    white-space: nowrap;
 }
 .nav-dropdown-trigger:hover,
 .nav-dropdown-trigger.dd-active,
 .nav-dropdown-trigger.is-active {
     color: var(--text);
+    background: rgba(255, 255, 255, 0.06);
 }
 
 /* Chevron rotation */
@@ -772,6 +782,22 @@ h1 {
 
 .nav-item-dropdown {
     position: relative;
+}
+
+/* Invisible bridge over the gap between the trigger and the panel
+   (see .nav-dropdown's `top: calc(100% + 12px)` below) so the pointer
+   never leaves the item's hit area while moving down into the dropdown.
+   Desktop-only: on mobile the panel sits in static flow with no gap,
+   and this would otherwise overlap the next tap target. */
+@media (min-width: 821px) {
+    .nav-item-dropdown::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        height: 12px;
+    }
 }
 
 .nav-dropdown {
@@ -3159,6 +3185,16 @@ h1 {
 
 .tl-content-below {
     margin-top: 1rem;
+}
+
+/* Alternate items away from the center track line so it clears the year
+   labels instead of cutting through them (line itself stays centered). */
+.tl-item.tl-below {
+    top: 16px;
+}
+
+.tl-item.tl-above {
+    top: -16px;
 }
 
 /* ── Year label ── */

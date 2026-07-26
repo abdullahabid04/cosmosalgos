@@ -1,0 +1,36 @@
+.hero,
+.section {
+    padding: 5rem 0;
+}
+
+.section-sm {
+    padding: 3rem 0;
+}
+
+.section-lg {
+    padding: 6rem 0;
+}
+
+.section-alt {
+    background: var(--surface-alt);
+}
+
+.section-head {
+    margin-bottom: 1.5rem;
+}
+
+.section-head p,
+.section-head-sub {
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+.section-head-center {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.section-head-center p {
+    color: var(--muted);
+    margin-bottom: 0;
+}

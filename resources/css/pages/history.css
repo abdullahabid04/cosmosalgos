@@ -1,0 +1,1421 @@
+.tl-sm .tl-node {
+    width: 14px;
+    height: 14px;
+}
+
+.tl-md .tl-node {
+    width: 28px;
+    height: 28px;
+}
+
+.tl-lg .tl-node {
+    width: 48px;
+    height: 48px;
+}
+
+.tl-xl .tl-node {
+    width: 64px;
+    height: 64px;
+}
+
+.tl-node {
+    border-radius: 50%;
+    background: var(--surface);
+    border: 2px solid var(--border);
+    position: relative;
+    z-index: 2;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.tl-item:hover .tl-node {
+    border-color: var(--brand);
+    transform: scale(1.1);
+    box-shadow: 0 0 16px rgba(224, 37, 26, 0.35);
+}
+
+.tl-node-active {
+    background: var(--brand) !important;
+    border-color: var(--brand) !important;
+    box-shadow: 0 0 20px rgba(224, 37, 26, 0.55);
+}
+
+/* ── 1. PAGE HERO ─────────────────────────────────────────── */
+.hist-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 5.5rem 0 4rem;
+    min-height: 56vh;
+    display: flex;
+    align-items: center;
+}
+
+.hist-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hist-hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.16;
+    animation: orbDrift ease-in-out infinite alternate;
+}
+
+.hist-hero-orb-1 {
+    width: 500px;
+    height: 500px;
+    top: -15%;
+    left: -8%;
+    background: radial-gradient(circle, rgba(224, 37, 26, 0.7) 0%, transparent 70%);
+    animation-duration: 22s;
+}
+
+.hist-hero-orb-2 {
+    width: 380px;
+    height: 380px;
+    bottom: -10%;
+    right: 5%;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.5) 0%, transparent 70%);
+    animation-duration: 28s;
+    animation-delay: -9s;
+}
+
+.hist-hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+    background-size: 34px 34px;
+    mask-image: radial-gradient(ellipse 75% 85% at 60% 50%, black 0%, transparent 100%);
+}
+
+.hist-hero-stars {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.55;
+}
+
+.hist-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hist-hero-inner {
+    max-width: 700px;
+}
+
+/* Breadcrumb */
+.hist-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+}
+
+.hist-breadcrumb a {
+    color: var(--muted);
+    transition: color 0.2s;
+}
+
+.hist-breadcrumb a:hover {
+    color: var(--text);
+}
+
+.hist-breadcrumb span:last-child {
+    color: var(--brand);
+}
+
+/* H1 */
+.hist-hero-h1 {
+    font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+    line-height: 1.1;
+    font-weight: 900;
+    margin: 0.5rem 0 1rem;
+    color: var(--text);
+}
+
+.hist-hero-accent {
+    background: linear-gradient(135deg, var(--brand) 0%, #ff6b35 50%, var(--nebula-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hist-hero-lead {
+    color: var(--muted);
+    font-size: 1rem;
+    max-width: 56ch;
+    line-height: 1.7;
+    margin-bottom: 2.25rem;
+}
+
+/* Hero stats */
+.hist-hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.hist-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.hist-stat-num {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--brand), var(--nebula-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+
+.hist-stat-label {
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    font-family: var(--font-display);
+}
+
+.hist-stat-divider {
+    width: 1px;
+    height: 2.4rem;
+    background: rgba(51, 51, 51, 0.9);
+    flex-shrink: 0;
+}
+
+/* ── 2. INTRO OVERVIEW CARDS ──────────────────────────────── */
+.hist-overview-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.hist-overview-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: linear-gradient(145deg, rgba(20, 22, 32, 0.95) 0%, rgba(12, 13, 20, 0.95) 100%);
+    border: 1px solid rgba(40, 44, 60, 0.9);
+    border-radius: 0.85rem;
+    padding: 1.1rem 1.25rem;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.hist-overview-card:hover {
+    border-color: rgba(224, 37, 26, 0.35);
+    transform: translateX(4px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 12px rgba(224, 37, 26, 0.06);
+}
+
+.hist-oc-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 8px rgba(224, 37, 26, 0.3));
+}
+
+.hist-oc-label {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--brand);
+    margin-bottom: 0.3rem;
+}
+
+.hist-overview-card p {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ── 3. VERTICAL TIMELINE ─────────────────────────────────── */
+.hist-tl-section {
+    overflow: visible;
+}
+
+.hist-vtl {
+    position: relative;
+    margin-top: 3rem;
+    padding: 0 0 2rem;
+}
+
+/* Central vertical track */
+.hist-vtl-track {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    transform: translateX(-50%);
+    background: rgba(40, 44, 60, 0.8);
+    z-index: 0;
+}
+
+.hist-vtl-track-fill {
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(180deg, var(--nebula-violet), var(--brand), var(--nebula-cyan));
+    transition: height 0.2s linear;
+    box-shadow: 0 0 8px rgba(224, 37, 26, 0.4), 0 0 16px rgba(0, 212, 255, 0.15);
+}
+
+/* Each timeline row */
+.hist-vtl-item {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 3.5rem;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hist-vtl-item.hist-vtl-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Stagger per item */
+.hist-vtl-item:nth-child(2) {
+    transition-delay: 0.08s;
+}
+
+.hist-vtl-item:nth-child(3) {
+    transition-delay: 0.16s;
+}
+
+.hist-vtl-item:nth-child(4) {
+    transition-delay: 0.24s;
+}
+
+.hist-vtl-item:nth-child(5) {
+    transition-delay: 0.32s;
+}
+
+.hist-vtl-item:nth-child(6) {
+    transition-delay: 0.40s;
+}
+
+/* Highlight on hash-jump */
+.hist-vtl-item.hist-vtl-highlight .hist-vtl-card {
+    animation: histCardHighlight 2s ease forwards;
+}
+
+@keyframes histCardHighlight {
+    0% {
+        box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.7), 0 8px 40px rgba(0, 212, 255, 0.25);
+    }
+    100% {
+        box-shadow: none;
+    }
+}
+
+/* Left items: content | node | spacer */
+.hist-vtl-left {
+    grid-template-columns: 1fr 80px 1fr;
+}
+
+/* Right items: spacer | node | content */
+.hist-vtl-right {
+    grid-template-columns: 1fr 80px 1fr;
+}
+
+.hist-vtl-right .hist-vtl-content {
+    grid-column: 3;
+}
+
+.hist-vtl-right .hist-vtl-node-col {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.hist-vtl-right .hist-vtl-spacer {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.hist-vtl-spacer { /* empty column filler */
+}
+
+/* Node column */
+.hist-vtl-node-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+/* Nodes */
+.hist-vtl-node {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 2px solid var(--border);
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.hist-vtl-node-sm {
+    width: 18px;
+    height: 18px;
+}
+
+.hist-vtl-node-md {
+    width: 32px;
+    height: 32px;
+}
+
+.hist-vtl-node-lg {
+    width: 52px;
+    height: 52px;
+}
+
+.hist-vtl-node-xl {
+    width: 68px;
+    height: 68px;
+}
+
+.hist-vtl-node:hover, .hist-vtl-item:hover .hist-vtl-node {
+    border-color: var(--brand);
+    box-shadow: 0 0 16px rgba(224, 37, 26, 0.5);
+    transform: scale(1.1);
+}
+
+.hist-vtl-node-dot {
+    border-radius: 50%;
+    background: var(--brand);
+    box-shadow: 0 0 8px rgba(224, 37, 26, 0.6);
+}
+
+.hist-vtl-node-sm .hist-vtl-node-dot {
+    width: 8px;
+    height: 8px;
+}
+
+.hist-vtl-node-md .hist-vtl-node-dot {
+    width: 14px;
+    height: 14px;
+}
+
+.hist-vtl-node-lg .hist-vtl-node-dot {
+    width: 22px;
+    height: 22px;
+}
+
+.hist-vtl-node-xl .hist-vtl-node-dot {
+    width: 28px;
+    height: 28px;
+}
+
+.hist-vtl-node-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px solid rgba(224, 37, 26, 0.25);
+    inset: -8px;
+    pointer-events: none;
+}
+
+.hist-vtl-node-ring-outer {
+    inset: -18px;
+    border-color: rgba(224, 37, 26, 0.1);
+}
+
+/* Active node (2025) */
+.hist-vtl-active .hist-vtl-node {
+    border-color: var(--brand);
+}
+
+.hist-vtl-active .hist-vtl-node-dot {
+    background: linear-gradient(135deg, var(--brand), var(--nebula-gold));
+    box-shadow: 0 0 20px rgba(224, 37, 26, 0.7), 0 0 40px rgba(255, 183, 71, 0.3);
+}
+
+.hist-vtl-node-ring-pulse {
+    animation: histNodePulse 2.2s ease-in-out infinite;
+    border-color: rgba(224, 37, 26, 0.5);
+}
+
+.hist-vtl-node-ring-outer-pulse {
+    inset: -22px;
+    border-color: rgba(224, 37, 26, 0.2);
+    animation: histNodePulse 2.2s ease-in-out 0.6s infinite;
+}
+
+@keyframes histNodePulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.4;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ── Content cards inside timeline ── */
+.hist-vtl-content {
+    padding: 0 1.5rem;
+}
+
+.hist-vtl-left .hist-vtl-content {
+    padding-right: 2rem;
+    padding-left: 0;
+    text-align: right;
+}
+
+.hist-vtl-right .hist-vtl-content {
+    padding-left: 2rem;
+    padding-right: 0;
+    text-align: left;
+}
+
+.hist-vtl-year-badge {
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: var(--brand);
+    text-transform: uppercase;
+    margin-bottom: 0.65rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-shadow: 0 0 12px rgba(224, 37, 26, 0.4);
+}
+
+.hist-vtl-left .hist-vtl-year-badge {
+    justify-content: flex-end;
+}
+
+.hist-year-founding {
+    color: var(--nebula-gold);
+    text-shadow: 0 0 12px rgba(255, 183, 71, 0.5);
+}
+
+.hist-year-active {
+    color: var(--nebula-cyan);
+    text-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
+}
+
+.hist-active-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--nebula-cyan);
+    box-shadow: 0 0 8px rgba(0, 212, 255, 0.8);
+    animation: histNodePulse 1.8s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+/* Card */
+.hist-vtl-card {
+    background: linear-gradient(145deg, rgba(20, 22, 32, 0.96) 0%, rgba(12, 13, 20, 0.96) 100%);
+    border: 1px solid rgba(40, 44, 60, 0.9);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.35s, box-shadow 0.35s, transform 0.3s;
+    text-align: left;
+}
+
+.hist-vtl-card:hover {
+    border-color: rgba(224, 37, 26, 0.35);
+    box-shadow: 0 8px 36px rgba(0, 0, 0, 0.45), 0 0 20px rgba(224, 37, 26, 0.07);
+    transform: translateY(-3px);
+}
+
+/* Featured card (2023 founding) */
+.hist-vtl-card-featured {
+    border-color: rgba(255, 183, 71, 0.2);
+    box-shadow: 0 4px 28px rgba(255, 183, 71, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.hist-vtl-card-featured:hover {
+    border-color: rgba(255, 183, 71, 0.45);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45), 0 0 28px rgba(255, 183, 71, 0.1);
+}
+
+.hist-vtl-card-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 0% 0%, rgba(255, 183, 71, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+.hist-vtl-founding-label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-display);
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--nebula-gold);
+    margin-bottom: 0.75rem;
+}
+
+.hist-vtl-founding-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--nebula-gold);
+    box-shadow: 0 0 8px rgba(255, 183, 71, 0.7);
+    animation: histNodePulse 2s ease-in-out infinite;
+}
+
+.hist-vtl-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    margin-bottom: 0.9rem;
+}
+
+.hist-vtl-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 8px rgba(224, 37, 26, 0.3));
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.hist-vtl-card:hover .hist-vtl-icon {
+    transform: scale(1.1) rotate(-5deg);
+    filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.5));
+}
+
+.hist-vtl-heading {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 0.2rem;
+    line-height: 1.3;
+    background: none;
+    -webkit-text-fill-color: var(--text);
+}
+
+.hist-vtl-phase {
+    font-family: var(--font-display);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    opacity: 0.8;
+}
+
+.hist-vtl-desc {
+    font-size: 0.84rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin: 0 0 0.9rem;
+}
+
+/* Tags */
+.hist-vtl-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.9rem;
+}
+
+.hist-vtl-tag {
+    font-family: var(--font-display);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0.25rem 0.6rem;
+    border: 1px solid rgba(40, 44, 60, 0.9);
+    border-radius: 999px;
+    background: rgba(20, 22, 32, 0.6);
+    transition: color 0.25s, border-color 0.25s;
+}
+
+.hist-vtl-card:hover .hist-vtl-tag {
+    color: var(--text);
+    border-color: rgba(224, 37, 26, 0.25);
+}
+
+.hist-tag-active {
+    color: var(--nebula-cyan) !important;
+    border-color: rgba(0, 212, 255, 0.25) !important;
+    background: rgba(0, 212, 255, 0.04);
+    box-shadow: 0 0 8px rgba(0, 212, 255, 0.1);
+}
+
+/* Achievement line */
+.hist-vtl-achievement {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    padding: 0.6rem 0.8rem;
+    border-radius: 0.5rem;
+    background: rgba(224, 37, 26, 0.05);
+    border: 1px solid rgba(224, 37, 26, 0.15);
+}
+
+.hist-vtl-achievement-featured {
+    background: rgba(255, 183, 71, 0.06);
+    border-color: rgba(255, 183, 71, 0.2);
+}
+
+.hist-vtl-ach-icon {
+    color: var(--brand);
+    font-size: 0.7rem;
+    flex-shrink: 0;
+}
+
+.hist-vtl-achievement-featured .hist-vtl-ach-icon {
+    color: var(--nebula-gold);
+}
+
+/* ── 4. HORIZONTAL MINI TIMELINE ──────────────────────────── */
+.hist-htl-section {
+    overflow: visible;
+}
+
+.hist-htl-outer {
+    position: relative;
+    padding: 5rem 0;
+    overflow-x: auto;
+    overflow-y: visible;
+    scrollbar-width: none;
+}
+
+.hist-htl-outer::-webkit-scrollbar {
+    display: none;
+}
+
+.hist-htl-track {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(40, 44, 60, 0.8);
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.hist-htl-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--nebula-violet), var(--brand), var(--nebula-cyan));
+    transition: width 1.6s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 10px rgba(224, 37, 26, 0.4), 0 0 20px rgba(0, 212, 255, 0.15);
+}
+
+.hist-htl-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 860px;
+    position: relative;
+    z-index: 1;
+    padding: 0 2rem;
+}
+
+.hist-htl-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hist-htl-item.hist-htl-visible {
+    opacity: 1;
+    transform: none;
+}
+
+.hist-htl-label {
+    max-width: 110px;
+    text-align: center;
+}
+
+.hist-htl-label-above {
+    margin-bottom: 0.9rem;
+    order: -1;
+}
+
+.hist-htl-label-below {
+    margin-top: 0.9rem;
+    order: 1;
+}
+
+.hist-htl-year {
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: var(--brand);
+    letter-spacing: 0.06em;
+    margin-bottom: 0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+}
+
+.hist-htl-year-founding {
+    color: var(--nebula-gold);
+}
+
+.hist-htl-year-active {
+    color: var(--nebula-cyan);
+}
+
+.hist-htl-active-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--nebula-cyan);
+    box-shadow: 0 0 8px rgba(0, 212, 255, 0.8);
+    animation: histNodePulse 1.8s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+.hist-htl-desc-mini {
+    font-size: 0.68rem;
+    color: var(--muted);
+    line-height: 1.4;
+}
+
+/* Nodes */
+.hist-htl-node {
+    position: relative;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 2px solid var(--border);
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hist-htl-item:hover .hist-htl-node {
+    border-color: var(--brand);
+    box-shadow: 0 0 14px rgba(224, 37, 26, 0.45);
+    transform: scale(1.12);
+}
+
+.hist-htl-node-sm {
+    width: 14px;
+    height: 14px;
+}
+
+.hist-htl-node-md {
+    width: 26px;
+    height: 26px;
+}
+
+.hist-htl-node-lg {
+    width: 44px;
+    height: 44px;
+}
+
+.hist-htl-node-xl {
+    width: 60px;
+    height: 60px;
+}
+
+.hist-htl-node-ring {
+    position: absolute;
+    inset: -7px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(224, 37, 26, 0.3);
+    pointer-events: none;
+}
+
+.hist-htl-node-ring-pulse {
+    animation: histNodePulse 2.2s ease-in-out infinite;
+}
+
+.hist-htl-item-featured .hist-htl-node {
+    border-color: rgba(255, 183, 71, 0.5);
+}
+
+.hist-htl-item-active .hist-htl-node {
+    border-color: var(--brand);
+}
+
+.hist-htl-item-active .hist-htl-node::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--brand), var(--nebula-gold));
+    box-shadow: 0 0 16px rgba(224, 37, 26, 0.6);
+}
+
+/* ── 5. PROJECTS GRID ─────────────────────────────────────── */
+.hist-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.15rem;
+    margin-top: 2rem;
+}
+
+.hist-project-card {
+    background: linear-gradient(145deg, rgba(20, 22, 32, 0.95) 0%, rgba(12, 13, 20, 0.95) 100%);
+    border: 1px solid rgba(40, 44, 60, 0.9);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: border-color 0.35s, transform 0.35s, box-shadow 0.35s;
+}
+
+.hist-project-card:hover {
+    border-color: rgba(224, 37, 26, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 36px rgba(0, 0, 0, 0.45), 0 0 20px rgba(224, 37, 26, 0.07);
+}
+
+.hist-project-year-bar {
+    background: rgba(224, 37, 26, 0.08);
+    border-bottom: 1px solid rgba(40, 44, 60, 0.9);
+    padding: 0.4rem 1.1rem;
+    font-family: var(--font-display);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brand);
+}
+
+.hist-year-bar-active {
+    background: rgba(0, 212, 255, 0.06);
+    border-color: rgba(0, 212, 255, 0.15);
+    color: var(--nebula-cyan);
+}
+
+.hist-project-body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.hist-project-icon {
+    font-size: 1.5rem;
+    filter: drop-shadow(0 0 8px rgba(224, 37, 26, 0.3));
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.hist-project-card:hover .hist-project-icon {
+    transform: scale(1.1) rotate(-5deg);
+    filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.5));
+}
+
+.hist-project-body h4 {
+    font-size: 0.85rem;
+    color: var(--text);
+    margin: 0;
+    line-height: 1.35;
+    background: none;
+    -webkit-text-fill-color: var(--text);
+}
+
+.hist-project-body p {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+}
+
+.hist-project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding-top: 0.4rem;
+    border-top: 1px solid rgba(40, 44, 60, 0.6);
+}
+
+.hist-project-card-active {
+    border-color: rgba(0, 212, 255, 0.15);
+}
+
+.hist-project-card-active:hover {
+    border-color: rgba(0, 212, 255, 0.4);
+}
+
+/* ── 6. ROLES GRID ────────────────────────────────────────── */
+.hist-roles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.15rem;
+    margin-top: 2rem;
+}
+
+.hist-role-card {
+    background: linear-gradient(145deg, rgba(20, 22, 32, 0.95) 0%, rgba(12, 13, 20, 0.95) 100%);
+    border: 1px solid rgba(40, 44, 60, 0.9);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: border-color 0.35s, transform 0.3s, box-shadow 0.3s;
+}
+
+.hist-role-card:hover {
+    border-color: rgba(224, 37, 26, 0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.4), 0 0 14px rgba(224, 37, 26, 0.06);
+}
+
+.hist-role-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+}
+
+.hist-role-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 6px rgba(224, 37, 26, 0.3));
+}
+
+.hist-role-title {
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.03em;
+}
+
+.hist-role-org {
+    font-size: 0.72rem;
+    color: var(--brand);
+    line-height: 1.4;
+}
+
+.hist-role-period {
+    margin-left: auto;
+    font-family: var(--font-display);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid rgba(40, 44, 60, 0.9);
+    border-radius: 999px;
+}
+
+.hist-role-desc {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+}
+
+.hist-role-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(40, 44, 60, 0.6);
+}
+
+/* ── 7. FUTURE SECTION ────────────────────────────────────── */
+.hist-future-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+.hist-future-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.hist-future-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    font-size: 0.87rem;
+    color: var(--muted);
+    line-height: 1.55;
+    padding: 0.5rem 0.8rem;
+    border-left: 2px solid rgba(224, 37, 26, 0.3);
+    border-radius: 0 0.4rem 0.4rem 0;
+    background: rgba(224, 37, 26, 0.03);
+    transition: border-color 0.3s, color 0.3s, background 0.3s;
+}
+
+.hist-future-list li:hover {
+    border-color: var(--brand);
+    color: var(--text);
+    background: rgba(224, 37, 26, 0.06);
+}
+
+.hist-future-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--brand);
+    flex-shrink: 0;
+    margin-top: 0.45em;
+    box-shadow: 0 0 6px rgba(224, 37, 26, 0.5);
+}
+
+/* Future visual - orbital rings */
+.hist-future-visual {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    max-width: 360px;
+    justify-self: center;
+}
+
+.hist-fv-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    transform: translate(-50%, -50%);
+}
+
+.hist-fv-ring-1 {
+    width: 88%;
+    height: 88%;
+    border-color: rgba(224, 37, 26, 0.12);
+    animation: ringRotate 30s linear infinite;
+}
+
+.hist-fv-ring-2 {
+    width: 64%;
+    height: 64%;
+    border-color: rgba(224, 37, 26, 0.2);
+    animation: ringRotate 18s linear infinite reverse;
+}
+
+.hist-fv-ring-3 {
+    width: 40%;
+    height: 40%;
+    border-color: rgba(0, 212, 255, 0.25);
+}
+
+.hist-fv-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(20, 22, 32, 0.95), rgba(10, 11, 16, 0.98));
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 40px rgba(224, 37, 26, 0.2), 0 0 80px rgba(0, 212, 255, 0.08);
+    animation: corePulse 3s ease-in-out infinite;
+}
+
+.hist-fv-year {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: var(--nebula-cyan);
+    text-shadow: 0 0 12px rgba(0, 212, 255, 0.6);
+    line-height: 1;
+}
+
+.hist-fv-sublabel {
+    font-family: var(--font-display);
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 0.2rem;
+}
+
+.hist-fv-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+}
+
+.hist-fv-orbit-1 {
+    width: 72%;
+    height: 72%;
+    margin-left: -36%;
+    margin-top: -36%;
+    animation: ringRotate 10s linear infinite;
+}
+
+.hist-fv-orbit-2 {
+    width: 84%;
+    height: 84%;
+    margin-left: -42%;
+    margin-top: -42%;
+    animation: ringRotate 16s linear infinite reverse;
+}
+
+.hist-fv-orb-dot {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    margin-left: -5px;
+    border-radius: 50%;
+    background: var(--brand);
+    box-shadow: 0 0 8px rgba(224, 37, 26, 0.8);
+}
+
+.hist-fv-orb-dot-sm {
+    width: 7px;
+    height: 7px;
+    top: -3.5px;
+    margin-left: -3.5px;
+    background: rgba(0, 212, 255, 0.8);
+    box-shadow: 0 0 8px rgba(0, 212, 255, 0.7);
+}
+
+/* ── 8. CTA BANNER ────────────────────────────────────────── */
+.hist-cta-banner {
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 0;
+    border-top: 1px solid rgba(40, 44, 60, 0.8);
+}
+
+.hist-cta-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.hist-cta-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.14;
+    animation: orbDrift ease-in-out infinite alternate;
+}
+
+.hist-cta-orb-1 {
+    width: 480px;
+    height: 480px;
+    top: -20%;
+    left: -8%;
+    background: radial-gradient(circle, rgba(224, 37, 26, 0.7) 0%, transparent 70%);
+    animation-duration: 20s;
+}
+
+.hist-cta-orb-2 {
+    width: 380px;
+    height: 380px;
+    top: 10%;
+    right: -5%;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.5) 0%, transparent 70%);
+    animation-duration: 24s;
+    animation-delay: -7s;
+}
+
+.hist-cta-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.hist-cta-text {
+    max-width: 520px;
+}
+
+.hist-cta-heading {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+    background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.75) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hist-cta-sub {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.65;
+    margin: 0;
+}
+
+.hist-cta-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* ── 9. RESPONSIVE ────────────────────────────────────────── */
+@media (max-width: 1100px) {
+    .hist-projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 860px) {
+    /* Vertical timeline — collapse to single column */
+    .hist-vtl-item,
+    .hist-vtl-left,
+    .hist-vtl-right {
+        grid-template-columns: 40px 1fr !important;
+        grid-template-rows: auto;
+    }
+
+    .hist-vtl-node-col {
+        grid-column: 1 !important;
+        grid-row: 1;
+    }
+
+    .hist-vtl-content {
+        grid-column: 2 !important;
+        grid-row: 1;
+        padding: 0 0 0 1rem !important;
+        text-align: left !important;
+    }
+
+    .hist-vtl-spacer {
+        display: none !important;
+    }
+
+    .hist-vtl-year-badge {
+        justify-content: flex-start !important;
+    }
+
+    .hist-vtl-track {
+        left: 20px;
+    }
+
+    .hist-vtl-node-sm {
+        width: 16px;
+        height: 16px;
+    }
+
+    .hist-vtl-node-md {
+        width: 24px;
+        height: 24px;
+    }
+
+    .hist-vtl-node-lg {
+        width: 36px;
+        height: 36px;
+    }
+
+    .hist-vtl-node-xl {
+        width: 48px;
+        height: 48px;
+    }
+
+    /* Other grids */
+    .hist-roles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hist-projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hist-future-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hist-future-visual {
+        max-width: 260px;
+        aspect-ratio: 1;
+    }
+
+    .hist-cta-inner {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 560px) {
+    .hist-hero-stats {
+        gap: 0.75rem;
+    }
+
+    .hist-stat-divider {
+        display: none;
+    }
+
+    .hist-hero-h1 {
+        font-size: clamp(1.6rem, 6vw, 2.2rem);
+    }
+
+    .hist-htl-items {
+        min-width: 680px;
+    }
+
+    .hist-overview-card {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* ── 10. REDUCED MOTION ───────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    .hist-vtl-item {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .hist-fv-ring-1, .hist-fv-ring-2,
+    .hist-fv-orbit-1, .hist-fv-orbit-2 {
+        animation: none;
+    }
+
+    .hist-vtl-node-ring-pulse, .hist-vtl-node-ring-outer-pulse {
+        animation: none;
+    }
+}
+

@@ -1,0 +1,46 @@
+.badge-row,
+.badge-row--centered {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.badge,
+.tag-label,
+.meta-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    padding: 0.45rem 0.8rem;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+.badge {
+    color: var(--muted);
+}
+
+.badge:hover {
+    border-color: var(--brand);
+    color: var(--brand);
+}
+
+.tech-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.tech-list li {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 0.45rem 0.8rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.9rem;
+}

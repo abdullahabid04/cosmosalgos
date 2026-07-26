@@ -1,0 +1,45 @@
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    margin-bottom: 1rem;
+}
+
+.lead {
+    color: var(--muted);
+    max-width: 56ch;
+    margin-bottom: 1.5rem;
+}
+
+.kicker {
+    color: var(--brand);
+    font-weight: 600;
+    margin: 0 0 0.75rem;
+}
+
+.tag-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--brand);
+    margin-bottom: 0.9rem;
+}
+
+.tag-label::before {
+    content: "";
+    display: inline-block;
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 999px;
+    background: var(--brand);
+    box-shadow: 0 0 0 0.28rem rgba(224, 37, 26, 0.16);
+}

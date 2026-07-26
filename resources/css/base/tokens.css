@@ -1,0 +1,21 @@
+:root {
+    --bg: #1a1a1a;
+    --surface: #242424;
+    --surface-alt: #1f1f1f;
+    --text: #f0f0f0;
+    --muted: #9a9a9a;
+    --brand: #e0251a;
+    --brand-dark: #b81c13;
+    --border: #333333;
+    --radius-sm: 0.55rem;
+    --radius-md: 0.9rem;
+    --radius-pill: 999px;
+    --space-1: 0.5rem;
+    --space-2: 0.75rem;
+    --space-3: 1rem;
+    --space-4: 1.25rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --bp-md: 960px;
+    --bp-sm: 680px;
+}

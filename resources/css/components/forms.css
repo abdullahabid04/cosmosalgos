@@ -1,0 +1,42 @@
+.contact-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.contact-form label {
+    display: grid;
+    gap: 0.4rem;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem;
+}
+
+.field-error {
+    color: #fca5a5;
+}
+
+.alert {
+    border: 1px solid var(--border);
+    border-radius: 0.7rem;
+    padding: 0.75rem 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.alert-success {
+    border-color: #14532d;
+    background: #052e16;
+    color: #86efac;
+}
+
+.alert-error {
+    border-color: #7f1d1d;
+    background: #450a0a;
+    color: #fecaca;
+}
