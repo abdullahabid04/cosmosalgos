@@ -1,0 +1,24 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-mFNGzaep.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/cosmos-animations.css": {
+    "file": "assets/cosmos-animations-9ermyvSf.css",
+    "src": "resources/css/cosmos-animations.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-DHeUqqvA.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/cosmos-animations.js": {
+    "file": "assets/cosmos-animations-B32VpntO.js",
+    "name": "cosmos-animations",
+    "src": "resources/js/cosmos-animations.js",
+    "isEntry": true
+  }
+}
