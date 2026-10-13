@@ -42,8 +42,8 @@
 
                 {{-- Static main headline --}}
                 <h1 class="hero-anim-2">
-                    AI-Powered<br>
-                    <span class="hero-h1-accent">Software Systems</span>
+                    Intelligent Electronic and Software Systems,<br>
+                    <span class="hero-h1-accent">Concept to Deployment</span>
                 </h1>
 
                 {{-- Rotating typewriter sub-headline --}}
@@ -55,8 +55,7 @@
 
                 {{-- Lead --}}
                 <p class="lead hero-anim-4">
-                    Hardware and software engineering. Smart devices, firmware,
-                    cloud analytics, and intelligent automation.
+                    Embedded hardware and firmware, automation, software, and AI/ML. From prototype to long-term support.
                 </p>
 
                 {{-- CTAs --}}
@@ -1119,11 +1118,12 @@
                TYPEWRITER — unchanged from original
             ══════════════════════════════════════════════ */
             const phrases = [
-                'Intelligent Automation.',
-                'Scalable SaaS Platforms.',
-                'IoT & Embedded Systems.',
-                'AI/ML Solutions.',
-                'From Idea to Production.',
+                'Embedded firmware and hardware on ESP32, STM32, Raspberry Pi, and FPGA',
+                'Automation and robotics',
+                'Production monitoring and Industrial IoT',
+                'Computer vision and ML models for edge deployment',
+                'Test rigs and setups for defense equipment',
+                'Rehabilitation and upgrades for industrial and defense electronics',
             ];
 
             const el     = document.getElementById('heroTypewriter');
