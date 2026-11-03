@@ -3,7 +3,7 @@
 @section('title', 'Contact Us — ' . $company['name'])
 @section('meta_description', 'Get in touch with Cosmos Algos. Reach out for custom software, IoT systems, AI/ML solutions, and embedded systems development. Based in Bahawalpur, Pakistan.')
 @section('og_title', 'Contact Cosmos Algos — Let\'s Build Something')
-@section('og_description', 'Have a project in mind? Tell us about it. We\'ll get back to you within 24 hours.')
+@section('og_description', 'Have a project in mind? Tell us about it. We reply personally during office hours.')
 
 @section('content')
 
@@ -19,12 +19,12 @@
             <div class="contact-hero-inner" data-reveal="fade-up">
                 <span class="tag-label">Contact Us</span>
                 <h1 class="contact-hero-h1 glitch-ready">Let's Build Something <span class="contact-h1-accent">Together</span></h1>
-                <p class="contact-hero-sub">Have a project in mind, a question about our services, or just want to explore what's possible? We're ready to listen and respond within 24 hours.</p>
+                <p class="contact-hero-sub">Have a project in mind, a question about our services, or just want to explore what's possible? Send a message and we'll reply during office hours.</p>
                 <div class="contact-hero-chips">
-                    <span class="contact-chip">⚡ Fast Response</span>
-                    <span class="contact-chip">🌍 Remote-First</span>
-                    <span class="contact-chip">🔒 Confidential</span>
-                    <span class="contact-chip">🤝 Free Consultation</span>
+                    <span class="contact-chip">📍 Bahawalpur, Pakistan</span>
+                    <span class="contact-chip">🕗 8:00 AM – 4:00 PM PKT</span>
+                    <span class="contact-chip">🔒 Confidential by default</span>
+                    <span class="contact-chip">🤝 Direct engineer contact</span>
                 </div>
             </div>
         </div>
@@ -119,14 +119,14 @@
                             <label for="contact_service">Service You're Interested In <span class="req">*</span></label>
                             <select id="contact_service" name="service" required>
                                 <option value="" disabled {{ old('service') ? '' : 'selected' }}>— Select a service —</option>
-                                <option value="cognitive-iot" {{ old('service') === 'cognitive-iot' ? 'selected' : '' }}>Cognitive IoT Systems</option>
-                                <option value="ai-ml" {{ old('service') === 'ai-ml' ? 'selected' : '' }}>AI / ML Analytics</option>
-                                <option value="firmware" {{ old('service') === 'firmware' ? 'selected' : '' }}>AI-Enabled Firmware &amp; Embedded Systems</option>
-                                <option value="cloud" {{ old('service') === 'cloud' ? 'selected' : '' }}>Cloud Services &amp; SaaS Platforms</option>
-                                <option value="mobile" {{ old('service') === 'mobile' ? 'selected' : '' }}>Mobile App Development</option>
-                                <option value="web" {{ old('service') === 'web' ? 'selected' : '' }}>Web Applications</option>
-                                <option value="engineering" {{ old('service') === 'engineering' ? 'selected' : '' }}>Engineering Solutions</option>
-                                <option value="rd" {{ old('service') === 'rd' ? 'selected' : '' }}>Research &amp; Development</option>
+                                <option value="embedded" {{ old('service') === 'embedded' ? 'selected' : '' }}>Embedded Systems &amp; Firmware</option>
+                                <option value="automation" {{ old('service') === 'automation' ? 'selected' : '' }}>Industrial Automation &amp; Test Rigs</option>
+                                <option value="iot" {{ old('service') === 'iot' ? 'selected' : '' }}>IoT Platforms &amp; Cloud Backends</option>
+                                <option value="ai" {{ old('service') === 'ai' ? 'selected' : '' }}>AI &amp; Computer Vision</option>
+                                <option value="mobile" {{ old('service') === 'mobile' ? 'selected' : '' }}>Mobile &amp; Desktop Applications</option>
+                                <option value="saas" {{ old('service') === 'saas' ? 'selected' : '' }}>SaaS Product Engineering</option>
+                                <option value="data" {{ old('service') === 'data' ? 'selected' : '' }}>Data Acquisition &amp; Visualisation</option>
+                                <option value="research" {{ old('service') === 'research' ? 'selected' : '' }}>Research, Prototyping &amp; Upgrades</option>
                                 <option value="other" {{ old('service') === 'other' ? 'selected' : '' }}>Other / Not Sure Yet</option>
                             </select>
                             @error('service')<span class="field-error">{{ $message }}</span>@enderror
@@ -155,7 +155,7 @@
                                 required
                             >{{ old('message') }}</textarea>
                             @error('message')<span class="field-error">{{ $message }}</span>@enderror
-                            <span class="char-count" id="charCount">0 / 2000</span>
+                            <span class="char-count" id="charCount">0 / 5000</span>
                         </div>
 
                         <div class="form-check">
@@ -183,7 +183,7 @@
 
                     <div class="contact-info-block">
                         <h3 class="contact-info-title">Get in Touch</h3>
-                        <p class="contact-info-lead">We'd love to hear from you. Choose whichever channel suits you best — we respond to every message.</p>
+                        <p class="contact-info-lead">Choose whichever channel suits you best. We read every message and reply as soon as possible during office hours.</p>
                     </div>
 
                     <ul class="contact-detail-list" data-stagger>
@@ -195,7 +195,7 @@
                             <div class="contact-detail-body">
                                 <span class="contact-detail-label">Headquarters</span>
                                 <span class="contact-detail-value">Bahawalpur, Punjab, Pakistan</span>
-                                <span class="contact-detail-note">Open to remote collaboration worldwide</span>
+                                <span class="contact-detail-note">Remote collaboration can be arranged</span>
                             </div>
                         </li>
 
@@ -206,7 +206,7 @@
                             <div class="contact-detail-body">
                                 <span class="contact-detail-label">General Enquiries</span>
                                 <a href="mailto:{{ $company['email'] }}" class="contact-detail-value contact-link">{{ $company['email'] }}</a>
-                                <span class="contact-detail-note">We reply within 24 hours</span>
+                                <span class="contact-detail-note">We reply as soon as possible</span>
                             </div>
                         </li>
 
@@ -215,8 +215,8 @@
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                             </div>
                             <div class="contact-detail-body">
-                                <span class="contact-detail-label">Sales &amp; Partnerships</span>
-                                <a href="mailto:sales@cosmosalgos.com" class="contact-detail-value contact-link">sales@cosmosalgos.com</a>
+                                <span class="contact-detail-label">Phone</span>
+                                <a href="tel:{{ $company['phone_href'] }}" class="contact-detail-value contact-link">{{ $company['phone'] }}</a>
                                 <span class="contact-detail-note">For project proposals and partnerships</span>
                             </div>
                         </li>
@@ -227,7 +227,7 @@
                             </div>
                             <div class="contact-detail-body">
                                 <span class="contact-detail-label">Working Hours</span>
-                                <span class="contact-detail-value">Mon – Fri, 9:00 AM – 6:00 PM PKT</span>
+                                <span class="contact-detail-value">{{ $company['hours'] }}</span>
                                 <span class="contact-detail-note">UTC +5:00 — Pakistan Standard Time</span>
                             </div>
                         </li>
@@ -236,20 +236,14 @@
 
                     {{-- Social Links --}}
                     <div class="contact-socials-block">
-                        <h4 class="contact-socials-title">Follow Our Work</h4>
+                        <h3 class="contact-socials-title">Follow Our Work</h3>
                         <div class="contact-socials-row">
-                            <a href="#" class="contact-social-btn" aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <a href="{{ $company['linkedin'] }}" class="contact-social-btn" aria-label="Cosmos Algos on LinkedIn" target="_blank" rel="noopener">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.25 2.36 4.25 5.44v6.3zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
                                 LinkedIn
                             </a>
-                            <a href="#" class="contact-social-btn" aria-label="GitHub" target="_blank" rel="noopener">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 12 .3z"/></svg>
-                                GitHub
-                            </a>
-                            <a href="#" class="contact-social-btn" aria-label="Twitter / X" target="_blank" rel="noopener">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2h3.27l-7.14 8.16L22.78 22h-6.58l-5.15-6.74L4.78 22H1.5l7.64-8.73L1.22 2h6.74l4.65 6.09L18.24 2zm-1.15 17.98h1.81L7.01 3.85H5.07l12.02 16.13z"/></svg>
-                                Twitter / X
-                            </a>
+                            <a href="mailto:{{ $company['email'] }}" class="contact-social-btn" aria-label="Email Cosmos Algos"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                Email</a>
                         </div>
                     </div>
 
@@ -257,8 +251,8 @@
                     <div class="contact-promise-card card" data-reveal="zoom-in">
                         <div class="contact-promise-icon" aria-hidden="true">🚀</div>
                         <div class="contact-promise-body">
-                            <strong>Free Initial Consultation</strong>
-                            <p>Every enquiry starts with a free 30-minute call to understand your project, no strings attached.</p>
+                            <strong>Initial Discussion</strong>
+                            <p>We start with a short conversation to understand the problem and decide whether we are the right fit. No obligation.</p>
                         </div>
                     </div>
 
@@ -283,29 +277,29 @@
                 <div class="contact-process-step card">
                     <div class="contact-process-num">01</div>
                     <div class="contact-process-icon" aria-hidden="true">📩</div>
-                    <h4>We Review Your Message</h4>
-                    <p>Our team reads every enquiry carefully. Within 24 hours you'll receive a personal response — not an automated template.</p>
+                    <h3>We Review Your Message</h3>
+                    <p>We read every enquiry and reply personally during office hours — not with an automated template.</p>
                 </div>
 
                 <div class="contact-process-step card">
                     <div class="contact-process-num">02</div>
                     <div class="contact-process-icon" aria-hidden="true">📞</div>
-                    <h4>Discovery Call</h4>
-                    <p>We schedule a free 30-minute call to understand your goals, challenges, and technical requirements in depth.</p>
+                    <h3>Discovery Call</h3>
+                    <p>We schedule a short call to understand your goals, constraints, and technical requirements before proposing anything.</p>
                 </div>
 
                 <div class="contact-process-step card">
                     <div class="contact-process-num">03</div>
                     <div class="contact-process-icon" aria-hidden="true">📋</div>
-                    <h4>Proposal &amp; Scoping</h4>
-                    <p>We prepare a detailed technical proposal with a timeline, technology stack, and transparent pricing — no hidden costs.</p>
+                    <h3>Proposal &amp; Scoping</h3>
+                    <p>We prepare a written technical proposal with a timeline, technology stack, and itemised pricing.</p>
                 </div>
 
                 <div class="contact-process-step card">
                     <div class="contact-process-num">04</div>
                     <div class="contact-process-icon" aria-hidden="true">🛠️</div>
-                    <h4>We Start Building</h4>
-                    <p>Once you're happy, we kick off with a clear roadmap, regular updates, and a dedicated point of contact throughout.</p>
+                    <h3>We Start Building</h3>
+                    <p>Once the scope is agreed, work starts with a clear roadmap, regular updates, and a direct point of contact.</p>
                 </div>
 
             </div>
@@ -333,14 +327,14 @@
                     <details class="faq-item card" open>
                         <summary class="faq-question">Do you work with international clients?</summary>
                         <div class="faq-answer">
-                            <p>Yes — we are a remote-first team and have worked with clients across Pakistan, the Middle East, Europe, and North America. Time zone differences are not a barrier; we adapt our communication schedule to suit you.</p>
+                            <p>We are based in Bahawalpur, Pakistan, and can collaborate remotely. We agree on communication hours and channels before work begins.</p>
                         </div>
                     </details>
 
                     <details class="faq-item card">
                         <summary class="faq-question">How long does a typical project take?</summary>
                         <div class="faq-answer">
-                            <p>It depends on scope. A focused mobile app or IoT integration typically takes 6–12 weeks. A full SaaS platform or embedded firmware system can range from 3–6 months. We define timelines precisely during the proposal phase.</p>
+                            <p>It depends on scope. Rather than quoting a generic range, we define milestones and a timeline in the proposal after the discovery call.</p>
                         </div>
                     </details>
 
@@ -354,7 +348,7 @@
                     <details class="faq-item card">
                         <summary class="faq-question">Do you offer post-launch support and maintenance?</summary>
                         <div class="faq-answer">
-                            <p>Absolutely. We provide ongoing maintenance, monitoring, and support packages for all projects we deliver. Support terms are included in every proposal.</p>
+                            <p>Support terms are agreed in the proposal. They can include a post-delivery support window, ongoing maintenance, or monitoring, depending on what the system needs.</p>
                         </div>
                     </details>
 
@@ -381,7 +375,7 @@
                 </div>
                 <span class="tag-label">Ready to Start?</span>
                 <h2 class="contact-cta-h2 glitch-ready">Your Next Project Starts with a Single Message</h2>
-                <p class="contact-cta-sub">From IoT firmware to AI-powered SaaS — we've built it all. Let's talk about what we can build for you.</p>
+                <p class="contact-cta-sub">From embedded firmware to cloud SaaS — tell us what you are trying to build and we will tell you honestly whether we can help.</p>
                 <div class="contact-cta-actions">
                     <a href="mailto:{{ $company['email'] }}" class="btn btn-primary">
                         Email Us Now <span aria-hidden="true">↗</span>
@@ -404,7 +398,7 @@
             /* ── Character counter for textarea ── */
             const ta    = document.getElementById('contact_message');
             const count = document.getElementById('charCount');
-            const MAX   = 2000;
+            const MAX   = 5000;
 
             if (ta && count) {
                 ta.addEventListener('input', function () {

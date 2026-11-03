@@ -67,8 +67,38 @@ class PageController extends Controller
         return view('pages.mission-vision', $vm->baseData('mission-vision'));
     }
 
+    public function culture(PortfolioViewModel $vm): View
+    {
+        return view('pages.culture', $vm->baseData('culture'));
+    }
+
     public function caseStudies(PortfolioViewModel $vm): View
     {
         return view('pages.case-studies', $vm->baseData('case-studies'));
+    }
+
+    public function blog(PortfolioViewModel $vm): View
+    {
+        return view('pages.blog', $vm->baseData('blog'));
+    }
+
+    public function social(PortfolioViewModel $vm): View
+    {
+        return view('pages.social', $vm->baseData('social'));
+    }
+
+    public function gallery(PortfolioViewModel $vm): View
+    {
+        return view('pages.gallery', $vm->baseData('gallery'));
+    }
+
+    public function privacy(PortfolioViewModel $vm): View
+    {
+        return view('pages.privacy', $vm->baseData('privacy'));
+    }
+
+    public function terms(PortfolioViewModel $vm): View
+    {
+        return view('pages.terms', $vm->baseData('terms'));
     }
 }

@@ -17,7 +17,11 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
 
-    <link rel="icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" href="{{ asset('favicon-32x32.png') }}?v=3" type="image/png" sizes="32x32">
+    <link rel="icon" href="{{ asset('favicon-16x16.png') }}?v=3" type="image/png" sizes="16x16">
+    <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}?v=3">
+    <link rel="manifest" href="{{ asset('site.webmanifest') }}?v=2">
+    <meta name="theme-color" content="#08090e">
 
     {{-- CSS: app.css first, cosmos on top of it --}}
     @vite([
@@ -44,7 +48,7 @@
     'resources/js/cosmos-animations.js'
 ])
 
-{{-- Per-page scripts (home.blade.php pushes cosmos + typewriter here) --}}
+{{-- Per-page scripts (typewriter and timeline live in home.blade.php) --}}
 @stack('scripts')
 
 </body>

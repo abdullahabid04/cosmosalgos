@@ -1,0 +1,21 @@
+{
+    "name": "Cosmos Algos",
+    "short_name": "Cosmos Algos",
+    "description": "Connected software for real-world systems.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#08090e",
+    "theme_color": "#08090e",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

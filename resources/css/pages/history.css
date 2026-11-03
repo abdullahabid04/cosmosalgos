@@ -1182,7 +1182,7 @@
     height: 72%;
     margin-left: -36%;
     margin-top: -36%;
-    animation: ringRotate 10s linear infinite;
+    animation: orbitRotate 10s linear infinite;
 }
 
 .hist-fv-orbit-2 {
@@ -1190,7 +1190,7 @@
     height: 84%;
     margin-left: -42%;
     margin-top: -42%;
-    animation: ringRotate 16s linear infinite reverse;
+    animation: orbitRotate 16s linear infinite reverse;
 }
 
 .hist-fv-orb-dot {

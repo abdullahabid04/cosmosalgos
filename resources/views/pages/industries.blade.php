@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Industries We Serve | Cosmos Algos')
-@section('meta_description', 'Cosmos Algos delivers AI, IoT, SaaS, and embedded systems solutions across Agriculture, Healthcare, Industrial Automation, Logistics, Energy, and more.')
+@section('meta_description', 'Cosmos Algos delivers AI, IoT, SaaS, and embedded systems work across agriculture, industrial automation, research, logistics, energy, consumer IoT, mobility, and technology products.')
 
 @section('content')
 
@@ -17,8 +17,8 @@
             <span class="tag-label">Where We Operate</span>
             <h1 class="page-hero-title">Industries We <span class="hero-h1-accent">Serve</span></h1>
             <p class="lead" style="max-width:620px;margin-top:1.2rem;">
-                We build domain-specific software, IoT infrastructure, and AI systems for
-                sectors where reliability, precision, and scale actually matter.
+                We build domain-specific software, IoT infrastructure, and applied AI for
+                sectors where the system has to work reliably outside a demo.
             </p>
         </div>
     </section>
@@ -28,25 +28,33 @@
     ═══════════════════════════════════ --}}
     <section class="section section-alt section-sm">
         <div class="container">
-            <div class="ind-intro-row" data-reveal-group>
+            <div class="ind-intro-row" data-stagger>
                 <div class="ind-intro-stat">
-                    <span class="ind-intro-num num" data-target="8">0</span>
+                    <span class="ind-intro-value">
+                        <span class="ind-intro-num num" data-target="{{ $stats['industries'] }}">0</span>
+                    </span>
                     <span class="ind-intro-label">Industries Served</span>
                 </div>
                 <div class="ind-intro-divider"></div>
                 <div class="ind-intro-stat">
-                    <span class="ind-intro-num num" data-target="10">0</span>
-                    <span class="ind-intro-label">Projects Delivered</span>
+                    <span class="ind-intro-value">
+                        <span class="ind-intro-num num" data-target="{{ $stats['projects'] }}">0</span><span class="ind-intro-unit" aria-hidden="true">+</span>
+                    </span>
+                    <span class="ind-intro-label">Projects &amp; Engagements</span>
                 </div>
                 <div class="ind-intro-divider"></div>
                 <div class="ind-intro-stat">
-                    <span class="ind-intro-num num" data-target="5">0</span>
+                    <span class="ind-intro-value">
+                        <span class="ind-intro-num num" data-target="{{ $stats['years_experience'] }}">0</span>
+                    </span>
                     <span class="ind-intro-label">Years of Cross-Industry Work</span>
                 </div>
                 <div class="ind-intro-divider"></div>
                 <div class="ind-intro-stat">
-                    <span class="ind-intro-num num" data-target="100">0</span><span class="ind-intro-unit">%</span>
-                    <span class="ind-intro-label">Client Satisfaction</span>
+                    <span class="ind-intro-value">
+                        <span class="ind-intro-num num" data-target="{{ $stats['care_rnd_projects'] }}">0</span>
+                    </span>
+                    <span class="ind-intro-label">CARE Lab R&amp;D Projects</span>
                 </div>
             </div>
         </div>
@@ -73,12 +81,12 @@
                     <div class="ind-card-body">
                         <h3 class="ind-card-title">Agriculture & Poultry</h3>
                         <p class="ind-card-desc">
-                            IoT-connected farm management platforms, AI-driven poultry growth prediction,
-                            real-time sensor monitoring, and climate automation systems for modern agri-operations.
+                            IoT-connected farm monitoring, AI-assisted broiler weight estimation,
+                            real-time sensor telemetry, and climate monitoring for agricultural operations.
                         </p>
                         <div class="ind-card-solutions">
                             <span>Farm IoT SaaS</span>
-                            <span>AI Growth Prediction</span>
+                            <span>Weight Estimation</span>
                             <span>Climate Monitoring</span>
                             <span>Remote Sensors</span>
                         </div>
@@ -108,22 +116,23 @@
                     <div class="ind-card-accent"></div>
                 </div>
 
-                {{-- Healthcare & Research --}}
+                {{-- Research & Academic Labs --}}
                 <div class="ind-card card">
                     <div class="ind-card-icon-wrap">
-                        <span class="ind-card-icon">🏥</span>
+                        <span class="ind-card-icon">🔬</span>
                         <div class="ind-card-orb"></div>
                     </div>
                     <div class="ind-card-body">
-                        <h3 class="ind-card-title">Healthcare & Research</h3>
+                        <h3 class="ind-card-title">Research &amp; Academic Labs</h3>
                         <p class="ind-card-desc">
-                            Data acquisition pipelines for medical research, RGB-D imaging systems,
-                            AI-assisted analysis tools, and research software for academic and clinical labs.
+                            Data acquisition pipelines, RGB-D imaging systems, analysis tooling,
+                            and research software for academic and industrial labs — including
+                            CARE Lab collaborations.
                         </p>
                         <div class="ind-card-solutions">
                             <span>Data Acquisition</span>
                             <span>RGB-D Imaging</span>
-                            <span>AI Analysis</span>
+                            <span>Analysis Tooling</span>
                             <span>Research Pipelines</span>
                         </div>
                     </div>
@@ -210,7 +219,7 @@
                         </p>
                         <div class="ind-card-solutions">
                             <span>EV Monitoring</span>
-                            <span>Fleet Telemetry</span>
+                            <span>EV Telemetry</span>
                             <span>Flutter Apps</span>
                             <span>Embedded Firmware</span>
                         </div>
@@ -227,8 +236,8 @@
                     <div class="ind-card-body">
                         <h3 class="ind-card-title">SaaS & Technology Products</h3>
                         <p class="ind-card-desc">
-                            End-to-end SaaS platform engineering — from backend APIs and device management
-                            to Stripe billing, OTA firmware updates, and scalable multi-tenant architectures.
+                            SaaS platform engineering — from backend APIs and device management
+                            to Stripe billing, OTA firmware updates, and multi-tenant architecture.
                         </p>
                         <div class="ind-card-solutions">
                             <span>Multi-tenant SaaS</span>
@@ -252,32 +261,32 @@
             <div class="section-head-center">
                 <span class="tag-label">Our Process</span>
                 <h2>How We Enter a New Industry</h2>
-                <p class="section-subhead">Same engineering rigour, adapted to your domain's real constraints.</p>
+                <p class="section-subhead">The same general approach, adapted to the domain's actual constraints.</p>
             </div>
 
             <div class="ind-process-row" data-reveal-group>
                 <div class="ind-process-step">
                     <div class="ind-process-num">01</div>
-                    <h4>Domain Research</h4>
+                    <h3>Domain Research</h3>
                     <p>We study your industry's workflows, regulations, and technical constraints before writing a single line of code.</p>
                 </div>
                 <div class="ind-process-arrow">→</div>
                 <div class="ind-process-step">
                     <div class="ind-process-num">02</div>
-                    <h4>Solution Mapping</h4>
+                    <h3>Solution Mapping</h3>
                     <p>We map your problem to the right technology stack — not the trendy one, the appropriate one.</p>
                 </div>
                 <div class="ind-process-arrow">→</div>
                 <div class="ind-process-step">
                     <div class="ind-process-num">03</div>
-                    <h4>Build & Integrate</h4>
+                    <h3>Build & Integrate</h3>
                     <p>We build, integrate with your existing systems, and test against real-world conditions in your environment.</p>
                 </div>
                 <div class="ind-process-arrow">→</div>
                 <div class="ind-process-step">
                     <div class="ind-process-num">04</div>
-                    <h4>Scale & Support</h4>
-                    <p>We stay. Post-delivery support, iteration on feedback, and scaling as your operation grows.</p>
+                    <h3>Handover &amp; Support</h3>
+                    <p>Delivery includes documentation and an agreed support window; ongoing work can be arranged separately.</p>
                 </div>
             </div>
         </div>
@@ -292,7 +301,7 @@
                 <div class="proj-cta-glow" aria-hidden="true"></div>
                 <span class="tag-label">Work With Us</span>
                 <h2>Don't See Your Industry?</h2>
-                <p>We work across any domain that requires reliable software, connected hardware, or intelligent automation. Tell us your problem — we'll figure out the solution.</p>
+                <p>If your problem involves software, connected hardware, or automation, tell us about it. We will tell you honestly whether it fits our experience.</p>
                 <div class="hero-cta-row" style="justify-content:center;margin-top:2rem;">
                     <a href="{{ route('contact') }}" class="btn btn-primary">Start a Conversation</a>
                     <a href="{{ route('services') }}" class="btn btn-ghost">Explore Services</a>

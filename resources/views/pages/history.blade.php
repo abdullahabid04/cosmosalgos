@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', $seo['title'] ?? 'Our History — Cosmos Algos')
-@section('meta_description', $seo['description'] ?? 'Trace the journey of Cosmos Algos — from first lines of code in 2020 to a full-scale AI and embedded systems company in 2025.')
+@section('meta_description', $seo['description'] ?? 'The journey behind Cosmos Algos — from first lines of code in 2020 to applied AI, embedded systems, and SaaS work in 2025.')
 
 @section('content')
 
@@ -54,32 +54,39 @@
                 <span class="tag-label">Our Journey</span>
                 <h1 class="hist-hero-h1">
                     From First Line of Code<br>
-                    <span class="hist-hero-accent">to Full-Scale AI Company</span>
+                    <span class="hist-hero-accent">to an Engineering Company</span>
                 </h1>
                 <p class="hist-hero-lead">
-                    Five years of consistent growth — from self-taught algorithms to
-                    production IoT systems, embedded AI, and enterprise SaaS platforms
-                    serving clients across the globe.
+                    Five years of consistent work — from self-taught algorithms to production
+                    IoT systems, embedded software, computer vision, and multi-tenant SaaS.
                 </p>
                 <div class="hist-hero-stats">
                     <div class="hist-stat">
-                        <span class="hist-stat-num" data-count="5">0</span><span class="hist-stat-num">+</span>
+                        <span class="hist-stat-value">
+                            <span class="hist-stat-num" data-count="{{ $stats['years_experience'] }}">0</span><span class="hist-stat-num" aria-hidden="true">+</span>
+                        </span>
                         <span class="hist-stat-label">Years of Growth</span>
                     </div>
                     <div class="hist-stat-divider"></div>
                     <div class="hist-stat">
-                        <span class="hist-stat-num" data-count="6">0</span>
+                        <span class="hist-stat-value">
+                            <span class="hist-stat-num" data-count="6">0</span>
+                        </span>
                         <span class="hist-stat-label">Major Milestones</span>
                     </div>
                     <div class="hist-stat-divider"></div>
                     <div class="hist-stat">
-                        <span class="hist-stat-num" data-count="20">0</span><span class="hist-stat-num">+</span>
-                        <span class="hist-stat-label">Projects Delivered</span>
+                        <span class="hist-stat-value">
+                            <span class="hist-stat-num" data-count="{{ $stats['projects'] }}">0</span><span class="hist-stat-num" aria-hidden="true">+</span>
+                        </span>
+                        <span class="hist-stat-label">Projects &amp; Engagements</span>
                     </div>
                     <div class="hist-stat-divider"></div>
                     <div class="hist-stat">
-                        <span class="hist-stat-num" data-count="10">0</span><span class="hist-stat-num">+</span>
-                        <span class="hist-stat-label">Tech Domains Mastered</span>
+                        <span class="hist-stat-value">
+                            <span class="hist-stat-num" data-count="{{ $stats['care_rnd_projects'] }}">0</span>
+                        </span>
+                        <span class="hist-stat-label">CARE Lab R&amp;D Projects</span>
                     </div>
                 </div>
             </div>
@@ -97,13 +104,12 @@
                     <h2>Built Slowly. Built Right.</h2>
                     <p>
                         Cosmos Algos didn't start with funding or a team — it started with curiosity,
-                        a compiler, and a stubborn refusal to stop learning. Every milestone in our history
-                        represents a deliberate step: a new technology mastered, a harder problem solved,
-                        a deeper client trust earned.
+                        a compiler, and a habit of finishing what was started. Each milestone below
+                        represents a new capability or a harder problem, not a marketing announcement.
                     </p>
                     <p class="secondary-para">
-                        From console applications in 2020 to AI-powered IoT platforms in 2025 — this is
-                        the story of a company that grew by shipping real things, not by writing roadmaps.
+                        From console applications in 2020 to connected industrial and AI systems in
+                        2025 — this is the record of a company that grew by shipping real things.
                     </p>
                 </div>
                 <div class="hist-overview-cards" data-reveal="fade-left">
@@ -111,21 +117,21 @@
                         <span class="hist-oc-icon">🌱</span>
                         <div>
                             <div class="hist-oc-label">The Beginning</div>
-                            <p>C++, OOP fundamentals, and first client work — building the engineering discipline that everything since depends on.</p>
+                            <p>A coding challenge from his father, then C++ and OOP fundamentals — the start of the engineering discipline later work builds on.</p>
                         </div>
                     </div>
                     <div class="hist-overview-card">
                         <span class="hist-oc-icon">🚀</span>
                         <div>
                             <div class="hist-oc-label">The Breakthrough</div>
-                            <p>Founding Cosmos Algos in 2023 — formalising years of freelance and research work into a structured, client-facing company.</p>
+                            <p>Founding Cosmos Algos in 2023 — formalising years of freelance and research work into a registered company.</p>
                         </div>
                     </div>
                     <div class="hist-overview-card">
                         <span class="hist-oc-icon">🧠</span>
                         <div>
                             <div class="hist-oc-label">The Expansion</div>
-                            <p>AI/ML, RealSense vision pipelines, cloud infrastructure, and enterprise SaaS — building the full-spectrum capability we have today.</p>
+                            <p>Applied AI, RealSense vision pipelines, cloud infrastructure, and SaaS platform work — extending the range of projects the company can take on.</p>
                         </div>
                     </div>
                 </div>
@@ -142,7 +148,7 @@
                 <span class="tag-label">Timeline</span>
                 <h2>Year by Year</h2>
                 <p class="section-head-sub" style="margin-inline:auto;">
-                    Every year added a new layer of capability. Here's exactly what was built and learned.
+                    The timeline below records what was built and learned at each stage.
                 </p>
             </div>
 
@@ -168,7 +174,7 @@
                                 The journey began with deep study of C++ and object-oriented programming —
                                 not tutorials, but real algorithmic problems. Built the first desktop console
                                 applications, established disciplined coding habits, and laid the mathematical
-                                and logical foundations that every subsequent project rests on.
+                                and logical foundations that later work builds on.
                             </p>
                             <div class="hist-vtl-tags">
                                 <span class="hist-vtl-tag">C++</span>
@@ -178,7 +184,7 @@
                             </div>
                             <div class="hist-vtl-achievement">
                                 <span class="hist-vtl-ach-icon">✦</span>
-                                First production-style desktop application shipped
+                                First console applications and algorithmic exercises completed
                             </div>
                         </div>
                     </div>
@@ -206,17 +212,19 @@
                             <div class="hist-vtl-card-header">
                                 <span class="hist-vtl-icon">📱</span>
                                 <div>
-                                    <h3 class="hist-vtl-heading">Flutter &amp; First Client Work</h3>
+                                    <h3 class="hist-vtl-heading">CARE Lab &amp; First Client Work</h3>
                                     <span class="hist-vtl-phase">Phase 2 — Exploration</span>
                                 </div>
                             </div>
                             <p class="hist-vtl-desc">
-                                Expanded into Python GUI development and cross-platform mobile with Flutter.
-                                Delivered first real client projects — small automation tools and mobile apps
-                                that required professional quality, deadlines, and communication. The shift
-                                from personal projects to client accountability changed everything.
+                                Joined the Center of Automation, Robotics and Embedded Systems (CARE Lab)
+                                at The Islamia University of Bahawalpur as a Software Developer in March
+                                2021. Alongside that role, expanded into Python GUI development and
+                                cross-platform mobile with Flutter, and delivered the first client-facing
+                                automation tools and apps.
                             </p>
                             <div class="hist-vtl-tags">
+                                <span class="hist-vtl-tag">CARE Lab</span>
                                 <span class="hist-vtl-tag">Flutter</span>
                                 <span class="hist-vtl-tag">Python</span>
                                 <span class="hist-vtl-tag">PyQt5</span>
@@ -224,7 +232,7 @@
                             </div>
                             <div class="hist-vtl-achievement">
                                 <span class="hist-vtl-ach-icon">✦</span>
-                                First paid client deliverables — mobile &amp; automation tools
+                                Joined CARE Lab as Software Developer — March 2021
                             </div>
                         </div>
                     </div>
@@ -246,7 +254,7 @@
                                 A decisive turn into embedded systems and hardware. Built a Raspberry Pi-based
                                 battery monitoring system used for real industrial testing. Developed PyQt5
                                 electrical signal visualiser and battery-charger health monitor — desktop tools
-                                used in live lab environments. Automation scripts for API testing and large-scale
+                                used in live lab environments. Automation scripts for API testing and bulk
                                 data simulation rounded out a foundational year in hardware-software integration.
                             </p>
                             <div class="hist-vtl-tags">
@@ -258,7 +266,7 @@
                             </div>
                             <div class="hist-vtl-achievement">
                                 <span class="hist-vtl-ach-icon">✦</span>
-                                First hardware-in-the-loop system deployed in industrial testing
+                                Hardware-in-the-loop systems delivered for CARE Lab projects
                             </div>
                         </div>
                     </div>
@@ -297,12 +305,11 @@
                                 </div>
                             </div>
                             <p class="hist-vtl-desc">
-                                After three years of freelance work, research, and rapidly expanding technical
-                                capability, Cosmos Algos was formally founded in Bahawalpur, Pakistan. The
-                                company was structured around a clear mission: AI-powered software systems
-                                that unite smart software with connected devices and industrial infrastructure.
-                                First IoT SaaS platforms and multi-tenant backend APIs were designed and
-                                delivered under the Cosmos Algos brand.
+                                After three years of independent software work and research, Cosmos Algos
+                                was formally founded in Bahawalpur, Pakistan in June 2023. The company
+                                focused on connected software: Laravel backends, multi-tenant SaaS modules,
+                                and the device integrations that feed them. Abdullah continued at CARE Lab
+                                while building the company.
                             </p>
                             <div class="hist-vtl-tags">
                                 <span class="hist-vtl-tag">Company Founded</span>
@@ -327,30 +334,29 @@
                             <div class="hist-vtl-card-header">
                                 <span class="hist-vtl-icon">🤖</span>
                                 <div>
-                                    <h3 class="hist-vtl-heading">FluxSense, RealSense &amp; Industrial AI</h3>
-                                    <span class="hist-vtl-phase">Phase 5 — AI Systems at Scale</span>
+                                    <h3 class="hist-vtl-heading">SaaS Platforms &amp; Applied AI</h3>
+                                    <span class="hist-vtl-phase">Phase 5 — Platform Depth</span>
                                 </div>
                             </div>
                             <p class="hist-vtl-desc">
-                                The most technically dense year to date. Led development of FluxSense AI —
-                                a full-stack smart environmental monitoring platform combining ESP32 edge hardware,
-                                MQTT telemetry, and AWS IoT cloud backend. Built an Intel RealSense D435i
-                                RGB-D streaming pipeline with Open3D for point-cloud generation and surface
-                                reconstruction. Delivered a complete VFD remote-control system: ESP32 MODBUS
-                                firmware, Flutter mobile client, and Laravel API backend — enabling full remote
-                                operation of industrial motors.
+                                The year focused on multi-tenant SaaS engineering: tenant isolation,
+                                role-based access, Stripe subscriptions, OTA firmware updates, and
+                                time-series aggregation across five platforms. Alongside that, the
+                                computer-vision toolchain expanded with OpenCV, Open3D, and Intel
+                                RealSense work, forming the base for the following year's research
+                                contract.
                             </p>
                             <div class="hist-vtl-tags">
-                                <span class="hist-vtl-tag">FluxSense AI</span>
-                                <span class="hist-vtl-tag">Intel RealSense D435i</span>
+                                <span class="hist-vtl-tag">Multi-Tenant SaaS</span>
+                                <span class="hist-vtl-tag">Stripe</span>
+                                <span class="hist-vtl-tag">OTA Updates</span>
+                                <span class="hist-vtl-tag">OpenCV</span>
                                 <span class="hist-vtl-tag">Open3D</span>
-                                <span class="hist-vtl-tag">VFD MODBUS</span>
-                                <span class="hist-vtl-tag">AWS IoT</span>
-                                <span class="hist-vtl-tag">Point Cloud</span>
+                                <span class="hist-vtl-tag">AWS</span>
                             </div>
                             <div class="hist-vtl-achievement">
                                 <span class="hist-vtl-ach-icon">✦</span>
-                                3 major full-stack systems shipped in a single year
+                                Backend work across five multi-tenant SaaS platforms
                             </div>
                         </div>
                     </div>
@@ -376,35 +382,37 @@
                     <div class="hist-vtl-content" data-reveal="fade-left">
                         <div class="hist-vtl-year-badge hist-year-active">
                             2025
-                            <span class="hist-active-dot" aria-label="Currently active"></span>
+                            <span class="hist-active-dot" aria-hidden="true"></span>
                         </div>
                         <div class="hist-vtl-card">
                             <div class="hist-vtl-card-header">
                                 <span class="hist-vtl-icon">🌌</span>
                                 <div>
-                                    <h3 class="hist-vtl-heading">Full-Spectrum AI &amp; Enterprise Expansion</h3>
+                                    <h3 class="hist-vtl-heading">Flock Sense, RealSense &amp; Remote Control</h3>
                                     <span class="hist-vtl-phase">Phase 6 — Present Day · Ongoing</span>
                                 </div>
                             </div>
                             <p class="hist-vtl-desc">
-                                Cosmos Algos enters its most expansive chapter. The service portfolio grows
-                                to cover the full software-hardware stack: AI/ML model development, cloud SaaS
-                                platforms, cross-platform mobile, embedded systems, and enterprise engineering
-                                solutions. Active collaboration at the Center of Automation, Robotics, and Embedded
-                                Systems (CARE Lab). Continued pursuit of a BSc in Artificial Intelligence at
-                                The Islamia University of Bahawalpur, keeping the company grounded in academic
-                                rigour alongside commercial delivery.
+                                Delivered Flock Sense AI — the AI extension of the Flock Sense poultry
+                                IoT platform, with a data-collection and inference pipeline for estimating
+                                broiler weight from camera imagery — under a research contract at DeepEmbed
+                                Research Lab. Built an Intel RealSense D435i RGB-D streaming
+                                pipeline with OpenCV and Open3D, and a remote VFD control system spanning
+                                ESP32 MODBUS firmware, a Laravel API, and a Flutter client. Continues as
+                                Software Developer at CARE Lab (since March 2021) and is pursuing a BSc in
+                                Artificial Intelligence at The Islamia University of Bahawalpur.
                             </p>
                             <div class="hist-vtl-tags">
-                                <span class="hist-vtl-tag hist-tag-active">AI / ML</span>
+                                <span class="hist-vtl-tag hist-tag-active">Flock Sense AI</span>
+                                <span class="hist-vtl-tag hist-tag-active">Intel RealSense D435i</span>
+                                <span class="hist-vtl-tag hist-tag-active">Open3D</span>
+                                <span class="hist-vtl-tag hist-tag-active">VFD MODBUS</span>
                                 <span class="hist-vtl-tag hist-tag-active">CARE Lab</span>
-                                <span class="hist-vtl-tag hist-tag-active">Cloud SaaS</span>
-                                <span class="hist-vtl-tag hist-tag-active">Enterprise Clients</span>
                                 <span class="hist-vtl-tag hist-tag-active">BSc AI</span>
                             </div>
                             <div class="hist-vtl-achievement">
                                 <span class="hist-vtl-ach-icon">✦</span>
-                                Full-spectrum engineering capability — device to cloud to client
+                                Research contract, RGB-D pipeline, and industrial remote control in one year
                             </div>
                         </div>
                     </div>
@@ -438,7 +446,7 @@
                     <div class="hist-htl-item">
                         <div class="hist-htl-label hist-htl-label-above">
                             <div class="hist-htl-year">2021</div>
-                            <div class="hist-htl-desc-mini">Flutter &amp; Client Work</div>
+                            <div class="hist-htl-desc-mini">CARE Lab &amp; Client Work</div>
                         </div>
                         <div class="hist-htl-node hist-htl-node-md"></div>
                     </div>
@@ -462,7 +470,7 @@
                         <div class="hist-htl-node hist-htl-node-lg"></div>
                         <div class="hist-htl-label hist-htl-label-below">
                             <div class="hist-htl-year">2024</div>
-                            <div class="hist-htl-desc-mini">FluxSense &amp; VFD AI</div>
+                            <div class="hist-htl-desc-mini">SaaS &amp; Applied AI</div>
                         </div>
                     </div>
                     <div class="hist-htl-item hist-htl-item-active">
@@ -471,7 +479,7 @@
                                 2025
                                 <span class="hist-htl-active-dot"></span>
                             </div>
-                            <div class="hist-htl-desc-mini">Enterprise AI Expansion</div>
+                            <div class="hist-htl-desc-mini">Flock Sense &amp; Remote Control</div>
                         </div>
                         <div class="hist-htl-node hist-htl-node-xl">
                             <div class="hist-htl-node-ring hist-htl-node-ring-pulse"></div>
@@ -491,7 +499,7 @@
                 <span class="tag-label">Landmark Projects</span>
                 <h2>What We Built Along the Way</h2>
                 <p class="section-head-sub" style="margin-inline:auto;">
-                    Milestones aren't just dates — they're systems that shipped and clients that succeeded.
+                    Milestones are dates; the useful record is what was actually built.
                 </p>
             </div>
             <div class="hist-projects-grid" data-stagger>
@@ -500,7 +508,7 @@
                     <div class="hist-project-year-bar">2022</div>
                     <div class="hist-project-body">
                         <span class="hist-project-icon">⚡</span>
-                        <h4>Battery Charger Health Monitor</h4>
+                        <h3>Battery Charger Health Monitor</h3>
                         <p>PyQt5 desktop application for real-time electrical signal visualisation and battery health tracking — deployed in live lab and industrial testing environments.</p>
                         <div class="hist-project-tags">
                             <span class="ts-chip">Python</span>
@@ -514,7 +522,7 @@
                     <div class="hist-project-year-bar">2023</div>
                     <div class="hist-project-body">
                         <span class="hist-project-icon">🌾</span>
-                        <h4>Poultry Farm IoT Platform</h4>
+                        <h3>Poultry Farm IoT Platform</h3>
                         <p>Multi-tenant SaaS backend with role-based access (managers/staff), real-time sensor ingestion, and analytics endpoints for flock metrics — built on Laravel with OpenAPI documentation.</p>
                         <div class="hist-project-tags">
                             <span class="ts-chip">Laravel</span>
@@ -525,25 +533,25 @@
                 </article>
 
                 <article class="hist-project-card">
-                    <div class="hist-project-year-bar">2024</div>
+                    <div class="hist-project-year-bar">2025</div>
                     <div class="hist-project-body">
-                        <span class="hist-project-icon">📡</span>
-                        <h4>FluxSense AI — Environmental Monitoring</h4>
-                        <p>Full-stack IoT platform: ESP32 edge nodes → MQTT → AWS IoT Core → Laravel API → real-time dashboard. AI anomaly detection reduces manual inspection cycles.</p>
+                        <span class="hist-project-icon">🐔</span>
+                        <h3>Flock Sense AI — Broiler Weight Estimation</h3>
+                        <p>Data-collection and inference pipeline that estimates broiler weight from camera imagery, delivered as a research contract at DeepEmbed Research Lab.</p>
                         <div class="hist-project-tags">
-                            <span class="ts-chip">ESP32</span>
-                            <span class="ts-chip">AWS IoT</span>
-                            <span class="ts-chip">AI/ML</span>
+                            <span class="ts-chip">Python</span>
+                            <span class="ts-chip">Computer Vision</span>
+                            <span class="ts-chip">DeepEmbed</span>
                         </div>
                     </div>
                 </article>
 
                 <article class="hist-project-card">
-                    <div class="hist-project-year-bar">2024</div>
+                    <div class="hist-project-year-bar">2025</div>
                     <div class="hist-project-body">
                         <span class="hist-project-icon">🔬</span>
-                        <h4>Intel RealSense RGB-D Pipeline</h4>
-                        <p>End-to-end depth camera streaming architecture — edge to cloud re-stream — with RGB-D frame capture, point-cloud generation, surface reconstruction, and cluster analysis via Open3D.</p>
+                        <h3>Intel RealSense RGB-D Pipeline</h3>
+                        <p>Depth-camera capture and streaming pipeline with RGB-D frame handling, point-cloud generation, and analysis using OpenCV and Open3D.</p>
                         <div class="hist-project-tags">
                             <span class="ts-chip">RealSense</span>
                             <span class="ts-chip">Open3D</span>
@@ -553,11 +561,11 @@
                 </article>
 
                 <article class="hist-project-card">
-                    <div class="hist-project-year-bar">2024</div>
+                    <div class="hist-project-year-bar">2025</div>
                     <div class="hist-project-body">
                         <span class="hist-project-icon">🏭</span>
-                        <h4>VFD Remote Control System</h4>
-                        <p>ESP32 MODBUS firmware + Flutter mobile client + Laravel backend — enabling fully remote operation, live telemetry display, and historical logging of Variable Frequency Drives.</p>
+                        <h3>VFD Remote Control System</h3>
+                        <p>ESP32 MODBUS firmware, a Laravel backend, and a Flutter client for remote monitoring and control of Variable Frequency Drives.</p>
                         <div class="hist-project-tags">
                             <span class="ts-chip">MODBUS</span>
                             <span class="ts-chip">Flutter</span>
@@ -570,8 +578,8 @@
                     <div class="hist-project-year-bar hist-year-bar-active">2025 · Ongoing</div>
                     <div class="hist-project-body">
                         <span class="hist-project-icon">🌌</span>
-                        <h4>Cosmos Algos Website &amp; Platform</h4>
-                        <p>Full-stack Laravel portfolio website with layered architecture (Controller → ViewModel → Service → Repository), cosmos-themed animations, and a component system built to scale into a complete business platform.</p>
+                        <h3>Cosmos Algos Website &amp; Platform</h3>
+                        <p>Full-stack Laravel portfolio website with layered architecture (Controller → ViewModel → Service → Repository), cosmos-themed animations, and a component structure intended to support future pages.</p>
                         <div class="hist-project-tags">
                             <span class="ts-chip">Laravel</span>
                             <span class="ts-chip">Blade</span>
@@ -599,18 +607,20 @@
                     <div class="hist-role-header">
                         <div class="hist-role-icon">🎓</div>
                         <div>
-                            <div class="hist-role-title">Teacher Assistant</div>
-                            <div class="hist-role-org">Deep Embed</div>
+                            <div class="hist-role-title">AI / Computer Vision Contract</div>
+                            <div class="hist-role-org">DeepEmbed Research Lab</div>
                         </div>
-                        <span class="hist-role-period">2022–2023</span>
+                        <span class="hist-role-period">Jul–Aug 2025</span>
                     </div>
                     <p class="hist-role-desc">
-                        Contributed to AI education — structuring curriculum, guiding students through
-                        embedded systems and ML fundamentals, and reinforcing knowledge through teaching.
+                        Delivered a computer-vision data-collection and inference pipeline for poultry
+                        weight estimation, including camera capture, dataset preparation, and model
+                        integration.
                     </p>
                     <div class="hist-role-tags">
-                        <span class="ts-chip">AI Education</span>
-                        <span class="ts-chip">Embedded Systems</span>
+                        <span class="ts-chip">Computer Vision</span>
+                        <span class="ts-chip">Python</span>
+                        <span class="ts-chip">Data Pipelines</span>
                     </div>
                 </div>
 
@@ -621,12 +631,12 @@
                             <div class="hist-role-title">Software Developer</div>
                             <div class="hist-role-org">CARE Lab — Center of Automation, Robotics &amp; Embedded Systems</div>
                         </div>
-                        <span class="hist-role-period">2023–Present</span>
+                        <span class="hist-role-period">Mar 2021–Present</span>
                     </div>
                     <p class="hist-role-desc">
-                        Delivering innovative solutions in automation, robotics, and embedded systems.
-                        A high-demand research-and-production environment that sharpened both engineering
-                        precision and delivery speed simultaneously.
+                        Contributed to {{ $stats['care_rnd_projects'] }} R&amp;D projects across automation, monitoring, and embedded
+                        systems, including defense test equipment, industrial dashboards, and mobile
+                        field tools.
                     </p>
                     <div class="hist-role-tags">
                         <span class="ts-chip">Robotics</span>
@@ -645,9 +655,10 @@
                         <span class="hist-role-period">2023–Present</span>
                     </div>
                     <p class="hist-role-desc">
-                        Leading a team of engineers and consultants focused on AI-powered software systems.
-                        Responsible for architecture decisions, client relationships, technical delivery,
-                        and the long-term strategic direction of the company.
+                        Leads the company and contributes directly to architecture and implementation.
+                        Responsible for client relationships, technical delivery, and the long-term
+                        direction of the company, working with a small group of engineers and
+                        collaborators on larger engagements.
                     </p>
                     <div class="hist-role-tags">
                         <span class="ts-chip">Leadership</span>
@@ -690,31 +701,26 @@
                     <span class="tag-label">What's Next</span>
                     <h2>The Road Ahead</h2>
                     <p>
-                        The next chapter is already in motion. Cosmos Algos is expanding its enterprise
-                        client base, deepening AI/ML capability across computer vision and predictive analytics,
-                        and building the infrastructure to scale both delivery capacity and service quality
-                        without losing the engineering precision that defines our work.
+                        The direction is practical rather than dramatic: deepen the applied AI and
+                        computer-vision work, improve how delivery is documented, and keep the
+                        connection between CARE Lab research and commercial engineering useful.
                     </p>
                     <ul class="hist-future-list">
                         <li>
                             <span class="hist-future-dot" aria-hidden="true"></span>
-                            Expanding AI/ML model deployment to production cloud environments
+                            More applied computer-vision and monitoring work
                         </li>
                         <li>
                             <span class="hist-future-dot" aria-hidden="true"></span>
-                            Growing the team with embedded systems and ML specialists
+                            Better internal tooling for delivery and documentation
                         </li>
                         <li>
                             <span class="hist-future-dot" aria-hidden="true"></span>
-                            Building a CMS-driven admin panel for full content management
+                            Continued collaboration between CARE Lab research and client work
                         </li>
                         <li>
                             <span class="hist-future-dot" aria-hidden="true"></span>
-                            Deeper integration between CARE Lab research and commercial delivery
-                        </li>
-                        <li>
-                            <span class="hist-future-dot" aria-hidden="true"></span>
-                            Phase 2: Blog, API marketplace, FCM push notification services
+                            Clearer public writing about the systems we build
                         </li>
                     </ul>
                 </div>
@@ -751,8 +757,8 @@
                     <span class="tag-label">Work With Us</span>
                     <h2 class="hist-cta-heading">Be Part of the Next Chapter</h2>
                     <p class="hist-cta-sub">
-                        Every milestone in this history was built for a client who needed something
-                        real. Your project could be next.
+                        Most of the work in this history was built for a real operational need.
+                        If you have one, tell us about it.
                     </p>
                 </div>
                 <div class="hist-cta-actions">

@@ -12,6 +12,6 @@ class ContactSubmissionController extends Controller
     {
         $contactService->submit($request->validated(), $request);
 
-        return to_route('contact')->with('status', 'Thanks for contacting Cosmos Algos. We will get back to you shortly.');
+        return to_route('contact')->with('success', 'Thanks for contacting Cosmos Algos. We will get back to you as soon as possible.');
     }
 }

@@ -18,6 +18,9 @@ class Project extends Model implements HasMedia, Sortable
     protected $fillable = [
         'title',
         'slug',
+        'summary',
+        'body',
+        'cover_image',
         'client',
         'year',
         'excerpt',

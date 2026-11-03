@@ -203,17 +203,24 @@ h1 {
 }
 
 .contact-form label {
-    display: grid;
-    gap: 0.4rem;
+    display: block;
 }
 
 .contact-form input,
+.contact-form select,
 .contact-form textarea {
     border: 1px solid var(--border);
     background: var(--surface);
     color: var(--text);
     border-radius: 0.55rem;
     padding: 0.75rem;
+    font: inherit;
+    width: 100%;
+}
+
+.contact-form select option {
+    background: var(--surface);
+    color: var(--text);
 }
 
 .field-error {
@@ -631,8 +638,7 @@ h1 {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--brand);
-    opacity: 0.85;
+    color: #ff6b5e;
 }
 
 .fc-value {
@@ -797,12 +803,14 @@ h1 {
         right: 0;
         top: 100%;
         height: 12px;
+        pointer-events: none;
+        z-index: 1;
     }
 }
 
 .nav-dropdown {
     position: absolute;
-    top: calc(100% + 12px);
+    top: 100%;
     left: 50%;
     transform: translateX(-50%) translateY(-6px);
     min-width: 240px;
@@ -1627,7 +1635,7 @@ h1 {
     transform: scale(1.1) rotate(-3deg);
 }
 
-.approach-card h4 {
+.approach-card h3 {
     font-size: 0.95rem;
     font-weight: 700;
     margin: 0 0 0.6rem;
@@ -1693,7 +1701,7 @@ h1 {
     transform: scale(1.15) translateY(-2px);
 }
 
-.service-card-item h4 {
+.service-card-item h3 {
     font-size: 0.9rem;
     font-weight: 700;
     margin: 0 0 0.5rem;
@@ -1854,7 +1862,7 @@ h1 {
     opacity: 1;
 }
 
-.process-step h4 {
+.process-step h3 {
     font-size: 0.85rem;
     font-weight: 700;
     margin: 0 0 0.5rem;
@@ -2064,7 +2072,7 @@ h1 {
     font-weight: 600;
 }
 
-.case-study-body h4 {
+.case-study-body h3 {
     font-size: 0.9rem;
     font-weight: 700;
     margin: 0 0 0.5rem;
@@ -2126,6 +2134,12 @@ h1 {
 
 .testimonial-card:hover::before {
     opacity: 1;
+}
+
+.reference-card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
 }
 
 .testi-quote {
@@ -2238,7 +2252,7 @@ h1 {
     transform: translateX(4px);
 }
 
-.location-card h5 {
+.location-card h3 {
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -2363,9 +2377,21 @@ h1 {
     *,
     *::before,
     *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+    }
+
+    /* Keep the cosmic scene visible as a calm, static fallback. */
+    .cosmos-nebula,
+    .hero-orb,
+    #algo-grid,
+    .hv-ring-outer,
+    .hv-ring-mid,
+    .hv-orbit,
+    .hist-fv-ring-1,
+    .hist-fv-ring-2,
+    .hist-fv-orbit-1,
+    .hist-fv-orbit-2 {
+        animation-play-state: paused !important;
     }
 }
 
@@ -2512,12 +2538,13 @@ h1 {
 }
 
 @keyframes ringRotate {
-    from {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    to {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes orbitRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 @keyframes corePulse {
@@ -2947,7 +2974,7 @@ h1 {
     height: 72%;
     margin-left: -36%;
     margin-top: -36%;
-    animation: ringRotate 10s linear infinite;
+    animation: orbitRotate 10s linear infinite;
 }
 
 .hv-orbit-2 {
@@ -2955,7 +2982,7 @@ h1 {
     height: 84%;
     margin-left: -42%;
     margin-top: -42%;
-    animation: ringRotate 16s linear infinite reverse;
+    animation: orbitRotate 16s linear infinite reverse;
 }
 
 .hv-orbit-dot {
@@ -3118,9 +3145,11 @@ h1 {
 
 /* ── Single item ── */
 .tl-item {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
     align-items: center;
+    justify-items: center;
+    min-height: 360px;
     flex: 1;
     position: relative;
     transition: opacity 0.6s ease, transform 0.6s ease;
@@ -3179,22 +3208,20 @@ h1 {
 }
 
 .tl-content-above {
+    grid-row: 1;
+    align-self: end;
     margin-bottom: 1rem;
-    order: -1;
 }
 
 .tl-content-below {
+    grid-row: 3;
+    align-self: start;
     margin-top: 1rem;
 }
 
-/* Alternate items away from the center track line so it clears the year
-   labels instead of cutting through them (line itself stays centered). */
-.tl-item.tl-below {
-    top: 16px;
-}
-
-.tl-item.tl-above {
-    top: -16px;
+.tl-node-wrap {
+    grid-row: 2;
+    align-self: center;
 }
 
 /* ── Year label ── */
@@ -3561,7 +3588,7 @@ h1 {
     transform: scale(1.12) rotate(-4deg);
 }
 
-.about-pillar h4 {
+.about-pillar h3 {
     font-size: 0.875rem;
     font-weight: 700;
     margin: 0 0 0.3rem;
@@ -3692,18 +3719,17 @@ h1 {
 .value-num {
     font-size: 0.68rem;
     font-weight: 800;
-    color: var(--brand);
+    color: #ff6b5e;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-bottom: 0.7rem;
-    opacity: 0.8;
 }
 
 .value-card:hover .value-num {
     opacity: 1;
 }
 
-.value-card h4 {
+.value-card h3 {
     font-size: 1rem;
     font-weight: 700;
     margin: 0 0 0.5rem;
@@ -3801,9 +3827,8 @@ h1 {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: var(--brand);
+    color: #ff6b5e;
     margin-bottom: 0.9rem;
-    opacity: 0.9;
 }
 
 .ts-chips {
@@ -4313,7 +4338,7 @@ h1 {
     font-size: 1.5rem;
 }
 
-.hw-item h4 {
+.hw-item h3 {
     font-size: 0.9rem;
     font-weight: 700;
     margin: 0 0 0.6rem;
@@ -4349,7 +4374,7 @@ h1 {
     opacity: 0.8;
 }
 
-.tech-approach-item h4 {
+.tech-approach-item h3 {
     font-size: 0.9rem;
     font-weight: 700;
     margin: 0 0 0.55rem;
@@ -4956,7 +4981,7 @@ h1 {
     transform: scale(1.15) translateY(-4px);
 }
 
-.svc-process-item h4 {
+.svc-process-item h3 {
     font-size: 0.78rem;
     letter-spacing: 0.04em;
     color: var(--text);
@@ -5061,7 +5086,7 @@ h1 {
     filter: drop-shadow(0 0 14px rgba(0, 212, 255, 0.5));
 }
 
-.svc-pillar-card h4 {
+.svc-pillar-card h3 {
     font-size: 0.8rem;
     margin-bottom: 0.5rem;
     color: var(--text);
@@ -5127,7 +5152,7 @@ h1 {
     gap: 0.75rem;
 }
 
-.svc-case-body h4 {
+.svc-case-body h3 {
     font-size: 0.88rem;
     color: var(--text);
     margin: 0;
@@ -5789,7 +5814,7 @@ a.contact-detail-value:hover {
     display: block;
 }
 
-.contact-process-step h4 {
+.contact-process-step h3 {
     font-size: 1rem;
     font-weight: 600;
     color: var(--text);
@@ -6177,7 +6202,7 @@ a.contact-detail-value:hover {
     font-size: .7rem;
     text-transform: uppercase;
     letter-spacing: .07em;
-    color: var(--brand);
+    color: #ff6b5e;
 }
 
 .proj-meta-val {
@@ -6839,14 +6864,14 @@ a.contact-detail-value:hover {
 
 /* inline link style */
 .faq-inline-link {
-    color: var(--brand);
+    color: #ff6b5e;
     text-decoration: none;
-    border-bottom: 1px solid rgba(224, 37, 26, 0.3);
+    border-bottom: 1px solid rgba(255, 107, 94, 0.35);
     transition: border-color 0.2s;
 }
 
 .faq-inline-link:hover {
-    border-color: var(--brand);
+    border-color: #ff6b5e;
 }
 
 /* ─── EMPTY STATE ────────────────────────────────────────── */
@@ -8171,10 +8196,12 @@ a.contact-detail-value:hover {
 }
 
 .hist-htl-item {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 1fr 74px 1fr;
+    justify-items: center;
     align-items: center;
     flex: 1;
+    min-height: 180px;
     opacity: 0;
     transform: translateY(14px);
     transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
@@ -8192,13 +8219,15 @@ a.contact-detail-value:hover {
 }
 
 .hist-htl-label-above {
+    grid-row: 1;
+    align-self: end;
     margin-bottom: 0.9rem;
-    order: -1;
 }
 
 .hist-htl-label-below {
+    grid-row: 3;
+    align-self: start;
     margin-top: 0.9rem;
-    order: 1;
 }
 
 .hist-htl-year {
@@ -8240,6 +8269,8 @@ a.contact-detail-value:hover {
 
 /* Nodes */
 .hist-htl-node {
+    grid-row: 2;
+    align-self: center;
     position: relative;
     border-radius: 50%;
     background: var(--surface);
@@ -8363,7 +8394,7 @@ a.contact-detail-value:hover {
     filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.5));
 }
 
-.hist-project-body h4 {
+.hist-project-body h3 {
     font-size: 0.85rem;
     color: var(--text);
     margin: 0;
@@ -9014,7 +9045,7 @@ a.contact-detail-value:hover {
     margin-bottom: .6rem;
 }
 
-.ind-process-step h4 {
+.ind-process-step h3 {
     font-size: .95rem;
     margin-bottom: .5rem;
 }
@@ -9062,7 +9093,7 @@ a.contact-detail-value:hover {
     filter: drop-shadow(0 0 8px rgba(224, 37, 26, .25));
 }
 
-.careers-perk h4 {
+.careers-perk h3 {
     font-size: .95rem;
     margin-bottom: .5rem;
 }
@@ -9164,7 +9195,7 @@ a.contact-detail-value:hover {
     flex-shrink: 0;
 }
 
-.careers-open-app h4 {
+.careers-open-app h3 {
     margin: 0 0 .3rem;
     font-size: .95rem;
 }
@@ -9202,7 +9233,7 @@ a.contact-detail-value:hover {
     border-radius: 50%;
     background: rgba(224, 37, 26, .1);
     border: 1px solid rgba(224, 37, 26, .3);
-    color: var(--brand);
+    color: #ff6b5e;
     font-size: 1rem;
     font-weight: 800;
     display: flex;
@@ -9211,7 +9242,7 @@ a.contact-detail-value:hover {
     margin: 0 auto 1rem;
 }
 
-.careers-process-step h4 {
+.careers-process-step h3 {
     font-size: .9rem;
     margin-bottom: .5rem;
 }
@@ -9425,7 +9456,7 @@ a.contact-detail-value:hover {
     margin-bottom: .75rem;
 }
 
-.mv-value-card h4 {
+.mv-value-card h3 {
     font-size: .95rem;
     margin-bottom: .6rem;
 }
@@ -9784,7 +9815,7 @@ a.contact-detail-value:hover {
     min-height: 400px;
 }
 
-.cs-thumb-fluxsense {
+.cs-thumb-flocksense {
     background: linear-gradient(135deg, #0d1f0d 0%, #0a1a0a 40%, #111 100%);
 }
 
@@ -10295,7 +10326,7 @@ a.contact-detail-value:hover {
     display: block;
 }
 
-.cs-process-step h4 {
+.cs-process-step h3 {
     font-size: 0.98rem;
     font-weight: 700;
     color: var(--text);

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Mission & Vision | Cosmos Algos')
-@section('meta_description', 'Cosmos Algos mission: engineering AI, IoT, and software systems that solve real problems. Our vision: to be the engineering partner that Pakistan-based technology companies trust to build at scale.')
+@section('meta_description', 'The mission, vision, and working principles behind Cosmos Algos — a small engineering company in Bahawalpur building software, IoT systems, and applied AI.')
 
 @section('content')
 
@@ -40,10 +40,10 @@
                             Engineering systems that connect the physical world to intelligent software.
                         </h2>
                         <p>
-                            We exist to build software, IoT systems, and AI solutions that solve real operational problems —
-                            for farms, factories, research labs, and businesses that need technology to work reliably,
-                            not just impressively. Every line of code we write should make something in the physical world
-                            more efficient, more connected, or more intelligent.
+                            We exist to build software, IoT systems, and applied AI that solve operational
+                            problems — for industrial, agricultural, research, and business settings where
+                            the technology has to work reliably, not just demo well. The measure is whether
+                            the system is useful to the people operating it.
                         </p>
                         <div class="mv-large-card-line"></div>
                     </div>
@@ -55,13 +55,13 @@
                         <div class="mv-large-icon">🌌</div>
                         <div class="mv-large-label">Our Vision</div>
                         <h2 class="mv-large-heading">
-                            To become the engineering partner that scales with your ambition.
+                            To be a dependable technical partner for organisations building connected systems.
                         </h2>
                         <p>
-                            We envision Cosmos Algos as the technical backbone for the next generation of IoT-driven
-                            businesses — a studio that combines the depth of a product team with the flexibility of
-                            a partner. Where companies come not just to build, but to architect systems that last
-                            years, not months.
+                            We want Cosmos Algos to be a dependable technical partner for small and mid-sized
+                            organisations building connected systems — combining product-level care with the
+                            flexibility of a small team. The aim is systems that can be maintained and extended,
+                            not just delivered.
                         </p>
                         <div class="mv-large-card-line"></div>
                     </div>
@@ -86,15 +86,14 @@
                         into something with a sharper purpose.
                     </p>
                     <p class="secondary-para">
-                        Over five years, working on industrial automation, embedded systems, IoT SaaS platforms,
-                        and AI pipelines, one thing became clear: most engineering problems are not technically
-                        unsolvable — they are organisationally neglected. Businesses need a reliable technical
-                        partner who understands both the hardware and the software, both the product and the
-                        deployment, both the MVP and the scale.
+                        Over five years of work on industrial automation, embedded systems, IoT platforms,
+                        and applied AI, a recurring problem became clear: projects often fail at the seams
+                        between hardware, backend, and the people operating the system. A small team that
+                        understands more than one layer can close those gaps.
                     </p>
                     <p class="secondary-para">
-                        Cosmos Algos was founded in 2023 to be exactly that partner. Based in Bahawalpur,
-                        Pakistan — built to work globally.
+                        Cosmos Algos was founded in 2023 to do that work. Based in Bahawalpur, Pakistan,
+                        and working with clients and collaborators where the engagement makes sense.
                     </p>
                 </div>
                 <div class="mv-story-visual card">
@@ -105,7 +104,7 @@
                         </div>
                         <div class="mv-story-point">
                             <span class="mv-story-year">2021</span>
-                            <span class="mv-story-event">First real client projects. Flutter, IoT, automation.</span>
+                            <span class="mv-story-event">Joined CARE Lab. Python tooling, automation, early IoT work.</span>
                         </div>
                         <div class="mv-story-point">
                             <span class="mv-story-year">2022</span>
@@ -113,15 +112,15 @@
                         </div>
                         <div class="mv-story-point">
                             <span class="mv-story-year">2023</span>
-                            <span class="mv-story-event mv-story-event--key">Founded Cosmos Algos. IoT SaaS at scale.</span>
+                            <span class="mv-story-event mv-story-event--key">Founded Cosmos Algos. Backend and SaaS platform work.</span>
                         </div>
                         <div class="mv-story-point">
                             <span class="mv-story-year">2024</span>
-                            <span class="mv-story-event">FluxSense AI. RealSense pipelines. VFD control.</span>
+                            <span class="mv-story-event">Multi-tenant SaaS, Stripe, OTA updates, time-series data.</span>
                         </div>
                         <div class="mv-story-point mv-story-point--active">
                             <span class="mv-story-year">2025</span>
-                            <span class="mv-story-event">AI/ML expansion. Enterprise delivery. Growing.</span>
+                            <span class="mv-story-event">Flock Sense AI contract. RealSense pipeline. VFD control.</span>
                         </div>
                     </div>
                 </div>
@@ -137,45 +136,45 @@
             <div class="section-head-center" data-reveal="up">
                 <span class="tag-label">What We Stand On</span>
                 <h2>Core Values</h2>
-                <p class="section-subhead">These aren't aspirational posters. They're the principles that shape every technical decision we make.</p>
+                <p class="section-subhead">Principles we aim to work by — not claims that every decision has lived up to them.</p>
             </div>
 
             <div class="mv-values-grid" data-reveal-group>
 
                 <div class="mv-value-card card">
                     <div class="mv-value-num">01</div>
-                    <h4>Engineering Integrity</h4>
-                    <p>We build things properly — not fast-and-broken. Shortcuts are technical debt we refuse to inherit. Correct architecture from day one, always.</p>
+                    <h3>Engineering Integrity</h3>
+                    <p>We try to build things properly rather than fast-and-broken. Shortcuts are treated as technical debt, and architecture is agreed before code is written.</p>
                 </div>
 
                 <div class="mv-value-card card">
                     <div class="mv-value-num">02</div>
-                    <h4>Real-World Reliability</h4>
-                    <p>Software that breaks in production is useless software. We design for failure modes, test against real conditions, and ship things that stay up.</p>
+                    <h3>Real-World Reliability</h3>
+                    <p>Software that breaks in production is not useful software. We consider failure modes, test against realistic conditions, and document known limits.</p>
                 </div>
 
                 <div class="mv-value-card card">
                     <div class="mv-value-num">03</div>
-                    <h4>Relentless Curiosity</h4>
-                    <p>We started because of curiosity and it hasn't stopped. We explore new domains, learn new stacks, and never stop asking why before how.</p>
+                    <h3>Curiosity</h3>
+                    <p>We started because of curiosity and try to keep it. New domains and stacks are learned when a problem requires them, with why considered before how.</p>
                 </div>
 
                 <div class="mv-value-card card">
                     <div class="mv-value-num">04</div>
-                    <h4>Client Partnership</h4>
-                    <p>We don't deliver and disappear. We stay involved, iterate on feedback, and treat your product as if we had stake in its success — because we do.</p>
+                    <h3>Client Partnership</h3>
+                    <p>We prefer to stay involved after delivery where the scope allows, respond to feedback, and treat the client's operational success as the point of the work.</p>
                 </div>
 
                 <div class="mv-value-card card">
                     <div class="mv-value-num">05</div>
-                    <h4>Pragmatic Innovation</h4>
-                    <p>AI and IoT aren't buzzwords for us — they're tools we've shipped. We adopt what solves problems, not what's trending on a conference slide.</p>
+                    <h3>Pragmatic Innovation</h3>
+                    <p>AI and IoT are tools we have used in delivered work, not decoration. Technology is chosen because it solves the problem, not because it is trending.</p>
                 </div>
 
                 <div class="mv-value-card card">
                     <div class="mv-value-num">06</div>
-                    <h4>Transparent Communication</h4>
-                    <p>We say what's possible, flag what isn't, and update without being asked. No surprises. No smoke and mirrors. Just honest engineering dialogue.</p>
+                    <h3>Transparent Communication</h3>
+                    <p>We try to say what is possible, flag what is not, and raise problems early. The goal is straightforward engineering dialogue, not optimistic silence.</p>
                 </div>
 
             </div>
@@ -195,15 +194,15 @@
             <div class="mv-beliefs-grid" data-reveal-group>
                 <div class="mv-belief">
                     <span class="mv-belief-quote">"</span>
-                    <p>Great software is invisible. It just works, every time, without demanding attention.</p>
+                    <p>Good software should be mostly invisible — it works without demanding constant attention.</p>
                 </div>
                 <div class="mv-belief">
                     <span class="mv-belief-quote">"</span>
-                    <p>The best architecture is the simplest one that fully solves the problem. Complexity is a cost, not an achievement.</p>
+                    <p>The better architecture is usually the simplest one that solves the problem. Complexity is a cost, not an achievement.</p>
                 </div>
                 <div class="mv-belief">
                     <span class="mv-belief-quote">"</span>
-                    <p>Hardware and software are not separate disciplines. The best IoT engineers understand both.</p>
+                    <p>Hardware and software are not separate disciplines. Good IoT work usually requires understanding both.</p>
                 </div>
                 <div class="mv-belief">
                     <span class="mv-belief-quote">"</span>
@@ -225,26 +224,10 @@
                 <p>If our mission resonates and you have a problem worth solving, let's talk about how we build the right solution together.</p>
                 <div class="hero-cta-row" style="justify-content:center;margin-top:2rem;">
                     <a href="{{ route('contact') }}" class="btn btn-primary">Get in Touch</a>
-                    <a href="{{ route('about') }}" class="btn btn-ghost">About the Team</a>
+                    <a href="{{ route('about') }}" class="btn btn-ghost">About Cosmos Algos</a>
                 </div>
             </div>
         </div>
     </section>
 
 @endsection
-
-@push('scripts')
-    <script>
-        (function () {
-            const io = new IntersectionObserver(entries => {
-                entries.forEach(en => {
-                    if (en.isIntersecting) {
-                        en.target.classList.add('is-visible');
-                        io.unobserve(en.target);
-                    }
-                });
-            }, { threshold: 0.10 });
-            document.querySelectorAll('[data-reveal], [data-reveal-group]').forEach(el => io.observe(el));
-        })();
-    </script>
-@endpush

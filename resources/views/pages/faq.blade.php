@@ -3,7 +3,7 @@
 @section('title', 'FAQ — ' . $company['name'])
 @section('meta_description', 'Frequently asked questions about Cosmos Algos — our services, process, technology, pricing, IoT, AI/ML, embedded systems, mobile and web development.')
 @section('og_title', 'FAQ — Cosmos Algos')
-@section('og_description', 'Everything you need to know before working with us. Questions about services, process, technology, pricing, and more.')
+@section('og_description', 'Common questions about Cosmos Algos services, process, technology, and pricing.')
 
 @section('content')
 
@@ -19,19 +19,19 @@
             <div class="faq-hero-inner" data-reveal="fade-up">
                 <span class="tag-label">FAQ</span>
                 <h1 class="faq-hero-h1 glitch-ready">Frequently Asked <span class="faq-h1-accent">Questions</span></h1>
-                <p class="faq-hero-sub">Everything you need to know about working with Cosmos Algos — our services, process, technology, and more. Can't find your answer? <a href="{{ route('contact') }}" class="faq-inline-link">Reach out directly.</a></p>
+                <p class="faq-hero-sub">Common questions about working with Cosmos Algos — services, process, technology, and pricing. Can't find your answer? <a href="{{ route('contact') }}" class="faq-inline-link">Reach out directly.</a></p>
                 <div class="faq-hero-stats" data-stagger>
                     <div class="faq-stat card">
                         <span class="faq-stat-num">7</span>
                         <span class="faq-stat-label">Categories</span>
                     </div>
                     <div class="faq-stat card">
-                        <span class="faq-stat-num">35+</span>
+                        <span class="faq-stat-num">39</span>
                         <span class="faq-stat-label">Questions Answered</span>
                     </div>
                     <div class="faq-stat card">
-                        <span class="faq-stat-num">24h</span>
-                        <span class="faq-stat-label">Response Time</span>
+                        <span class="faq-stat-num">8–4</span>
+                        <span class="faq-stat-label">Office Hours (PKT)</span>
                     </div>
                 </div>
             </div>
@@ -115,35 +115,35 @@
                             <details class="faq-item card">
                                 <summary class="faq-q">What is Cosmos Algos?</summary>
                                 <div class="faq-a">
-                                    <p>Cosmos Algos is a pioneering technology company based in Bahawalpur, Pakistan. Founded by Abdullah Abid, we specialize in delivering advanced software and hardware solutions — from custom IoT systems and AI-powered firmware to cloud platforms, mobile apps, and web applications. We work with businesses globally to solve complex technical challenges and drive digital transformation.</p>
+                                    <p>Cosmos Algos is a technology company based in Bahawalpur, Pakistan. Founded by Abdullah Abid, we build advanced hardware and software solutions — from custom IoT systems and embedded firmware to cloud platforms, mobile apps, and web applications. We help businesses solve complex technical challenges and turn them into reliable, working systems.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">Where is Cosmos Algos based, and do you work internationally?</summary>
                                 <div class="faq-a">
-                                    <p>Our headquarters are in Bahawalpur, Punjab, Pakistan. We are a remote-first company and work with clients across Pakistan, the Middle East, Europe, and North America. Time zones are never a barrier — we adapt our communication schedule to suit you.</p>
+                                    <p>Our headquarters are in Bahawalpur, Punjab, Pakistan. We work with clients on-site and remotely, and agree communication hours and channels before an engagement begins.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">What industries do you serve?</summary>
                                 <div class="faq-a">
-                                    <p>We serve a wide range of industries including agriculture and smart farming, industrial manufacturing, energy and utilities, healthcare, education, fintech, real estate, insurance, and e-commerce. Our hardware-and-software combination means we can serve both traditional and emerging sectors effectively.</p>
+                                    <p>Documented work spans agriculture and livestock, industrial automation, energy and utilities, research and academic labs, defense-related test equipment through CARE Lab, logistics and ports, consumer IoT, and technology products. The common thread is a system that has to work outside a demo environment.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">What makes Cosmos Algos different from other software companies?</summary>
                                 <div class="faq-a">
-                                    <p>Most software firms work purely in software. We bridge both worlds — hardware and software. Our team has hands-on experience with embedded systems (ESP32, Raspberry Pi), real-time IoT pipelines, AI/ML model development, and full cloud-to-device integration. This cross-disciplinary capability means we can own a project end-to-end, from sensor firmware to a client-facing mobile dashboard.</p>
+                                    <p>Most software firms work purely in software. We work across both worlds — hardware and software. The founder has hands-on experience with embedded systems (ESP32, Raspberry Pi), IoT pipelines, applied AI/ML, and cloud-to-device integration. That means one team can work from sensor firmware through to a client-facing dashboard, rather than handing the project between vendors.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">Can I see examples of your previous work?</summary>
                                 <div class="faq-a">
-                                    <p>Yes. Our <a href="{{ route('projects') }}" class="faq-inline-link">Projects page</a> showcases case studies including FluxSense AI (a smart poultry monitoring system), a VFD motor remote-control system using MODBUS and Flutter, an Intel RealSense RGB-D 3D scanning pipeline, and CARE Lab automation systems. Each case study details the problem, our approach, and the outcome.</p>
+                                    <p>Yes. Our <a href="{{ route('projects') }}" class="faq-inline-link">Projects page</a> includes Flock Sense AI (broiler weight estimation from camera imagery, an extension of the Flock Sense poultry IoT platform), a VFD motor remote-control system using MODBUS and Flutter, an Intel RealSense RGB-D acquisition pipeline, and CARE Lab automation systems. Where a project was delivered through CARE Lab or a research contract, the attribution is stated.</p>
                                 </div>
                             </details>
 
@@ -165,42 +165,42 @@
                             <details class="faq-item card">
                                 <summary class="faq-q">What services does Cosmos Algos offer?</summary>
                                 <div class="faq-a">
-                                    <p>Our core service areas are: Cognitive IoT Systems, AI/ML Analytics, AI-Enabled Firmware &amp; Embedded Systems, Cloud Services &amp; SaaS Platforms, Mobile App Development, Web Application Development, Engineering Solutions, and Research &amp; Development. Each service can be delivered standalone or as part of a fully integrated system.</p>
+                                    <p>Our core service areas are: Embedded Systems &amp; Firmware; Industrial Automation &amp; Test Rigs; IoT Platforms &amp; Cloud Backends; AI &amp; Computer Vision; Mobile &amp; Desktop Applications; SaaS Product Engineering; Data Acquisition &amp; Visualisation; and Research, Prototyping &amp; Upgrades. A service can be delivered on its own or as part of a wider system.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">What does your IoT development service include?</summary>
                                 <div class="faq-a">
-                                    <p>Our IoT service covers the full stack: sensor selection and hardware integration, embedded firmware (ESP32, Raspberry Pi, custom MCUs), real-time data pipelines, cloud storage and APIs (AWS, DynamoDB), and client-facing dashboards or mobile apps. We've built systems for agriculture, industrial motor control, and environmental monitoring. We handle secure connectivity, OTA firmware updates, and MODBUS/serial protocol integration.</p>
+                                    <p>Our IoT work spans sensor selection and hardware integration, embedded firmware (ESP32 and Raspberry Pi), data pipelines, cloud storage and APIs (AWS, DynamoDB), and client-facing dashboards or mobile apps. We've built systems for agriculture, industrial motor control, and environmental monitoring. Work has included device connectivity and MODBUS/serial protocol integration.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">Do you build custom AI and machine learning solutions?</summary>
                                 <div class="faq-a">
-                                    <p>Yes. We develop custom AI/ML solutions including data analytics pipelines, predictive models, computer vision systems (using OpenCV and Intel RealSense), and AI-powered automation. Our founder specialises in AI and machine learning, and we have hands-on production experience deploying models in both cloud and embedded environments.</p>
+                                    <p>Yes. We work on applied AI/ML: data pipelines, computer vision (OpenCV and Intel RealSense), model evaluation, and inference integrated into desktop or web tools. The founder's degree is in artificial intelligence, and the work includes a computer-vision research contract at DeepEmbed Research Lab. Models are integrated where they fit the workflow, not added for their own sake.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">What platforms do you target for mobile app development?</summary>
                                 <div class="faq-a">
-                                    <p>We primarily build cross-platform mobile applications using Flutter, which means a single codebase delivers native-quality apps on both iOS and Android. We also have experience building Android-native apps and integrating mobile apps with hardware devices via Bluetooth, Wi-Fi, and REST APIs.</p>
+                                    <p>We primarily build cross-platform mobile applications using Flutter, which gives one codebase for Android and iOS. Mobile clients have been integrated with hardware and backend services over Wi-Fi and REST APIs. Native Android work is considered where the platform requires it.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">Can you build a complete SaaS platform from scratch?</summary>
                                 <div class="faq-a">
-                                    <p>Absolutely. We have experience designing and building multi-tenant SaaS platforms with Laravel backends, role-based access control, RESTful APIs with full OpenAPI documentation, real-time data ingestion, and analytics dashboards. We follow an API-first architecture so your platform can support web, mobile, and third-party integrations from day one.</p>
+                                    <p>Yes. We have experience with multi-tenant SaaS platforms using Laravel backends, role-based access control, RESTful APIs, data ingestion, and analytics dashboards. The architecture is agreed around the web, mobile, and third-party integrations the platform actually needs.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">Do you offer Research &amp; Development (R&amp;D) as a service?</summary>
                                 <div class="faq-a">
-                                    <p>Yes. We have an active R&amp;D division with ties to university research labs. We take on exploratory projects in computer vision, edge AI, 3D point cloud processing, and novel embedded system architectures. If you have a technically ambitious idea that isn't yet a defined product, we can help you scope, prototype, and validate it.</p>
+                                    <p>Yes. We take on applied R&amp;D work, with ties to university research labs. That has included exploratory work in computer vision, 3D point-cloud processing, and embedded systems. If an idea is not yet a defined product, we can help scope, prototype, and evaluate it.</p>
                                 </div>
                             </details>
 
@@ -222,28 +222,28 @@
                             <details class="faq-item card">
                                 <summary class="faq-q">What does the project process look like from start to finish?</summary>
                                 <div class="faq-a">
-                                    <p>Our process has four clear phases: (1) <strong>Discovery</strong> — a free consultation call to understand your goals and constraints; (2) <strong>Proposal &amp; Scoping</strong> — a detailed technical proposal with timeline, stack, and fixed pricing; (3) <strong>Development</strong> — iterative builds with regular demos and check-ins; (4) <strong>Delivery &amp; Handover</strong> — testing, documentation, deployment, and a support window.</p>
+                                    <p>Our process has four clear phases: (1) <strong>Discovery</strong> — an initial conversation to understand your goals and constraints; (2) <strong>Proposal &amp; Scoping</strong> — a written technical proposal with timeline, stack, and pricing; (3) <strong>Development</strong> — iterative builds with regular demos and check-ins; (4) <strong>Delivery &amp; Handover</strong> — testing, documentation, deployment, and an agreed support window.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">How long does a typical project take?</summary>
                                 <div class="faq-a">
-                                    <p>Timelines vary by scope. A focused mobile app or IoT integration typically takes 6–12 weeks. A full SaaS platform or embedded firmware system can range from 3–6 months. Projects with R&amp;D or novel hardware components may take longer. We define an accurate timeline during the proposal phase, and we stick to it.</p>
+                                    <p>Timelines vary by scope. A focused mobile app or IoT integration typically takes 6–12 weeks. A larger SaaS platform or embedded firmware system can range from 3–6 months. Projects with R&amp;D or novel hardware components may take longer. A timeline is agreed during the proposal phase; if the scope changes, the timeline is re-estimated rather than quietly ignored.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">How do you handle communication during a project?</summary>
                                 <div class="faq-a">
-                                    <p>Every project has a dedicated point of contact. We hold scheduled progress calls (weekly or bi-weekly depending on project pace), share progress via a project management tool, and are reachable over email or messaging for day-to-day questions. You are never left in the dark about the state of your project.</p>
+                                    <p>Each engagement has an agreed point of contact. Progress calls and written updates are agreed at the start — the frequency depends on the project pace. Day-to-day questions can go by email or messaging, and the aim is that you know the current state of the work.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">Do you work with agile or fixed-scope methodology?</summary>
                                 <div class="faq-a">
-                                    <p>We adapt to your preference. For well-defined projects, we use a fixed-scope, milestone-based approach so you know exactly what you're getting at each stage. For exploratory or evolving projects, we use an agile sprint model with bi-weekly deliverables. We discuss and agree on the methodology during scoping so there are no surprises.</p>
+                                    <p>We adapt to the project. For well-defined work, a fixed-scope, milestone-based approach makes the deliverables clear at each stage. For exploratory or evolving work, short delivery cycles work better. The methodology is discussed and agreed during scoping.</p>
                                 </div>
                             </details>
 
@@ -257,7 +257,7 @@
                             <details class="faq-item card">
                                 <summary class="faq-q">Will I own the code and intellectual property when the project is complete?</summary>
                                 <div class="faq-a">
-                                    <p>Yes. Full intellectual property ownership transfers to you upon final payment. This is written explicitly into every contract. We retain no rights to your codebase, designs, or proprietary data after handover.</p>
+                                    <p>Intellectual property is addressed in the contract. Our standard position is that ownership of the delivered codebase transfers on final payment, with any pre-existing or third-party components identified separately. The exact terms are confirmed in writing before work begins.</p>
                                 </div>
                             </details>
 
@@ -279,42 +279,42 @@
                             <details class="faq-item card">
                                 <summary class="faq-q">What programming languages and frameworks do you use?</summary>
                                 <div class="faq-a">
-                                    <p>Our primary languages are Python, PHP, C++, JavaScript, and Dart. On the backend we use Laravel (PHP) as our main framework, with Django and Flask for Python-heavy services. For mobile we use Flutter (Dart). On the hardware side we write firmware in C++ for ESP32 and similar microcontrollers. For data and AI we rely heavily on Python with NumPy, OpenCV, Open3D, TensorFlow, and scikit-learn.</p>
+                                    <p>Our primary languages are Python, PHP, C++, JavaScript, and Dart. Laravel (PHP) is the main backend framework, and Flutter (Dart) is used for cross-platform mobile apps. Firmware is written in C/C++ for ESP32, STM32, and similar microcontrollers. Python is used for data and vision work with NumPy, Pandas, OpenCV, Open3D, and scikit-learn.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">What cloud platforms and infrastructure do you work with?</summary>
                                 <div class="faq-a">
-                                    <p>We are an AWS Partner and primarily work within the AWS ecosystem — including EC2, Lambda, DynamoDB, S3, and IoT Core. We can also work with DigitalOcean, Hetzner, or any cloud environment your organisation already uses. For containerisation we work with Docker and can integrate with CI/CD pipelines.</p>
+                                    <p>We work primarily within the AWS ecosystem — including IoT Core, Lambda, DynamoDB, API Gateway, Cognito, EC2, and S3. We can also work in other cloud environments your organisation already uses. Docker is used where containerisation helps, and deployment can follow your existing workflow.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">What embedded hardware platforms do you support?</summary>
                                 <div class="faq-a">
-                                    <p>We have hands-on production experience with ESP32 (Wi-Fi/BLE), Raspberry Pi (Linux-based edge computing), Arduino, Intel RealSense D435i (RGB-D depth sensing), and MODBUS-connected industrial devices (PLCs, VFDs). We also have experience with PCB design for custom hardware prototypes.</p>
+                                    <p>Hands-on work includes ESP32 (Wi-Fi/BLE), Raspberry Pi (Linux-based edge computing), STM32, FPGA, Intel RealSense D435i (RGB-D depth sensing), and MODBUS-connected industrial devices such as VFDs.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">How do you handle data security and privacy in IoT systems?</summary>
                                 <div class="faq-a">
-                                    <p>Security is designed in from the start, not bolted on after. We use TLS/HTTPS for all data in transit, encrypted credentials, token-based API authentication (Laravel Sanctum / JWT), and role-based access control. For IoT endpoints, devices authenticate via unique certificates and communicate over secured MQTT or HTTPS channels. We never store sensitive data in device firmware.</p>
+                                    <p>Security is considered during design rather than added at the end. Where the system requires it, we use TLS/HTTPS for data in transit, encrypted credentials, token-based API authentication (Laravel Sanctum or JWT), and role-based access control. Device authentication and transport security are agreed per deployment; not every project needs the same model.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">Can you integrate with existing systems and third-party APIs?</summary>
                                 <div class="faq-a">
-                                    <p>Yes, this is a common requirement. We routinely integrate with third-party REST APIs, Webhook systems, MODBUS/serial industrial protocols, MQTT brokers, payment gateways, and communication services (email, SMS, push notifications). If it has a documented API or protocol, we can integrate with it.</p>
+                                    <p>Yes. Work has included third-party REST APIs, webhooks, MODBUS/serial industrial protocols, MQTT brokers, payment gateways, and communication services. Where a documented API or protocol exists, the integration can be assessed and scoped.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">Do you provide API documentation and technical handover materials?</summary>
                                 <div class="faq-a">
-                                    <p>Always. Every API we build is documented in OpenAPI (Swagger) format and accompanied by a Postman collection. We also deliver inline code documentation, architecture diagrams, deployment guides, and a handover README. Your team should be able to maintain and extend the codebase confidently after we hand over.</p>
+                                    <p>Where documentation is part of the agreed scope, APIs are documented with OpenAPI (Swagger) and Postman collections. Handover can also include architecture notes, deployment steps, and a README. The aim is that another engineer can maintain and extend the work without reverse-engineering it.</p>
                                 </div>
                             </details>
 
@@ -336,35 +336,35 @@
                             <details class="faq-item card">
                                 <summary class="faq-q">How do you price your projects?</summary>
                                 <div class="faq-a">
-                                    <p>We offer both fixed-price and time-and-materials (T&amp;M) pricing depending on project type. Fixed-price suits well-defined scopes — you know the cost upfront with no surprises. T&amp;M works better for exploratory, R&amp;D, or evolving projects where scope may change. We provide a full cost breakdown in every proposal so you can see exactly what you are paying for.</p>
+                                    <p>We offer both fixed-price and time-and-materials (T&amp;M) pricing depending on the project. Fixed-price suits well-defined scopes, with the cost agreed upfront. T&amp;M works better for exploratory, R&amp;D, or evolving work where the scope may change. Proposals include a cost breakdown so the basis of the price is visible.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
-                                <summary class="faq-q">Do you offer a free consultation?</summary>
+                                <summary class="faq-q">How does a project start?</summary>
                                 <div class="faq-a">
-                                    <p>Yes. Every engagement starts with a free 30-minute discovery call. There is no obligation to proceed. We use that call to understand your project, answer your questions, and determine whether we are the right fit. If we are, we follow up with a detailed written proposal within 3–5 business days.</p>
+                                    <p>We start with a short discovery call to understand the project. There is no charge for that initial conversation and no obligation to proceed. If there is a fit, we agree the next steps and prepare a written proposal.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">Can you work within a fixed budget?</summary>
                                 <div class="faq-a">
-                                    <p>Yes. If your budget is fixed, we scope the project to fit it — prioritising the highest-value features first and phasing lower-priority items into future iterations. We are transparent if a scope cannot realistically fit a given budget, and we will always recommend the most cost-effective approach rather than overpromising.</p>
+                                    <p>If the budget is fixed, the project can be scoped to fit it — prioritising the highest-value features and phasing the rest. We will say so if a scope cannot realistically fit the budget, rather than agreeing to something undeliverable.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">What are your payment terms?</summary>
                                 <div class="faq-a">
-                                    <p>Standard payment terms are structured around project milestones: an initial deposit to start work, intermediate payments at agreed milestones, and a final payment on delivery. This structure protects both parties — you don't pay for work not done, and we can sustain delivery quality throughout the engagement. Specific terms are agreed in the contract before work begins.</p>
+                                    <p>Payment terms are usually structured around project milestones: an initial deposit to start work, intermediate payments at agreed milestones, and a final payment on delivery. Specific terms are agreed in the contract before work begins.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">Are there any hidden costs I should be aware of?</summary>
                                 <div class="faq-a">
-                                    <p>No. Our proposals include all costs — development, design, testing, deployment, and documentation. Third-party costs (e.g., cloud hosting, API subscriptions, hardware components) are itemised separately and clearly labelled as pass-through costs. We never add fees that weren't in the signed proposal without your prior approval.</p>
+                                    <p>Proposals are intended to make the agreed costs explicit — development, design, testing, deployment, and documentation where included. Third-party costs such as cloud hosting, API subscriptions, and hardware are itemised separately as pass-through costs. Additional work is quoted and approved before it starts.</p>
                                 </div>
                             </details>
 
@@ -386,35 +386,35 @@
                             <details class="faq-item card">
                                 <summary class="faq-q">Do you offer post-launch support?</summary>
                                 <div class="faq-a">
-                                    <p>Yes. All projects include a post-launch support window (typically 30–60 days) during which we fix any bugs or issues that arise at no additional charge. After that, we offer ongoing maintenance packages that cover security updates, dependency management, performance monitoring, and minor feature requests on a monthly retainer basis.</p>
+                                    <p>Support terms are agreed in the contract. A post-launch support window can be included for defects found in the delivered scope, and ongoing maintenance can be arranged separately. The exact duration and scope are written into the agreement rather than assumed.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">What is your response time for critical bugs or outages?</summary>
                                 <div class="faq-a">
-                                    <p>For clients on a maintenance retainer, critical issues (system-down scenarios) are responded to within 4 business hours. Non-critical bugs are addressed within 1–2 business days. For clients not on a retainer, we offer priority response on a case-by-case basis. We always try to be available when it matters most.</p>
+                                    <p>Response targets are agreed in the support agreement. We do not publish a blanket SLA because a critical outage on a production platform and a minor cosmetic issue should not be treated the same way. For clients on a maintenance retainer, the escalation path and response windows are defined in writing.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">Can I make changes or add features after the project is delivered?</summary>
                                 <div class="faq-a">
-                                    <p>Absolutely. We encourage planning for future iterations from the start — it informs architectural decisions that make future changes easier and cheaper. Change requests are scoped, costed, and approved before we begin any additional work. Many clients return to us for Phase 2 enhancements, and we're always ready to continue from where we left off.</p>
+                                    <p>Yes. Planning for future iterations early can make later changes cheaper, so it is worth discussing at the start. Change requests are scoped, costed, and approved before additional work begins. If a second phase is needed, it is treated as a new piece of work with its own scope.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">Will my team be able to maintain the codebase without you?</summary>
                                 <div class="faq-a">
-                                    <p>Yes — that is a design goal. We write clean, well-commented, documented code and deliver full handover documentation including architecture diagrams, API specs, deployment guides, and environment setup instructions. We also offer optional knowledge-transfer sessions where we walk your internal team through the codebase. Your independence after delivery is important to us.</p>
+                                    <p>That is a design goal. Documentation is part of the agreed scope, and the exact set depends on the project. It can include architecture notes, API references, deployment steps, and a handover session. The aim is that another engineer can pick up the work without reverse-engineering it.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">Do you monitor live systems after deployment?</summary>
                                 <div class="faq-a">
-                                    <p>For clients on a maintenance retainer, we set up uptime monitoring, error tracking, and performance dashboards as part of the service. For IoT deployments specifically, we can configure alerting for device connectivity drops, sensor anomalies, or API error spikes. Monitoring setup is included by default for SaaS and IoT platform projects.</p>
+                                    <p>Monitoring can be configured as part of a support agreement. For IoT deployments that may include device-connectivity alerts, sensor-anomaly checks, and API error tracking. It is not switched on by default unless the engagement includes it.</p>
                                 </div>
                             </details>
 
@@ -436,42 +436,42 @@
                             <details class="faq-item card">
                                 <summary class="faq-q">Who founded Cosmos Algos?</summary>
                                 <div class="faq-a">
-                                    <p>Cosmos Algos was founded by Abdullah Abid — a software engineer and AI specialist based in Bahawalpur, Pakistan. Abdullah holds a Bachelor's degree in Artificial Intelligence from The Islamia University of Bahawalpur and has hands-on experience spanning backend API development, embedded systems, computer vision, and full-stack product engineering. He previously worked as a Software Developer at CARE (Center of Automation, Robotics, and Embedded Systems) and as a Teacher Assistant at Deep Embed.</p>
+                                    <p>Cosmos Algos was founded by Abdullah Abid — a software engineer based in Bahawalpur, Pakistan. Abdullah is pursuing a Bachelor's degree in Artificial Intelligence at The Islamia University of Bahawalpur and has hands-on experience spanning backend API development, embedded systems, computer vision, and full-stack product engineering. He works as a Software Developer at CARE (Center of Automation, Robotics, and Embedded Systems) and has delivered computer-vision work under a research contract at DeepEmbed Research Lab.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">How experienced is the Cosmos Algos team?</summary>
                                 <div class="faq-a">
-                                    <p>The team has been active since 2020 and has delivered 20+ projects across IoT, SaaS, mobile, and embedded systems. Our experience spans academic research (CARE Lab), client product development, and internal R&amp;D. The founding team combines AI specialisation, backend engineering, mobile development, and hardware integration — a breadth that most small agencies cannot match.</p>
+                                    <p>The founder has been building software since 2020 and has contributed to {{ $stats['care_rnd_projects'] }} documented CARE Lab R&amp;D projects, {{ $stats['saas_platforms'] }} SaaS platforms, and research contracts in computer vision. That experience spans academic research, industrial automation, client product development, and internal R&amp;D.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">What is the culture and working style at Cosmos Algos?</summary>
                                 <div class="faq-a">
-                                    <p>We are a remote-first, async-friendly team that values precision, ownership, and continuous learning. We approach every project with an architecture-first mindset — thinking about long-term maintainability, scalability, and security before writing the first line of code. We are direct communicators: no unnecessary meetings, no vague status updates, and no surprises on timelines or costs.</p>
+                                    <p>We are a small, hands-on team. We value precision, ownership, and continuous learning, and we approach projects with maintenance in mind — thinking about how the system will be run and changed after delivery. We communicate directly: clear scope, honest status, and no invented metrics.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">Do you have partnerships with technology vendors?</summary>
                                 <div class="faq-a">
-                                    <p>Yes. We are an AWS Partner and have working relationships with hardware distributors including Avnet and Microchip Technology. These partnerships give us access to technical support resources, discounted pricing on components for hardware projects, and early access to new modules and development kits.</p>
+                                    <p>Our engineering is built on established platforms and vendor ecosystems — AWS for cloud, Espressif (ESP32), Raspberry Pi, and Intel RealSense for hardware, and the Laravel and Flutter communities for application development. Where a project needs component sourcing or vendor support, we work with the appropriate distributors and support channels.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">Is Cosmos Algos open to long-term partnerships or retainer arrangements?</summary>
                                 <div class="faq-a">
-                                    <p>Yes, and we actively prefer them. Long-term partnerships allow us to deeply understand your business domain, move faster on subsequent projects, and provide proactive technical guidance rather than just reactive development. We offer monthly retainer arrangements for clients who want a dedicated allocation of engineering time without committing to a specific project scope upfront.</p>
+                                    <p>Longer engagements can work well when there is a continuing stream of work. A retainer can be discussed where it fits both sides, with the allocation of engineering time and the boundaries written down. It is not the right arrangement for every project, and we will say so if a fixed scope makes more sense.</p>
                                 </div>
                             </details>
 
                             <details class="faq-item card">
                                 <summary class="faq-q">How can I stay updated on what Cosmos Algos is building?</summary>
                                 <div class="faq-a">
-                                    <p>Follow us on LinkedIn and GitHub where we share project updates, technical insights, and company news. You can also subscribe to our newsletter from the homepage. For a more direct conversation about what we're working on, feel free to <a href="{{ route('contact') }}" class="faq-inline-link">reach out</a> — we're always happy to talk technology.</p>
+                                    <p>Follow the founder on <a href="{{ $company['linkedin'] }}" class="faq-inline-link" target="_blank" rel="noopener">LinkedIn</a> for public project updates and engineering notes. This site does not run a newsletter or an embedded social feed. For a direct conversation, <a href="{{ route('contact') }}" class="faq-inline-link">reach out</a>.</p>
                                 </div>
                             </details>
 
@@ -501,7 +501,7 @@
                 <div class="faq-cta-bg" aria-hidden="true"><div class="faq-cta-orb"></div></div>
                 <span class="tag-label">Still have questions?</span>
                 <h2 class="faq-cta-h2 glitch-ready">Can't Find What You're Looking For?</h2>
-                <p class="faq-cta-sub">Send us a message and we'll get back to you with a personal, detailed answer within 24 hours — no bots, no templates.</p>
+                <p class="faq-cta-sub">Send us a message and we'll reply personally during office hours — no bots, no templates.</p>
                 <div class="faq-cta-actions">
                     <a href="{{ route('contact') }}" class="btn btn-primary">Ask Us a Question ↗</a>
                     <a href="{{ route('services') }}" class="btn btn-ghost">Explore Our Services</a>

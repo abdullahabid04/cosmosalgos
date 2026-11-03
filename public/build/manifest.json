@@ -1,13 +1,33 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-BLwbi1fl.css",
+    "file": "assets/app-CV_5aULw.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/css/cosmos-animations.css": {
-    "file": "assets/cosmos-animations-9ermyvSf.css",
+    "file": "assets/cosmos-animations-oi4nZYTg.css",
     "src": "resources/css/cosmos-animations.css",
     "isEntry": true
+  },
+  "resources/fonts/exo-2/exo-2-italic-latin-ext.woff2": {
+    "file": "assets/exo-2-italic-latin-ext-BdagksOR.woff2",
+    "src": "resources/fonts/exo-2/exo-2-italic-latin-ext.woff2"
+  },
+  "resources/fonts/exo-2/exo-2-italic-latin.woff2": {
+    "file": "assets/exo-2-italic-latin-9qdPE589.woff2",
+    "src": "resources/fonts/exo-2/exo-2-italic-latin.woff2"
+  },
+  "resources/fonts/exo-2/exo-2-latin-ext.woff2": {
+    "file": "assets/exo-2-latin-ext-B5pmZ151.woff2",
+    "src": "resources/fonts/exo-2/exo-2-latin-ext.woff2"
+  },
+  "resources/fonts/exo-2/exo-2-latin.woff2": {
+    "file": "assets/exo-2-latin-CQ1lLIdm.woff2",
+    "src": "resources/fonts/exo-2/exo-2-latin.woff2"
+  },
+  "resources/fonts/orbitron/orbitron-latin.woff2": {
+    "file": "assets/orbitron-latin-Du7j2Vp2.woff2",
+    "src": "resources/fonts/orbitron/orbitron-latin.woff2"
   },
   "resources/js/app.js": {
     "file": "assets/app-DHeUqqvA.js",
@@ -16,7 +36,7 @@
     "isEntry": true
   },
   "resources/js/cosmos-animations.js": {
-    "file": "assets/cosmos-animations-B32VpntO.js",
+    "file": "assets/cosmos-animations-D68pHUYw.js",
     "name": "cosmos-animations",
     "src": "resources/js/cosmos-animations.js",
     "isEntry": true

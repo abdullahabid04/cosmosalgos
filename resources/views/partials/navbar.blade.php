@@ -2,8 +2,15 @@
     <div class="container nav-wrap">
 
         {{-- ── Brand ── --}}
-        <a class="brand" href="{{ route('home') }}">
-            <span class="brand-cosmos">Cosmos</span><span class="brand-algos">Algos</span>
+        <a class="brand" href="{{ route('home') }}" aria-label="Cosmos Algos — home">
+            <img class="brand-logo"
+                 src="{{ asset('images/brand/cosmos-algos-mark.png') }}"
+                 alt=""
+                 width="523" height="477">
+            <span class="brand-wordmark" aria-hidden="true">
+                <span class="brand-wordmark-cosmos">Cosmos</span>
+                <span class="brand-wordmark-algos">Algos</span>
+            </span>
         </a>
 
         {{-- ── Center nav ── --}}
@@ -20,10 +27,11 @@
 
                 {{-- Company dropdown --}}
                 <li class="nav-item-dropdown" id="ddCompany">
-                    <button class="nav-dropdown-trigger"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                            aria-controls="ddCompanyPanel"
+                    <a href="{{ route('about') }}"
+                       class="nav-dropdown-trigger"
+                       aria-haspopup="true"
+                       aria-expanded="false"
+                       aria-controls="ddCompanyPanel"
                         @class(['is-active' => request()->routeIs(
                             'about','history','mission-vision','culture','careers'
                         )])>
@@ -31,7 +39,7 @@
                         <svg class="dd-chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
                             <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                    </button>
+                    </a>
                     <div class="nav-dropdown" id="ddCompanyPanel" role="region">
                         <ul>
                             <li>
@@ -62,11 +70,11 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="" @class(['is-active' => request()->routeIs('culture')])>
+                                <a href="{{ route('culture') }}" @class(['is-active' => request()->routeIs('culture')])>
                                     <span class="dd-icon">🌱</span>
                                     <span class="dd-text">
                                         <strong>Culture</strong>
-                                        <small>Values, environment & team life</small>
+                                        <small>Working principles</small>
                                     </span>
                                 </a>
                             </li>
@@ -75,7 +83,7 @@
                                     <span class="dd-icon">💼</span>
                                     <span class="dd-text">
                                         <strong>Careers</strong>
-                                        <small>Join the Cosmos Algos team</small>
+                                        <small>Openings &amp; speculative applications</small>
                                     </span>
                                 </a>
                             </li>
@@ -85,10 +93,11 @@
 
                 {{-- Work dropdown --}}
                 <li class="nav-item-dropdown" id="ddWork">
-                    <button class="nav-dropdown-trigger"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                            aria-controls="ddWorkPanel"
+                    <a href="{{ route('services') }}"
+                       class="nav-dropdown-trigger"
+                       aria-haspopup="true"
+                       aria-expanded="false"
+                       aria-controls="ddWorkPanel"
                         @class(['is-active' => request()->routeIs(
                             'services','projects','technologies','case-studies','industries'
                         )])>
@@ -96,7 +105,7 @@
                         <svg class="dd-chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
                             <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                    </button>
+                    </a>
                     <div class="nav-dropdown" id="ddWorkPanel" role="region">
                         <ul>
                             <li>
@@ -150,10 +159,11 @@
 
                 {{-- Insights dropdown --}}
                 <li class="nav-item-dropdown" id="ddInsights">
-                    <button class="nav-dropdown-trigger"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                            aria-controls="ddInsightsPanel"
+                    <a href="{{ route('blog') }}"
+                       class="nav-dropdown-trigger"
+                       aria-haspopup="true"
+                       aria-expanded="false"
+                       aria-controls="ddInsightsPanel"
                         @class(['is-active' => request()->routeIs(
                             'blog','gallery','testimonials','faq','social'
                         )])>
@@ -161,33 +171,33 @@
                         <svg class="dd-chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
                             <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                    </button>
+                    </a>
                     <div class="nav-dropdown" id="ddInsightsPanel" role="region">
                         <ul>
                             <li>
-                                <a href="" @class(['is-active' => request()->routeIs('blog')])>
+                                <a href="{{ route('blog') }}" @class(['is-active' => request()->routeIs('blog')])>
                                     <span class="dd-icon">✍️</span>
                                     <span class="dd-text">
-                                        <strong>Blog & News</strong>
-                                        <small>Articles, updates & announcements</small>
+                                        <strong>Engineering Notes</strong>
+                                        <small>Articles in preparation</small>
                                     </span>
                                 </a>
                             </li>
                             <li>
-                                <a href="" @class(['is-active' => request()->routeIs('social')])>
+                                <a href="{{ route('social') }}" @class(['is-active' => request()->routeIs('social')])>
                                     <span class="dd-icon">📣</span>
                                     <span class="dd-text">
-                                        <strong>Social Feed</strong>
-                                        <small>Latest posts from the team</small>
+                                        <strong>Social</strong>
+                                        <small>Public LinkedIn updates</small>
                                     </span>
                                 </a>
                             </li>
                             <li>
-                                <a href="" @class(['is-active' => request()->routeIs('gallery')])>
+                                <a href="{{ route('gallery') }}" @class(['is-active' => request()->routeIs('gallery')])>
                                     <span class="dd-icon">🖼️</span>
                                     <span class="dd-text">
                                         <strong>Gallery</strong>
-                                        <small>Events, team & behind the scenes</small>
+                                        <small>Documented project images</small>
                                     </span>
                                 </a>
                             </li>
@@ -195,8 +205,8 @@
                                 <a href="{{ route('testimonials') }}" @class(['is-active' => request()->routeIs('testimonials')])>
                                     <span class="dd-icon">💬</span>
                                     <span class="dd-text">
-                                        <strong>Testimonials</strong>
-                                        <small>What our clients say</small>
+                                        <strong>References</strong>
+                                        <small>Attribution &amp; client references</small>
                                     </span>
                                 </a>
                             </li>
@@ -269,27 +279,56 @@
             const panel   = item.querySelector('.nav-dropdown');
             if (!trigger || !panel) return;
 
-            /* Desktop: open/close on hover */
+            /* Desktop: open/close on hover. Keep the panel open while the
+               pointer is moving between the trigger and its absolutely
+               positioned panel. */
+            let closeTimer;
             item.addEventListener('mouseenter', () => {
-                if (window.innerWidth > 820) openDropdown(trigger, panel);
+                if (window.innerWidth > 820) {
+                    clearTimeout(closeTimer);
+                    ddItems.forEach(other => {
+                        if (other !== item) {
+                            closeDropdown(
+                                other.querySelector('.nav-dropdown-trigger'),
+                                other.querySelector('.nav-dropdown')
+                            );
+                        }
+                    });
+                    openDropdown(trigger, panel);
+                }
             });
-            item.addEventListener('mouseleave', () => {
-                if (window.innerWidth > 820) closeDropdown(trigger, panel);
+            item.addEventListener('mouseleave', event => {
+                if (window.innerWidth > 820 && !item.contains(event.relatedTarget)) {
+                    closeTimer = setTimeout(() => closeDropdown(trigger, panel), 180);
+                }
+            });
+            panel.addEventListener('mouseenter', () => {
+                if (window.innerWidth > 820) {
+                    clearTimeout(closeTimer);
+                }
+            });
+            panel.addEventListener('mouseleave', event => {
+                if (window.innerWidth > 820 && !item.contains(event.relatedTarget)) {
+                    closeTimer = setTimeout(() => closeDropdown(trigger, panel), 180);
+                }
             });
 
             /* Mobile + keyboard: toggle on click */
-            trigger.addEventListener('click', () => {
-                const isOpen = panel.classList.contains('dd-open');
-                /* Close all others first */
-                ddItems.forEach(other => {
-                    if (other !== item) {
-                        closeDropdown(
-                            other.querySelector('.nav-dropdown-trigger'),
-                            other.querySelector('.nav-dropdown')
-                        );
-                    }
-                });
-                isOpen ? closeDropdown(trigger, panel) : openDropdown(trigger, panel);
+            trigger.addEventListener('click', e => {
+                if (window.innerWidth <= 820) {
+                    e.preventDefault();
+                    const isOpen = panel.classList.contains('dd-open');
+                    /* Close all others first */
+                    ddItems.forEach(other => {
+                        if (other !== item) {
+                            closeDropdown(
+                                other.querySelector('.nav-dropdown-trigger'),
+                                other.querySelector('.nav-dropdown')
+                            );
+                        }
+                    });
+                    isOpen ? closeDropdown(trigger, panel) : openDropdown(trigger, panel);
+                }
             });
 
             /* Close on any link click inside */

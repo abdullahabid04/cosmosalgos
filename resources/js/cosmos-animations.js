@@ -11,6 +11,8 @@
        1. INJECT BACKGROUND DOM ELEMENTS
        ══════════════════════════════════════════════════════ */
     function injectBackgroundElements() {
+        if (document.getElementById('cosmos-bg')) return;
+
         // Main cosmos background wrapper
         const bg = document.createElement('div');
         bg.id = 'cosmos-bg';
@@ -40,15 +42,14 @@
 
         document.body.insertBefore(bg, document.body.firstChild);
 
-        // Algo grid overlay
+        // Keep the fixed layers in a deterministic paint order.
         const grid = document.createElement('div');
         grid.id = 'algo-grid';
-        document.body.insertBefore(grid, document.body.firstChild);
+        bg.after(grid);
 
-        // Network canvas
         const canvas = document.createElement('canvas');
         canvas.id = 'network-canvas';
-        document.body.insertBefore(canvas, document.body.firstChild);
+        grid.after(canvas);
     }
 
     /* ══════════════════════════════════════════════════════
@@ -125,7 +126,7 @@
         }
 
         // Hover state for interactive elements
-        const hoverTargets = 'a, button, .btn, .service-card-item, .industry-item, .hv-card, .process-step, .testimonial-card, .tl-item, [data-cursor-hover]';
+        const hoverTargets = 'a, button, .btn, .service-card-item, .industry-item, .hv-card, .process-step, .testimonial-card, .treatment-card, .approach-card, .trust-card, .case-study-card, .tl-item, [data-cursor-hover]';
 
         document.querySelectorAll(hoverTargets).forEach(el => {
             el.addEventListener('mouseenter', () => {
@@ -186,9 +187,13 @@
     function initNetworkCanvas() {
         const canvas = document.getElementById('network-canvas');
         if (!canvas) return;
+        if (canvas.dataset.cosmosReady === 'true') return;
+        canvas.dataset.cosmosReady = 'true';
         const ctx = canvas.getContext('2d');
+        if (!ctx) return;
 
         let W, H, nodes, animFrame;
+        let running = true;
 
         const NODE_COUNT = 55;
         const MAX_DIST   = 160;
@@ -217,6 +222,7 @@
         }
 
         function draw() {
+            if (!running) return;
             ctx.clearRect(0, 0, W, H);
 
             // Update + draw nodes
@@ -246,7 +252,7 @@
                         ctx.beginPath();
                         ctx.moveTo(a.x, a.y);
                         ctx.lineTo(b.x, b.y);
-                        ctx.strokeStyle = `rgba(40, 44, 70, ${alpha})`;
+                        ctx.strokeStyle = `rgba(120, 160, 220, ${alpha})`;
                         ctx.lineWidth = 0.8;
                         ctx.stroke();
                     }
@@ -260,9 +266,20 @@
         createNodes();
         draw();
 
+        let resizeTimer;
         window.addEventListener('resize', () => {
-            resize();
-            createNodes();
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                resize();
+                createNodes();
+            }, 120);
+        }, { passive: true });
+
+        document.addEventListener('visibilitychange', () => {
+            running = !document.hidden;
+            if (running) {
+                animFrame = requestAnimationFrame(draw);
+            }
         });
     }
 
@@ -433,7 +450,457 @@
     }
 
     /* ══════════════════════════════════════════════════════
-       8. COUNTER ANIMATION — stats numbers count up
+       8. HERO COSMOS — canvas starfield, planets, orbits,
+          asteroids, meteors and impact rings
+       ══════════════════════════════════════════════════════ */
+    function initHeroCosmos() {
+        const canvas = document.querySelector('.hero-cosmos-canvas');
+        const hero   = document.querySelector('.hero-home');
+
+        if (!canvas || !hero || canvas.dataset.cosmosReady === 'true') return;
+
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+
+        canvas.dataset.cosmosReady = 'true';
+
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const finePointer  = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+        let W = 0;
+        let H = 0;
+        let dpr = 1;
+        let rafId = null;
+        let running = false;
+        let lastTime = 0;
+        let nextMeteorAt = 0;
+        let nextImpactAt = 0;
+        let pointerX = 0;
+        let pointerY = 0;
+        let targetPointerX = 0;
+        let targetPointerY = 0;
+
+        const startedAt = performance.now();
+        let stars = [];
+        let brightStars = [];
+        let asteroids = [];
+        let meteors = [];
+        let impacts = [];
+        let planets = [];
+
+        const rand = (min, max) => min + Math.random() * (max - min);
+
+        function makeScene() {
+            const starCount = Math.max(90, Math.min(220, Math.round((W * H) / 9000)));
+
+            stars = Array.from({ length: starCount }, () => ({
+                x: Math.random(),
+                y: Math.random(),
+                r: rand(0.35, 1.15),
+                a: rand(0.18, 0.68),
+                tw: rand(0.5, 2.4),
+                ph: rand(0, Math.PI * 2),
+                depth: rand(0.2, 1),
+                color: Math.random() < 0.12 ? 'gold' : (Math.random() < 0.18 ? 'cyan' : 'white'),
+            }));
+
+            brightStars = Array.from({ length: 10 }, () => ({
+                x: Math.random(),
+                y: Math.random(),
+                r: rand(1.2, 2.1),
+                a: rand(0.45, 0.9),
+                tw: rand(0.4, 1.2),
+                ph: rand(0, Math.PI * 2),
+                depth: rand(0.6, 1),
+            }));
+
+            asteroids = Array.from({ length: 7 }, () => ({
+                x: Math.random(),
+                y: Math.random(),
+                r: rand(1.2, 3.2),
+                a: rand(0.18, 0.4),
+                vx: rand(-0.0035, 0.0035),
+                vy: rand(0.001, 0.004),
+                rot: rand(0, Math.PI * 2),
+                vr: rand(-0.25, 0.25),
+                shape: Array.from({ length: 7 }, () => rand(0.65, 1.15)),
+            }));
+
+            planets = [
+                {
+                    x: 0.82, y: 0.28, r: 0.075, hue: 'red', depth: 0.5,
+                    moon: { angle: rand(0, Math.PI * 2), speed: 0.18, dist: 1.55, r: 0.16 },
+                },
+                {
+                    x: 0.15, y: 0.78, r: 0.032, hue: 'cyan', depth: 0.7,
+                    orbit: {
+                        cx: 0.78, cy: 0.48, rx: 0.24, ry: 0.16,
+                        angle: rand(0, Math.PI * 2), speed: 0.055,
+                    },
+                },
+                { x: 0.62, y: 0.12, r: 0.016, hue: 'gold', depth: 0.4, orbit: null },
+            ];
+
+            meteors = [];
+            impacts = [];
+            nextMeteorAt = startedAt + rand(2200, 4500);
+            nextImpactAt = startedAt + rand(5000, 8500);
+        }
+
+        function resize() {
+            const rect = hero.getBoundingClientRect();
+            W = Math.max(1, Math.round(rect.width));
+            H = Math.max(1, Math.round(rect.height));
+            dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+            canvas.width = Math.round(W * dpr);
+            canvas.height = Math.round(H * dpr);
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+            makeScene();
+            draw(performance.now(), true, 0);
+        }
+
+        function parallax(x, y, depth) {
+            return [
+                x * W + pointerX * depth * 18,
+                y * H + pointerY * depth * 12,
+            ];
+        }
+
+        function starColor(kind, alpha) {
+            if (kind === 'gold') return `rgba(255, 199, 122, ${alpha})`;
+            if (kind === 'cyan') return `rgba(150, 235, 255, ${alpha})`;
+            return `rgba(255, 255, 255, ${alpha})`;
+        }
+
+        function drawPlanet(x, y, radius, hue) {
+            const glowColor = hue === 'red'
+                ? 'rgba(224, 37, 26, .42)'
+                : (hue === 'cyan' ? 'rgba(0, 212, 255, .35)' : 'rgba(255, 183, 71, .35)');
+
+            ctx.save();
+            ctx.shadowColor = glowColor;
+            ctx.shadowBlur = radius * 1.8;
+
+            const grad = ctx.createRadialGradient(
+                x - radius * 0.38, y - radius * 0.42, radius * 0.08,
+                x, y, radius
+            );
+
+            if (hue === 'red') {
+                grad.addColorStop(0, 'rgba(255, 154, 130, .95)');
+                grad.addColorStop(0.32, 'rgba(224, 37, 26, .9)');
+                grad.addColorStop(0.72, 'rgba(92, 23, 19, .92)');
+                grad.addColorStop(1, 'rgba(13, 15, 22, .98)');
+            } else if (hue === 'cyan') {
+                grad.addColorStop(0, 'rgba(188, 248, 255, .95)');
+                grad.addColorStop(0.38, 'rgba(0, 212, 255, .82)');
+                grad.addColorStop(0.78, 'rgba(9, 72, 91, .9)');
+                grad.addColorStop(1, 'rgba(10, 15, 22, .98)');
+            } else {
+                grad.addColorStop(0, 'rgba(255, 235, 190, .95)');
+                grad.addColorStop(0.42, 'rgba(255, 183, 71, .82)');
+                grad.addColorStop(0.8, 'rgba(91, 57, 20, .9)');
+                grad.addColorStop(1, 'rgba(15, 15, 18, .98)');
+            }
+
+            ctx.fillStyle = grad;
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+        }
+
+        function drawOrbit(cx, cy, rx, ry) {
+            ctx.save();
+            ctx.strokeStyle = 'rgba(150, 205, 235, .13)';
+            ctx.lineWidth = 1;
+            ctx.setLineDash([2, 6]);
+            ctx.beginPath();
+            ctx.ellipse(cx, cy, rx, ry, 0, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.restore();
+        }
+
+        function addImpact(x, y, strength) {
+            impacts.push({
+                x, y,
+                life: 1,
+                maxLife: 1,
+                radius: 2,
+                maxRadius: strength * 30,
+            });
+        }
+
+        function draw(now, staticFrame, dt) {
+            const t = (now - startedAt) / 1000;
+
+            if (!staticFrame) {
+                pointerX += (targetPointerX - pointerX) * 0.04;
+                pointerY += (targetPointerY - pointerY) * 0.04;
+            }
+
+            ctx.clearRect(0, 0, W, H);
+
+            // Distant stars
+            ctx.save();
+            ctx.globalCompositeOperation = 'lighter';
+            stars.forEach((star) => {
+                const [x, y] = parallax(star.x, star.y, star.depth);
+                const twinkle = 0.55 + 0.45 * Math.sin(t * star.tw + star.ph);
+                const alpha = star.a * twinkle;
+                ctx.fillStyle = starColor(star.color, alpha);
+                ctx.beginPath();
+                ctx.arc(x, y, star.r, 0, Math.PI * 2);
+                ctx.fill();
+            });
+
+            brightStars.forEach((star) => {
+                const [x, y] = parallax(star.x, star.y, star.depth);
+                const twinkle = 0.6 + 0.4 * Math.sin(t * star.tw + star.ph);
+                ctx.fillStyle = `rgba(255, 255, 255, ${star.a * twinkle})`;
+                ctx.shadowColor = 'rgba(190, 235, 255, .8)';
+                ctx.shadowBlur = 8;
+                ctx.beginPath();
+                ctx.arc(x, y, star.r, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.shadowBlur = 0;
+            });
+            ctx.restore();
+
+            // Orbital paths
+            planets.forEach((planet) => {
+                if (!planet.orbit) return;
+                const [cx, cy] = parallax(planet.orbit.cx, planet.orbit.cy, planet.depth);
+                drawOrbit(cx, cy, planet.orbit.rx * W, planet.orbit.ry * H);
+            });
+
+            // Asteroids
+            if (!staticFrame) {
+                asteroids.forEach((rock) => {
+                    rock.x += rock.vx * dt;
+                    rock.y += rock.vy * dt;
+                    rock.rot += rock.vr * dt;
+
+                    if (rock.x < -0.05) rock.x = 1.05;
+                    if (rock.x > 1.05) rock.x = -0.05;
+                    if (rock.y > 1.05) rock.y = -0.05;
+                });
+            }
+
+            asteroids.forEach((rock) => {
+                const [x, y] = parallax(rock.x, rock.y, 0.8);
+                const r = rock.r;
+                ctx.save();
+                ctx.translate(x, y);
+                ctx.rotate(rock.rot);
+                ctx.beginPath();
+                rock.shape.forEach((scale, i) => {
+                    const angle = (i / rock.shape.length) * Math.PI * 2;
+                    const px = Math.cos(angle) * r * scale;
+                    const py = Math.sin(angle) * r * scale;
+                    if (i === 0) ctx.moveTo(px, py);
+                    else ctx.lineTo(px, py);
+                });
+                ctx.closePath();
+                ctx.fillStyle = `rgba(180, 190, 205, ${rock.a})`;
+                ctx.fill();
+                ctx.strokeStyle = 'rgba(255, 255, 255, .08)';
+                ctx.lineWidth = 0.7;
+                ctx.stroke();
+                ctx.restore();
+            });
+
+            // Planets
+            planets.forEach((planet) => {
+                let x = planet.x;
+                let y = planet.y;
+
+                if (planet.orbit) {
+                    const angle = planet.orbit.angle + t * planet.orbit.speed;
+                    x = planet.orbit.cx + Math.cos(angle) * planet.orbit.rx;
+                    y = planet.orbit.cy + Math.sin(angle) * planet.orbit.ry;
+                }
+
+                const [px, py] = parallax(x, y, planet.depth);
+                const radius = Math.max(5, planet.r * Math.min(W, H));
+
+                drawPlanet(px, py, radius, planet.hue);
+
+                if (planet.hue === 'red') {
+                    // Subtle ring around the large planet
+                    ctx.save();
+                    ctx.translate(px, py);
+                    ctx.rotate(-0.32);
+                    ctx.scale(1, 0.34);
+                    ctx.strokeStyle = 'rgba(255, 199, 160, .22)';
+                    ctx.lineWidth = 2;
+                    ctx.beginPath();
+                    ctx.arc(0, 0, radius * 1.55, 0, Math.PI * 2);
+                    ctx.stroke();
+                    ctx.strokeStyle = 'rgba(224, 37, 26, .2)';
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.arc(0, 0, radius * 1.78, 0, Math.PI * 2);
+                    ctx.stroke();
+                    ctx.restore();
+
+                    // Moon
+                    const moonAngle = planet.moon.angle + t * planet.moon.speed;
+                    const moonX = px + Math.cos(moonAngle) * radius * planet.moon.dist;
+                    const moonY = py + Math.sin(moonAngle) * radius * planet.moon.dist * 0.42;
+                    ctx.fillStyle = 'rgba(210, 220, 235, .72)';
+                    ctx.beginPath();
+                    ctx.arc(moonX, moonY, Math.max(1.5, radius * planet.moon.r), 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            });
+
+            // Meteors
+            if (!staticFrame && now >= nextMeteorAt) {
+                const fromLeft = Math.random() > 0.35;
+                const speed = rand(0.32, 0.55);
+                meteors.push({
+                    x: fromLeft ? rand(0.05, 0.5) : rand(0.5, 0.95),
+                    y: rand(0.02, 0.36),
+                    vx: fromLeft ? speed : -speed,
+                    vy: rand(0.16, 0.3),
+                    life: 1,
+                    maxLife: 1,
+                    length: rand(0.1, 0.18),
+                });
+                nextMeteorAt = now + rand(5200, 9800);
+            }
+
+            meteors = meteors.filter((meteor) => {
+                if (!staticFrame) {
+                    meteor.x += meteor.vx * dt;
+                    meteor.y += meteor.vy * dt;
+                    meteor.life -= dt;
+                }
+
+                const headX = meteor.x * W;
+                const headY = meteor.y * H;
+                const tailX = (meteor.x - meteor.vx * meteor.length) * W;
+                const tailY = (meteor.y - meteor.vy * meteor.length) * H;
+                const alpha = Math.max(0, meteor.life / meteor.maxLife);
+
+                const streak = ctx.createLinearGradient(headX, headY, tailX, tailY);
+                streak.addColorStop(0, `rgba(255, 255, 255, ${0.85 * alpha})`);
+                streak.addColorStop(0.4, `rgba(255, 206, 160, ${0.45 * alpha})`);
+                streak.addColorStop(1, 'rgba(255, 255, 255, 0)');
+                ctx.save();
+                ctx.strokeStyle = streak;
+                ctx.lineWidth = 1.6;
+                ctx.beginPath();
+                ctx.moveTo(headX, headY);
+                ctx.lineTo(tailX, tailY);
+                ctx.stroke();
+                ctx.restore();
+
+                if (meteor.life <= 0) {
+                    addImpact(meteor.x, meteor.y, 1);
+                    return false;
+                }
+                return true;
+            });
+
+            // Occasional particle impacts
+            if (!staticFrame && now >= nextImpactAt) {
+                addImpact(rand(0.42, 0.96), rand(0.12, 0.88), rand(0.45, 0.9));
+                nextImpactAt = now + rand(6500, 12000);
+            }
+
+            impacts = impacts.filter((impact) => {
+                if (!staticFrame) impact.life -= dt * 0.85;
+                const progress = 1 - Math.max(0, impact.life / impact.maxLife);
+                const alpha = Math.max(0, impact.life / impact.maxLife);
+                const radius = impact.radius + progress * impact.maxRadius;
+
+                ctx.save();
+                ctx.strokeStyle = `rgba(255, 210, 170, ${alpha * 0.4})`;
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.arc(impact.x * W, impact.y * H, radius, 0, Math.PI * 2);
+                ctx.stroke();
+
+                ctx.fillStyle = `rgba(255, 240, 210, ${alpha * 0.55})`;
+                ctx.beginPath();
+                ctx.arc(impact.x * W, impact.y * H, Math.max(0.6, 2.2 * alpha), 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+
+                return impact.life > 0;
+            });
+        }
+
+        function frame(now) {
+            if (!running) return;
+            const dt = lastTime ? Math.min((now - lastTime) / 1000, 0.05) : 0;
+            lastTime = now;
+            draw(now, false, dt);
+            rafId = requestAnimationFrame(frame);
+        }
+
+        function start() {
+            if (reduceMotion || running) return;
+            running = true;
+            lastTime = performance.now();
+            rafId = requestAnimationFrame(frame);
+        }
+
+        function stop() {
+            running = false;
+            if (rafId !== null) {
+                cancelAnimationFrame(rafId);
+                rafId = null;
+            }
+        }
+
+        if (finePointer && !reduceMotion) {
+            window.addEventListener('mousemove', (event) => {
+                targetPointerX = (event.clientX / Math.max(1, window.innerWidth) - 0.5) * 2;
+                targetPointerY = (event.clientY / Math.max(1, window.innerHeight) - 0.5) * 2;
+            }, { passive: true });
+        }
+
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                resize();
+                if (reduceMotion) draw(performance.now(), true, 0);
+            }, 120);
+        }, { passive: true });
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) stop();
+            else if (!reduceMotion) start();
+        });
+
+        if ('IntersectionObserver' in window && !reduceMotion) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && !document.hidden) start();
+                    else stop();
+                });
+            }, { threshold: 0 });
+
+            observer.observe(hero);
+        }
+
+        resize();
+
+        if (reduceMotion) {
+            draw(performance.now(), true, 0);
+        } else {
+            start();
+        }
+    }
+
+    /* ══════════════════════════════════════════════════════
+       9. COUNTER ANIMATION — stats numbers count up
        ══════════════════════════════════════════════════════ */
     function initCounters() {
         const counterEls = document.querySelectorAll('.num, .hv-card-num');
@@ -445,9 +912,13 @@
 
                 const el  = entry.target;
                 const raw = el.textContent.trim();
-                const num = parseFloat(raw.replace(/[^0-9.]/g, ''));
-                const suffix = raw.replace(/[0-9.]/g, '');
-                if (isNaN(num)) return;
+                const targetValue = el.dataset.target !== undefined
+                    ? parseFloat(el.dataset.target)
+                    : parseFloat(raw.replace(/[^0-9.]/g, ''));
+                const suffix = el.dataset.suffix !== undefined
+                    ? el.dataset.suffix
+                    : raw.replace(/[0-9.]/g, '');
+                if (isNaN(targetValue)) return;
 
                 const duration = 1600;
                 const start    = performance.now();
@@ -455,7 +926,7 @@
                 function step(now) {
                     const progress = Math.min((now - start) / duration, 1);
                     const eased    = 1 - Math.pow(1 - progress, 3); // ease-out-cubic
-                    el.textContent = Math.round(eased * num) + suffix;
+                    el.textContent = Math.round(eased * targetValue) + suffix;
                     if (progress < 1) requestAnimationFrame(step);
                 }
                 requestAnimationFrame(step);
@@ -575,7 +1046,7 @@
         if (window.matchMedia('(max-width: 768px)').matches) return;
 
         const tiltTargets = document.querySelectorAll(
-            '.service-card-item, .testimonial-card, .exp-num-card, .process-step'
+            '.service-card-item, .testimonial-card, .exp-num-card, .process-step, .approach-card, .trust-card'
         );
 
         tiltTargets.forEach(card => {
@@ -662,24 +1133,34 @@
        16. INIT ALL
        ══════════════════════════════════════════════════════ */
     function init() {
-        injectBackgroundElements();
-        autoTagRevealTargets();
+        if (window.__cosmosInit) return;
+        window.__cosmosInit = true;
 
-        // Defer heavier inits slightly to not block first paint
-        requestAnimationFrame(() => {
-            initCursor();
-            initNetworkCanvas();
-            initScrollReveal();
-            initGlitch();
-            initParallax();
-            initCounters();
-            initMagneticElements();
-            initNavbar();
-            initSectionGlow();
-            initConstellationHero();
-            initTiltCards();
-            initBrandHover();
-            initScrollProgress();
+        const features = [
+            injectBackgroundElements,
+            autoTagRevealTargets,
+            initCursor,
+            initNetworkCanvas,
+            initHeroCosmos,
+            initScrollReveal,
+            initGlitch,
+            initParallax,
+            initCounters,
+            initMagneticElements,
+            initNavbar,
+            initSectionGlow,
+            initConstellationHero,
+            initTiltCards,
+            initBrandHover,
+            initScrollProgress,
+        ];
+
+        features.forEach((feature) => {
+            try {
+                feature();
+            } catch (error) {
+                console.warn(`[Cosmos] ${feature.name} failed`, error);
+            }
         });
     }
 

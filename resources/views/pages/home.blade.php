@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', ($company['name'] ?? 'Cosmos Algos') . ' | AI-Powered Software Systems')
+@section('title', ($company['name'] ?? 'Cosmos Algos') . ' | Software, Embedded Systems & Applied AI')
 
-@section('meta_description', 'Hardware and software engineering. Smart devices, firmware, cloud analytics, and intelligent automation.')
+@section('meta_description', 'Hardware and software engineering from Bahawalpur, Pakistan — smart devices, firmware, cloud analytics, and applied AI.')
 
 @section('content')
 
@@ -16,6 +16,8 @@
 
         {{-- ── Animated background canvas ── --}}
         <div class="hero-bg" aria-hidden="true">
+            {{-- Canvas-rendered stars, planets, orbits, asteroids and meteors --}}
+            <canvas class="hero-cosmos-canvas" aria-hidden="true"></canvas>
             {{-- Gradient orbs --}}
             <div class="hero-orb hero-orb-1"></div>
             <div class="hero-orb hero-orb-2"></div>
@@ -55,7 +57,7 @@
 
                 {{-- Lead --}}
                 <p class="lead hero-anim-4">
-                    Embedded hardware and firmware, automation, software, and AI/ML. From prototype to long-term support.
+                    Embedded hardware and firmware, automation, software, and applied AI. From prototype to documented handover.
                 </p>
 
                 {{-- CTAs --}}
@@ -66,18 +68,16 @@
 
                 {{-- Badges --}}
                 <div class="badge-row hero-anim-6">
-                    <span class="badge">AWS Partner</span>
-                    <span class="badge">ISO 27001</span>
-                    <span class="badge">ISO 9001</span>
-                    <span class="badge">Top IoT Developers 2025</span>
-                    <span class="badge">Clutch 5★</span>
+                    <span class="badge">IoT &amp; Embedded</span>
+                    <span class="badge">AI / ML</span>
+                    <span class="badge">Cloud &amp; SaaS</span>
+                    <span class="badge">Industrial Automation</span>
+                    <span class="badge">Computer Vision</span>
                 </div>
 
             </div>{{-- /hero-left --}}
 
             {{-- ── RIGHT COLUMN — Visual Panel ── --}}
-            {{-- TODO: Replace the entire .hero-visual div with a real <img> when you have one:
-                 <img src="{{ asset('images/hero-visual.png') }}" alt="Cosmos Algos platform" class="hero-img"> --}}
             <div class="hero-visual hero-anim-right" aria-hidden="true">
 
                 {{-- Central glowing ring --}}
@@ -106,20 +106,20 @@
 
                 {{-- Floating stat cards --}}
                 <div class="hv-card hv-card-1">
-                    <span class="hv-card-num" data-target="20" data-suffix="+">20+</span>
-                    <span class="hv-card-label">Projects Delivered</span>
+                    <span class="hv-card-num" data-target="{{ $stats['projects'] }}" data-suffix="+">{{ $stats['projects'] }}+</span>
+                    <span class="hv-card-label">Projects &amp; engagements</span>
                 </div>
                 <div class="hv-card hv-card-2">
-                    <span class="hv-card-num" data-target="5" data-suffix="+">5+</span>
-                    <span class="hv-card-label">Years Experience</span>
+                    <span class="hv-card-num" data-target="{{ $stats['years_experience'] }}" data-suffix="+">{{ $stats['years_experience'] }}+</span>
+                    <span class="hv-card-label">Years experience</span>
                 </div>
                 <div class="hv-card hv-card-3">
-                    <span class="hv-card-num" data-target="100" data-suffix="%">100%</span>
-                    <span class="hv-card-label">Client Satisfaction</span>
+                    <span class="hv-card-num" data-target="{{ $stats['industries'] }}" data-suffix="">{{ $stats['industries'] }}</span>
+                    <span class="hv-card-label">Industries served</span>
                 </div>
                 <div class="hv-card hv-card-4">
-                    <span class="hv-card-num" data-target="10" data-suffix="+">10+</span>
-                    <span class="hv-card-label">Tech Domains</span>
+                    <span class="hv-card-num" data-target="{{ $stats['saas_platforms'] }}" data-suffix=""> {{ $stats['saas_platforms'] }}</span>
+                    <span class="hv-card-label">SaaS platforms</span>
                 </div>
 
                 {{-- Orbiting dots --}}
@@ -140,15 +140,14 @@
          ══════════════════════════════════════════════════════ --}}
     <div class="logo-strip" data-reveal="fade-up">
         <div class="container">
-            <p class="logo-strip-label">Trusted by teams at</p>
+            <p class="logo-strip-label">Built with</p>
             <ul class="logo-list">
-                {{-- TODO: Replace with actual client / partner logos/images --}}
-                <li>Avnet</li>
-                <li>Microchip</li>
                 <li>AWS</li>
-                <li>UNDP</li>
-                <li>N2O</li>
-                <li>LNU</li>
+                <li>Laravel</li>
+                <li>ESP32</li>
+                <li>Intel RealSense</li>
+                <li>Flutter</li>
+                <li>OpenCV</li>
             </ul>
         </div>
     </div>
@@ -161,38 +160,36 @@
             <div class="text-two-col">
                 <div data-reveal="fade-right">
                     <span class="tag-label">About Us</span>
-                    <h2 class="glitch-ready">Profound Experience</h2>
+                    <h2 class="glitch-ready">Engineering Experience</h2>
                     <p>
-                        Cosmos Algos is a global engineering company focused on Artificial
-                        Intelligence and software systems with years of deep experience.
-                        We provide AI-enabled solutions that unite smart software with
-                        connected devices and industrial infrastructure. Our teams merge
-                        IoT expertise with embedded development and the latest AI automation
-                        trends to create autonomous products that drive business progress.
+                        Cosmos Algos is an engineering company building intelligent software
+                        for connected systems — from embedded firmware and industrial
+                        automation to IoT platforms, cloud APIs, and applied AI data
+                        pipelines. We unite hardware and software expertise to deliver
+                        systems that connect devices, data, and decisions end to end.
                     </p>
                     <a href="{{ route('about') }}" class="btn btn-ghost about-btn">About the Company</a>
                 </div>
                 <div data-reveal="fade-left">
                     <div class="exp-numbers" data-stagger>
                         <div class="exp-num-card card">
-                            <div class="num">5+</div>
+                            <div class="num">{{ $stats['years_experience'] }}+</div>
                             <div class="num-label">Years Experience</div>
                         </div>
                         <div class="exp-num-card card">
-                            <div class="num">20+</div>
-                            <div class="num-label">Projects Delivered</div>
+                            <div class="num">{{ $stats['projects'] }}+</div>
+                            <div class="num-label">Projects &amp; Engagements</div>
                         </div>
                         <div class="exp-num-card card">
-                            <div class="num">10+</div>
-                            <div class="num-label">Happy Clients</div>
+                            <div class="num">{{ $stats['industries'] }}</div>
+                            <div class="num-label">Industries Served</div>
                         </div>
                     </div>
                     <div class="card about-card">
                         <p>
-                            We leverage smart algorithms to develop innovative software that tackles
-                            business challenges head-on. With a customer-centric approach, we
-                            collaborate closely with companies across industries to understand
-                            their unique needs and deliver customized solutions.
+                            Most engagements start with a physical system and a software gap.
+                            We help scope the problem, build the firmware, backend, and interface,
+                            and document the handover so the system can be maintained.
                         </p>
                     </div>
                 </div>
@@ -244,9 +241,9 @@
                     <div class="tl-content tl-content-above">
                         <div class="tl-year">2021</div>
                         <p>
-                            Delivered first real-world <strong>Flutter client projects</strong>
-                            in automation &amp; home systems. Explored backend, servers,
-                            and IoT integration.
+                            Joined <strong>CARE Lab</strong> as Software Developer (March 2021).
+                            Expanded into Python GUI development, Flutter, and early
+                            client-facing automation tools.
                         </p>
                     </div>
                     <div class="tl-node-wrap">
@@ -277,8 +274,8 @@
                         <div class="tl-year">2023</div>
                         <p>
                             Founded <strong>Cosmos Algos</strong>.<br>
-                            Completed large industrial automation project. Transitioned to
-                            <strong>IoT SaaS</strong> — collaborated on 4 SaaS platforms as
+                            Continued industrial automation and test-rig work. Transitioned to
+                            <strong>IoT SaaS</strong> — contributed to four platforms as
                             backend &amp; systems engineer.
                         </p>
                     </div>
@@ -297,10 +294,10 @@
                     <div class="tl-content tl-content-below">
                         <div class="tl-year">2024</div>
                         <p>
-                            Led <strong>FluxSense AI</strong> — poultry growth prediction
-                            pipeline. Built <strong>Intel RealSense</strong> camera streaming.
-                            Designed VFD remote control system
-                            (ESP32 + Android + Laravel).
+                            Completed long-running industrial test automation work.
+                            Backend work across <strong>five SaaS platforms</strong> —
+                            multi-tenant architecture, Stripe billing, OTA updates,
+                            and time-series data.
                         </p>
                     </div>
                 </div>
@@ -310,10 +307,10 @@
                     <div class="tl-content tl-content-above">
                         <div class="tl-year">2025</div>
                         <p>
-                            Expanded service portfolio to <strong>AI/ML, mobile &amp; web
-                                systems</strong>. Joined CARE Lab at IUB as Software Developer.
-                            Delivering enterprise-grade products across
-                            healthcare, agriculture, and industrial sectors.
+                            <strong>Flock Sense AI</strong> research contract at DeepEmbed.
+                            Built an <strong>Intel RealSense</strong> RGB-D pipeline and a
+                            <strong>VFD remote control</strong> system (ESP32 + Flutter +
+                            Laravel). Continues at <strong>CARE Lab</strong>.
                         </p>
                     </div>
                     <div class="tl-node-wrap">
@@ -334,26 +331,26 @@
             <div class="text-two-col">
                 <div data-reveal="fade-right">
                     <span class="tag-label">What We Do</span>
-                    <h2 class="glitch-ready">Transforming Business with AI and Software Development</h2>
+                    <h2 class="glitch-ready">Engineering Software for Real Operations</h2>
                     <p>
-                        We design AI-powered solutions that connect Artificial Intelligence
-                        and software engineering into a single cognitive ecosystem. Such
-                        systems collect raw data from sensors and user interactions, then
-                        AI algorithms interpret it and make decisions, making the system
-                        fully autonomous, reducing human intervention, and delivering
-                        measurable efficiency gains.
+                        We build connected systems end to end: firmware and device integration,
+                        industrial automation software, cloud backends, and the dashboards and
+                        mobile apps that operators actually use. AI is applied where it earns
+                        its place — computer vision, signal analysis, and prediction — not as a
+                        label on a slide.
                     </p>
                     <p class="secondary-para">
-                        Our team of skilled professionals combines expertise in software
-                        development, machine learning, and data analysis to create
-                        transformative applications that propel your business forward.
+                        Our work spans defense test equipment, industrial monitoring, poultry
+                        data collection, solar and energy systems, and multi-tenant SaaS
+                        platforms. Keeping the work within one small team makes it easier to
+                        carry a system from the sensor to the cloud without losing context.
                     </p>
                 </div>
                 <div data-reveal="fade-left">
                     <div class="ai-visual-panel card">
                         <div class="ai-visual-icon">🧠</div>
                         <p class="ai-visual-caption">
-                            Data → AI Algorithms → Autonomous Decision-Making
+                            Data → Models → Decisions
                         </p>
                         <div class="badge-row badge-row--centered">
                             <span class="badge">IoT</span>
@@ -379,7 +376,7 @@
             <div class="approach-grid" data-stagger>
                 <div class="approach-card">
                     <div class="a-icon">🛡️</div>
-                    <h4>Reduce Risk Before Scaling</h4>
+                    <h3>Reduce Risk Before Scaling</h3>
                     <p>
                         Our R&amp;D process is designed to absorb risk before you commit a
                         serious budget. Launching a complex project shouldn't feel like
@@ -388,16 +385,16 @@
                 </div>
                 <div class="approach-card">
                     <div class="a-icon">🔗</div>
-                    <h4>End-to-End Ownership</h4>
+                    <h3>Cross-Layer Ownership</h3>
                     <p>
-                        You don't have to deal with multiple vendors on your own. Our
-                        strategic partnerships with cloud providers and hardware manufacturers
-                        allow us to build the complete architecture as a whole.
+                        You don't have to coordinate every vendor alone. We work across the
+                        cloud, embedded, and application layers as one team, so the
+                        architecture is considered together rather than in isolated pieces.
                     </p>
                 </div>
                 <div class="approach-card">
                     <div class="a-icon">🎯</div>
-                    <h4>Pragmatic Engineering: Real Results, No Hype</h4>
+                    <h3>Pragmatic Engineering: Real Results, No Hype</h3>
                     <p>
                         We are honest about complexity, limitations, and risks. We help you
                         set realistic goals, because we know what technology can do and what's
@@ -406,11 +403,11 @@
                 </div>
                 <div class="approach-card">
                     <div class="a-icon">📄</div>
-                    <h4>Documentation Is a Core Deliverable</h4>
+                    <h3>Documentation Is a Core Deliverable</h3>
                     <p>
-                        Every project comes with full technical and operational documentation.
-                        Your system stays transparent, maintainable, and truly yours — not
-                        locked into a single vendor.
+                        Documentation is part of the agreed scope, not an afterthought. The aim
+                        is a system the client can understand, maintain, and hand to another
+                        engineer if needed.
                     </p>
                 </div>
             </div>
@@ -424,122 +421,25 @@
         <div class="container">
             <div class="section-head" data-reveal="fade-up">
                 <span class="tag-label">What We Build</span>
-                <h2 class="glitch-ready">Our Development Services</h2>
+                <h2 class="glitch-ready">Our Core Services</h2>
                 <p class="section-head-sub">
-                    Our development services cover the full spectrum of connected intelligent
-                    products. Whether you're only considering adopting smart solutions or have
-                    a clear-cut vision, we have you covered.
+                    Eight core areas drawn from the work we have actually done. The services
+                    page has the detailed breakdown: connected products, industrial software,
+                    applied AI, and the backends behind them.
                 </p>
             </div>
+            @php
+                $serviceIcons = ['🔌', '⚙️', '☁️', '👁️', '📱', '🧩', '📈', '🔬'];
+            @endphp
             <div class="services-grid" data-stagger>
-                <div class="service-card-item">
-                    <span class="svc-icon">🤖</span>
-                    <h4>Cognitive IoT Systems</h4>
-                    <p>
-                        We combine AI with connected devices to analyze data in real time,
-                        detect anomalies, and support predictive maintenance.
-                    </p>
-                    <span class="svc-link">Discover</span>
-                </div>
-                <div class="service-card-item">
-                    <span class="svc-icon">💡</span>
-                    <h4>AI-Enabled Firmware &amp; Devices</h4>
-                    <p>
-                        We embed AI directly into firmware and smart devices, enabling
-                        on-device learning and decision-making without cloud dependency.
-                    </p>
-                    <span class="svc-link">Discover</span>
-                </div>
-                <div class="service-card-item">
-                    <span class="svc-icon">🔬</span>
-                    <h4>R&amp;D Services</h4>
-                    <p>
-                        Cutting-edge research and development services to bring out the
-                        best in your project concept and validate technical feasibility.
-                    </p>
-                    <span class="svc-link">Discover</span>
-                </div>
-                <div class="service-card-item">
-                    <span class="svc-icon">🎨</span>
-                    <h4>UI/UX Design</h4>
-                    <p>
-                        Our experienced designers believe there is no second chance to make
-                        a first impression. We craft satisfying and efficient user experiences.
-                    </p>
-                    <span class="svc-link">Discover</span>
-                </div>
-                <div class="service-card-item">
-                    <span class="svc-icon">⚡</span>
-                    <h4>Edge &amp; Gateway Intelligence</h4>
-                    <p>
-                        We deploy AI at the edge using smart gateways that filter data,
-                        run ML models, and respond locally for low-latency performance.
-                    </p>
-                    <span class="svc-link">Discover</span>
-                </div>
-                <div class="service-card-item">
-                    <span class="svc-icon">📊</span>
-                    <h4>Data &amp; AI/ML Analytics</h4>
-                    <p>
-                        Our analytics platforms turn raw data into clear insights using
-                        advanced AI models to optimize energy, logistics, and operations.
-                    </p>
-                    <span class="svc-link">Discover</span>
-                </div>
-                <div class="service-card-item">
-                    <span class="svc-icon">☁️</span>
-                    <h4>Cloud Services</h4>
-                    <p>
-                        Professional cloud development including AWS, Azure, and GCP by
-                        a team with years of cloud-native engineering experience.
-                    </p>
-                    <span class="svc-link">Discover</span>
-                </div>
-                <div class="service-card-item">
-                    <span class="svc-icon">🛠️</span>
-                    <h4>Post-Production Support</h4>
-                    <p>
-                        We offer a full range of services to maintain your software — from
-                        regular updates to custom fixes and performance optimization.
-                    </p>
-                    <span class="svc-link">Discover</span>
-                </div>
-                <div class="service-card-item">
-                    <span class="svc-icon">🔌</span>
-                    <h4>IoT Consulting Services</h4>
-                    <p>
-                        Our consultants help your business understand smart technology and
-                        develop IoT strategies tailored to your unique needs.
-                    </p>
-                    <span class="svc-link">Discover</span>
-                </div>
-                <div class="service-card-item">
-                    <span class="svc-icon">🧭</span>
-                    <h4>Tech Advisory</h4>
-                    <p>
-                        Advanced technology strategy and advisory services backed by years
-                        of hands-on experience in complex software and IoT projects.
-                    </p>
-                    <span class="svc-link">Discover</span>
-                </div>
-                <div class="service-card-item">
-                    <span class="svc-icon">📱</span>
-                    <h4>Mobile Development</h4>
-                    <p>
-                        Cross-platform mobile apps using Flutter for iOS and Android,
-                        connecting users to your systems with intuitive interfaces.
-                    </p>
-                    <span class="svc-link">Discover</span>
-                </div>
-                <div class="service-card-item">
-                    <span class="svc-icon">🌐</span>
-                    <h4>Web Application Development</h4>
-                    <p>
-                        Scalable backend APIs, SaaS platforms, and dashboards built with
-                        modern frameworks and architecture-first thinking.
-                    </p>
-                    <span class="svc-link">Discover</span>
-                </div>
+                @foreach ($services as $index => $service)
+                    <div class="service-card-item">
+                        <span class="svc-icon">{{ $serviceIcons[$index] ?? '⚙️' }}</span>
+                        <h3>{{ $service['title'] }}</h3>
+                        <p>{{ $service['description'] }}</p>
+                        <a href="{{ route('services') }}" class="svc-link">Explore service <span aria-hidden="true">→</span></a>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -552,31 +452,35 @@
             <div class="why-grid">
                 <div data-reveal="fade-right">
                     <span class="tag-label">Why Us</span>
-                    <h2 class="glitch-ready">Why Choose Us as Your Engineering Partner</h2>
+                    <h2 class="glitch-ready">Why Work With Us</h2>
                     <p class="why-lead">
-                        Cosmos Algos gathers engineers who live and breathe technology. We
-                        combine profound experience in software, IoT, and AI with a strong
-                        culture of innovation and delivery, so your projects smoothly move
-                        from idea to reality.
+                        We are a hands-on engineering company, not a sales layer. The person
+                        who scopes the work is involved in building it, and the person who
+                        writes the firmware can also reason about the backend it reports to.
                     </p>
                     <ul class="why-list" data-stagger>
-                        <li>Profound expertise in new technologies</li>
-                        <li>Competitive solutions</li>
-                        <li>Defined workflow</li>
-                        <li>Professional and enthusiastic team</li>
-                        <li>Eliminating risks and challenges</li>
-                        <li>Constant support</li>
-                        <li>Full-cycle development</li>
-                        <li>Cultivated digital transformation strategy</li>
-                        <li>Transparent pricing policy</li>
-                        <li>Architecture-first thinking</li>
+                        <li>Hardware-to-cloud ownership in one team</li>
+                        <li>Industrial and defense field experience through CARE Lab</li>
+                        <li>Firmware, backend, desktop, and mobile under one scope</li>
+                        <li>Documentation and handover scoped into delivery</li>
+                        <li>Direct contact with the engineer doing the work</li>
+                        <li>Verification against real hardware, not only simulators</li>
+                        <li>Fixed-scope proposals before work begins</li>
+                        <li>No invented client logos, review scores, or metrics</li>
+                        <li>Support terms agreed in writing, not assumed</li>
+                        <li>Architecture chosen for maintenance, not novelty</li>
                     </ul>
                 </div>
                 <div data-reveal="fade-left">
-                    {{-- TODO: Replace with a real image / illustration --}}
-                    <div class="why-visual card">
-                        <span class="why-visual-emoji">👨‍💻</span>
-                    </div>
+                    <figure class="why-visual card">
+                        <img src="{{ asset('images/projects/solar-field-monitoring.jpg') }}"
+                             alt="Field validation of a solar monitoring setup with a laptop dashboard and sensor hardware"
+                             loading="lazy" width="1200" height="675">
+                        <figcaption>
+                            Field validation of a solar monitoring setup — hardware, telemetry,
+                            and dashboard tested together.
+                        </figcaption>
+                    </figure>
                 </div>
             </div>
         </div>
@@ -590,11 +494,15 @@
             <div class="section-head-center" data-reveal="fade-up">
                 <span class="tag-label">Our Process</span>
                 <h2 class="glitch-ready">From Idea to Implementation</h2>
+                <p class="section-head-sub">
+                    A general delivery process. The exact steps and depth are adapted to the
+                    scope of each engagement.
+                </p>
             </div>
             <div class="process-steps" data-stagger>
                 <div class="process-step">
                     <div class="step-num">Step 01</div>
-                    <h4>Discovery &amp; Use-Case Definition</h4>
+                    <h3>Discovery &amp; Use-Case Definition</h3>
                     <p>
                         We analyze business goals, users, and constraints to identify the
                         right problems to solve and define clear success criteria.
@@ -602,15 +510,15 @@
                 </div>
                 <div class="process-step">
                     <div class="step-num">Step 02</div>
-                    <h4>Architecture &amp; R&amp;D</h4>
+                    <h3>Architecture &amp; R&amp;D</h3>
                     <p>
-                        We explore technologies, evaluate feasibility, and design a scalable
-                        system architecture that fits performance and security needs.
+                        We explore technologies, evaluate feasibility, and design a system
+                        architecture that fits the performance and security needs of the project.
                     </p>
                 </div>
                 <div class="process-step">
                     <div class="step-num">Step 03</div>
-                    <h4>Proof of Concept &amp; Prototyping</h4>
+                    <h3>Proof of Concept &amp; Prototyping</h3>
                     <p>
                         We build quick prototypes to validate ideas, reduce risks, and
                         confirm technical viability before full development.
@@ -618,42 +526,42 @@
                 </div>
                 <div class="process-step">
                     <div class="step-num">Step 04</div>
-                    <h4>Detailed Design &amp; Specifications</h4>
+                    <h3>Detailed Design &amp; Specifications</h3>
                     <p>
                         We create detailed UX flows, technical specs, and documentation
-                        to ensure teams are fully aligned on what will be delivered.
+                        to keep everyone aligned on what will be delivered.
                     </p>
                 </div>
                 <div class="process-step">
                     <div class="step-num">Step 05</div>
-                    <h4>End-to-End Development</h4>
+                    <h3>Implementation Across the Stack</h3>
                     <p>
-                        We implement the full solution — backend, frontend, firmware, data
-                        pipelines, and integrations — following best engineering practices.
+                        We implement the agreed solution — backend, frontend, firmware, data
+                        pipelines, and integrations — with the practices agreed for the project.
                     </p>
                 </div>
                 <div class="process-step">
                     <div class="step-num">Step 06</div>
-                    <h4>Testing &amp; Validation</h4>
+                    <h3>Testing &amp; Validation</h3>
                     <p>
-                        We rigorously test functionality, performance, security, and
-                        usability to make sure everything works reliably in real conditions.
+                        We test functionality, performance, and usability against realistic
+                        conditions, and document the limits of what was validated.
                     </p>
                 </div>
                 <div class="process-step">
                     <div class="step-num">Step 07</div>
-                    <h4>Deployment &amp; Integration</h4>
+                    <h3>Deployment &amp; Integration</h3>
                     <p>
                         We launch the solution, integrate with existing systems, migrate
-                        data, and prepare environments for smooth operation.
+                        data where needed, and prepare the environments for operation.
                     </p>
                 </div>
                 <div class="process-step">
                     <div class="step-num">Step 08</div>
-                    <h4>Operations, Optimization &amp; Support</h4>
+                    <h3>Operations, Optimization &amp; Support</h3>
                     <p>
-                        We monitor performance, fix issues, roll out improvements, and
-                        continuously optimize based on real usage and feedback.
+                        Where support is agreed, monitoring, fixes, and improvements follow
+                        handover and are based on real usage and feedback.
                     </p>
                 </div>
             </div>
@@ -671,52 +579,36 @@
             </div>
             <div class="industry-grid" data-stagger>
                 <div class="industry-item card">
-                    <span class="ind-icon">🏠</span>
-                    <span>Smart Home</span>
+                    <span class="ind-icon">🌾</span>
+                    <span>Agriculture &amp; Poultry</span>
                 </div>
                 <div class="industry-item card">
-                    <span class="ind-icon">🚁</span>
-                    <span>Drones &amp; UAV Solutions</span>
-                </div>
-                <div class="industry-item card">
-                    <span class="ind-icon">☀️</span>
-                    <span>Solar/Wind Energy</span>
+                    <span class="ind-icon">⚙️</span>
+                    <span>Industrial Automation</span>
                 </div>
                 <div class="industry-item card">
                     <span class="ind-icon">🔬</span>
-                    <span>High-Tech</span>
+                    <span>Research &amp; Academic Labs</span>
                 </div>
                 <div class="industry-item card">
-                    <span class="ind-icon">🛢️</span>
-                    <span>Oil &amp; Gas</span>
-                </div>
-                <div class="industry-item card">
-                    <span class="ind-icon">🚗</span>
-                    <span>Automotive</span>
-                </div>
-                <div class="industry-item card">
-                    <span class="ind-icon">📡</span>
-                    <span>Consumer IoT</span>
+                    <span class="ind-icon">🚢</span>
+                    <span>Logistics &amp; Port Management</span>
                 </div>
                 <div class="industry-item card">
                     <span class="ind-icon">⚡</span>
-                    <span>Energy</span>
+                    <span>Energy &amp; Utilities</span>
                 </div>
                 <div class="industry-item card">
-                    <span class="ind-icon">🏥</span>
-                    <span>Healthcare</span>
+                    <span class="ind-icon">🏠</span>
+                    <span>Smart Home &amp; Consumer IoT</span>
                 </div>
                 <div class="industry-item card">
-                    <span class="ind-icon">🌾</span>
-                    <span>Agriculture</span>
+                    <span class="ind-icon">🚲</span>
+                    <span>Transport &amp; Mobility</span>
                 </div>
                 <div class="industry-item card">
-                    <span class="ind-icon">🏭</span>
-                    <span>Digital Manufacturing / Industry 4.0</span>
-                </div>
-                <div class="industry-item card">
-                    <span class="ind-icon">💊</span>
-                    <span>Telemedicine Applications</span>
+                    <span class="ind-icon">☁️</span>
+                    <span>SaaS &amp; Technology Products</span>
                 </div>
             </div>
         </div>
@@ -728,18 +620,21 @@
     <section class="section section-alt section-sm">
         <div class="container">
             <div class="section-head-center" data-reveal="fade-up">
-                <span class="tag-label">Partners &amp; Clients</span>
-                <h2>Our Partners &amp; Clients</h2>
-                <p>We align closely with partners and clients to meet the most ambitious business needs.</p>
+                <span class="tag-label">Collaborations</span>
+                <h2>Research &amp; Industrial Collaborations</h2>
+                <p>
+                    Software development work delivered through the Center of Automation,
+                    Robotics &amp; Embedded Systems (CARE Lab), IUB, by our founder. Some
+                    engagements are confidential; in-progress negotiations are not listed
+                    as clients.
+                </p>
             </div>
-            {{-- TODO: Replace text items with actual logo images --}}
             <div class="partners-logos" data-stagger>
-                <span class="partner-logo-item">Solar Manager</span>
-                <span class="partner-logo-item">UDB</span>
-                <span class="partner-logo-item">Avnet</span>
-                <span class="partner-logo-item">AVL</span>
-                <span class="partner-logo-item">Microchip</span>
-                <span class="partner-logo-item">AWS</span>
+                <span class="partner-logo-item">Pakistan Army Ordnance Corps</span>
+                <span class="partner-logo-item">EPTeck Technologies</span>
+                <span class="partner-logo-item">AirCon Electronics</span>
+                <span class="partner-logo-item">The Islamia University of Bahawalpur</span>
+                <span class="partner-logo-item">Dubai-based industrial investor</span>
             </div>
         </div>
     </section>
@@ -750,44 +645,40 @@
     <section class="section section-lg">
         <div class="container">
             <div class="section-head" data-reveal="fade-up">
-                <span class="tag-label">Strategic Alliances</span>
-                <h2 class="glitch-ready">Trusted Partnerships with Global Industry Leaders</h2>
+                <span class="tag-label">Platforms &amp; Capabilities</span>
+                <h2 class="glitch-ready">The Stacks We Build On</h2>
                 <p class="section-head-sub">
-                    Through these strategic alliances, Cosmos Algos gains privileged access
-                    to the latest advancements in technology. This ensures that we consistently
-                    deliver state-of-the-art solutions that meet business objectives and
-                    surpass the evolving expectations of end users.
+                    We choose tools for the constraint in front of us — from the microcontroller
+                    and sensors to the cloud and the client app — and document the choices that
+                    matter for maintenance and handover.
                 </p>
             </div>
             <div class="trust-grid" data-stagger>
                 <div class="trust-card">
-                    <div class="partner-name">Microchip</div>
-                    <div class="partner-title">Microchip Design Partner</div>
+                    <div class="partner-name">Cloud</div>
+                    <div class="partner-title">AWS Serverless IoT Backends</div>
                     <p>
-                        We take pride in our status as a trusted Microchip Design Partner.
-                        With Microchip's global prominence in microcontrollers and analog
-                        semiconductors, our collaboration ensures IoT solutions that
-                        integrate cutting-edge technology with industry-leading expertise.
+                        Cloud backends on AWS — IoT Core for device connectivity, Lambda for
+                        serverless processing, DynamoDB and MySQL for storage, and API Gateway
+                        with Cognito and IAM for secure, documented APIs.
                     </p>
                 </div>
                 <div class="trust-card">
-                    <div class="partner-name">Avnet</div>
-                    <div class="partner-title">Avnet IoT Partner Program Member</div>
+                    <div class="partner-name">Embedded</div>
+                    <div class="partner-title">ESP32, Raspberry Pi &amp; Intel RealSense</div>
                     <p>
-                        As a valued member of the Avnet IoT Partner Program, we align
-                        with a distinguished global distributor of electronic components
-                        and IoT solutions, gaining access to an extensive ecosystem of
-                        resources and technologies.
+                        Firmware and edge systems on ESP32 and Raspberry Pi, industrial protocol
+                        integration (MODBUS, UART, USB), and RGB-D depth sensing with the
+                        Intel RealSense D435i for computer-vision pipelines.
                     </p>
                 </div>
                 <div class="trust-card">
-                    <div class="partner-name">AWS</div>
-                    <div class="partner-title">AWS Partner</div>
+                    <div class="partner-name">Applications</div>
+                    <div class="partner-title">Laravel, Flutter &amp; Python</div>
                     <p>
-                        Cosmos Algos is an official AWS Partner, allowing us to leverage
-                        AWS resources and offer customers an even more customized approach
-                        while taking full advantage of AWS partner programs and cloud
-                        infrastructure.
+                        Laravel REST APIs and SaaS platforms, cross-platform Flutter apps, and
+                        Python tooling for data acquisition, automation, and desktop control
+                        software — with API documentation and handover notes.
                     </p>
                 </div>
             </div>
@@ -801,40 +692,43 @@
         <div class="container">
             <div class="section-head" data-reveal="fade-up">
                 <span class="tag-label">Case Studies</span>
-                <h2 class="glitch-ready">Customer Success Stories</h2>
+                <h2 class="glitch-ready">Selected Engineering Work</h2>
                 <p class="section-head-sub">
-                    Check out our portfolio of transformed businesses that have reaped
-                    the benefits of working with us.
+                    Documented projects with clear attribution — including work delivered
+                    through CARE Lab and research contracts.
                 </p>
             </div>
             <div class="grid cols-3" data-stagger>
-                {{-- TODO: Loop $projects from controller when case studies are ready --}}
                 <div class="case-study-card">
-                    <div class="case-study-thumb">🌐</div>
+                    <div class="case-study-thumb has-image">
+                        <img src="{{ asset('images/projects/primer-analyzer.jpg') }}"
+                             alt="Primer Analyzer test equipment"
+                             loading="lazy" width="1200" height="900">
+                    </div>
                     <div class="case-study-body">
                         <div class="case-study-meta">
-                            <span class="meta-chip">Energy</span>
-                            <span class="meta-chip">Oil &amp; Gas</span>
+                            <span class="meta-chip">Defense Electronics</span>
+                            <span class="meta-chip">Automation</span>
                         </div>
-                        <h4>Web IIoT Application for Real-Time Monitoring of SCADA Units</h4>
+                        <h3>Primer Analyzer — Automated Test &amp; Reporting System</h3>
                         <p>
-                            An IoT web application for monitoring equipment performance in
-                            manufacturing: oil, water, gas. The solution reduces fuel usage
-                            and time required to manually take measurements, eliminating
-                            human errors.
+                            Software-assisted test equipment that performs four electrical
+                            and one mechanical test on primers, automating the quality
+                            assessment and generating detailed reports. Delivered for the
+                            Pakistan Army Ordnance Corps through CARE Lab.
                         </p>
                         <div class="case-study-stats">
                             <div class="case-stat">
-                                <strong>9 engineers</strong>
-                                Team Size
+                                <strong>Test &amp; Reporting</strong>
+                                Category
                             </div>
                             <div class="case-stat">
-                                <strong>4 years</strong>
-                                Project Lifetime
+                                <strong>CARE Lab</strong>
+                                Collaboration
                             </div>
                             <div class="case-stat">
-                                <strong>USA</strong>
-                                Client
+                                <strong>Pakistan</strong>
+                                Deployment
                             </div>
                         </div>
                     </div>
@@ -845,27 +739,27 @@
                     <div class="case-study-body">
                         <div class="case-study-meta">
                             <span class="meta-chip">Agriculture</span>
-                            <span class="meta-chip">AI/ML</span>
+                            <span class="meta-chip">Computer Vision</span>
                         </div>
-                        {{-- TODO: Replace with real case study --}}
-                        <h4>AI-Powered Poultry Growth Prediction System</h4>
+                        <h3>Flock Sense AI — Broiler Weight Estimation</h3>
                         <p>
-                            An end-to-end AI pipeline for livestock growth prediction using
-                            computer vision and sensor fusion. Enabled data-driven feeding
-                            decisions and reduced operational costs significantly.
+                            Data-collection and inference pipeline for estimating broiler
+                            weight from camera imagery, delivered as a research contract at
+                            DeepEmbed Research Lab. The work covered structured image capture,
+                            dataset preparation, and an inference workflow for weight estimation.
                         </p>
                         <div class="case-study-stats">
                             <div class="case-stat">
-                                <strong>3 engineers</strong>
-                                Team Size
+                                <strong>DeepEmbed</strong>
+                                Contract
                             </div>
                             <div class="case-stat">
-                                <strong>6 months</strong>
-                                Project Lifetime
+                                <strong>Python / CV</strong>
+                                Stack
                             </div>
                             <div class="case-stat">
-                                <strong>Pakistan</strong>
-                                Client
+                                <strong>Poultry</strong>
+                                Industry
                             </div>
                         </div>
                     </div>
@@ -878,25 +772,25 @@
                             <span class="meta-chip">Industrial</span>
                             <span class="meta-chip">IoT</span>
                         </div>
-                        {{-- TODO: Replace with real case study --}}
-                        <h4>VFD Remote Control System for Industrial Automation</h4>
+                        <h3>VFD Remote Control System for Industrial Automation</h3>
                         <p>
                             A remote-control system for Variable Frequency Drives using
-                            ESP32, Android, and a Laravel backend. Enabled real-time
-                            motor monitoring and control from any location.
+                            ESP32 MODBUS firmware, a Laravel backend, and a Flutter client.
+                            Operators can monitor drive status, send commands, and review
+                            historical logs without standing at the panel.
                         </p>
                         <div class="case-study-stats">
                             <div class="case-stat">
-                                <strong>2 engineers</strong>
-                                Team Size
+                                <strong>ESP32 + MODBUS</strong>
+                                Edge
                             </div>
                             <div class="case-stat">
-                                <strong>3 months</strong>
-                                Project Lifetime
+                                <strong>Laravel</strong>
+                                Backend
                             </div>
                             <div class="case-stat">
-                                <strong>Pakistan</strong>
-                                Client
+                                <strong>Flutter</strong>
+                                Mobile
                             </div>
                         </div>
                     </div>
@@ -906,115 +800,53 @@
     </section>
 
     {{-- ══════════════════════════════════════════════════════
-         13. TESTIMONIALS
+         13. REFERENCES / VERIFICATION
          ══════════════════════════════════════════════════════ --}}
     <section class="section section-lg">
         <div class="container">
             <div class="section-head-center" data-reveal="fade-up">
-                <span class="tag-label">Testimonials</span>
-                <h2 class="glitch-ready">Why Our Clients Can't Stop Talking About Us</h2>
+                <span class="tag-label">References</span>
+                <h2 class="glitch-ready">Evidence, Not Invented Praise</h2>
                 <p>
-                    At Cosmos Algos, we pride ourselves on having 100% satisfied clients.
-                    Our dedicated team of technology experts, data analysts, and digital
-                    transformation consultants work tirelessly to ensure your success.
+                    We do not publish fabricated testimonials, star ratings, or review-platform
+                    badges. Client references are available on request with their consent, and
+                    the project record is documented in the case studies.
                 </p>
             </div>
-            <div class="grid cols-2" data-stagger>
-                {{-- TODO: Loop $testimonials from controller --}}
-                <div class="testimonial-card">
-                    <div class="testi-quote">"</div>
-                    <p class="testi-text">
-                        This is the best tech partner we've ever worked with. Their solutions
-                        are innovative and their support is unparalleled. Cosmos Algos truly
-                        understands the complexity of industrial systems.
-                    </p>
-                    <div class="testi-author">
-                        <div class="testi-avatar">OD</div>
-                        <div>
-                            <div class="testi-name">Ostap D.</div>
-                            <div class="testi-role">COO, Electronics Manufacturer</div>
-                            <div class="rating-row">
-                                <span class="star">★</span><span class="star">★</span>
-                                <span class="star">★</span><span class="star">★</span>
-                                <span class="star">★</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="testimonial-card">
-                    <div class="testi-quote">"</div>
-                    <p class="testi-text">
-                        Cosmos Algos transformed our business with their advanced analytics
-                        and custom software. We couldn't be happier with the results. Their
-                        architecture-first approach gave us a system that actually scales.
+            <div class="grid cols-3" data-stagger>
+                <div class="card" style="padding:1.75rem;">
+                    <div class="num" style="font-size:2rem;font-weight:800;color:var(--brand);">{{ $stats['care_rnd_projects'] }}</div>
+                    <div class="num-label">CARE Lab R&amp;D projects</div>
+                    <p style="color:var(--muted);margin-top:.5rem;">
+                        Software and embedded contributions across the centre's funded and
+                        in-progress project list, including defense test equipment.
                     </p>
-                    <div class="testi-author">
-                        <div class="testi-avatar">CA</div>
-                        <div>
-                            <div class="testi-name">Client A</div>
-                            <div class="testi-role">CTO, SaaS Platform</div>
-                            <div class="rating-row">
-                                <span class="star">★</span><span class="star">★</span>
-                                <span class="star">★</span><span class="star">★</span>
-                                <span class="star">★</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-
-                <div class="testimonial-card">
-                    <div class="testi-quote">"</div>
-                    <p class="testi-text">
-                        Their expertise in IoT solutions has streamlined our operations and
-                        significantly boosted our growth. Every deliverable was clean,
-                        documented, and production-ready from day one.
+                <div class="card" style="padding:1.75rem;">
+                    <div class="num" style="font-size:2rem;font-weight:800;color:var(--brand);">{{ $stats['saas_platforms'] }}</div>
+                    <div class="num-label">SaaS platforms</div>
+                    <p style="color:var(--muted);margin-top:.5rem;">
+                        Multi-tenant products supported across backend APIs, subscriptions,
+                        OTA updates, and time-series data.
                     </p>
-                    <div class="testi-author">
-                        <div class="testi-avatar">CB</div>
-                        <div>
-                            <div class="testi-name">Client B</div>
-                            <div class="testi-role">Operations Director, Manufacturing</div>
-                            <div class="rating-row">
-                                <span class="star">★</span><span class="star">★</span>
-                                <span class="star">★</span><span class="star">★</span>
-                                <span class="star">★</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-
-                <div class="testimonial-card">
-                    <div class="testi-quote">"</div>
-                    <p class="testi-text">
-                        Choosing Cosmos Algos was the best decision for our digital
-                        transformation. Their team is skilled, responsive, and committed
-                        to excellence. They delivered beyond our expectations.
+                <div class="card" style="padding:1.75rem;">
+                    <div class="num" style="font-size:2rem;font-weight:800;color:var(--brand);">{{ $stats['projects'] }}+</div>
+                    <div class="num-label">Documented engagements</div>
+                    <p style="color:var(--muted);margin-top:.5rem;">
+                        Defense, industrial, agriculture, energy, research, and consumer
+                        systems described across this site.
                     </p>
-                    <div class="testi-author">
-                        <div class="testi-avatar">CC</div>
-                        <div>
-                            <div class="testi-name">Client C</div>
-                            <div class="testi-role">Founder, AgriTech Startup</div>
-                            <div class="rating-row">
-                                <span class="star">★</span><span class="star">★</span>
-                                <span class="star">★</span><span class="star">★</span>
-                                <span class="star">★</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
-            {{-- Review platform badges --}}
-            <div class="review-badges" data-reveal="fade-up">
-                <span class="badge">Clutch 5 Stars</span>
-                <span class="badge">GoodFirms 5 Stars</span>
-                <span class="badge">Top IoT Developers 2025</span>
+            <div class="hero-cta-row" style="justify-content:center;margin-top:2rem;">
+                <a href="{{ route('case-studies') }}" class="btn btn-primary">Read Case Studies</a>
+                <a href="{{ route('contact') }}" class="btn btn-ghost">Request a Reference</a>
             </div>
         </div>
     </section>
-
     {{-- ══════════════════════════════════════════════════════
          14. CONTACT / LOCATION
          ══════════════════════════════════════════════════════ --}}
@@ -1028,24 +860,24 @@
                     <h2 class="contact-h2 glitch-ready">We Are Located</h2>
                     <div class="location-cards">
                         <div class="location-card">
-                            <h5>🇵🇰 Pakistan (HQ)</h5>
+                            <h3>🇵🇰 Pakistan (HQ)</h3>
                             <p>
                                 Bahawalpur, Punjab, Pakistan<br>
-                                <a href="mailto:hello@cosmosalgos.com" class="contact-link">hello@cosmosalgos.com</a>
+                                <a href="mailto:{{ $company['email'] }}" class="contact-link">{{ $company['email'] }}</a><br>
+                                <a href="tel:{{ $company['phone_href'] }}" class="contact-link">{{ $company['phone'] }}</a>
                             </p>
                         </div>
-                        {{-- TODO: Add more office locations as they expand --}}
                     </div>
                     <div class="sales-office">
-                        <p class="sales-label">Sales Office:</p>
-                        <a href="mailto:sales@cosmosalgos.com" class="contact-link">sales@cosmosalgos.com</a>
+                        <p class="sales-label">Office hours:</p>
+                        <span class="contact-link">{{ $company['hours'] }}</span>
                     </div>
                 </div>
 
                 {{-- Right: contact form --}}
                 <div class="contact-form-card" data-reveal="fade-left">
                     <h3>Tell Us About Your Project</h3>
-                    <p class="sub">We'll get back to you within 24 hours.</p>
+                    <p class="sub">We reply as soon as possible during office hours.</p>
 
                     @if (session('success'))
                         <div class="alert alert-success">{{ session('success') }}</div>
@@ -1054,7 +886,7 @@
                         <div class="alert alert-error">{{ session('error') }}</div>
                     @endif
 
-                    <form method="POST" action="">
+                    <form method="POST" action="{{ route('contact.submit') }}">
                         @csrf
                         <div class="form-group">
                             <label for="name">Name *</label>
@@ -1091,11 +923,14 @@
                             @error('message')<span class="field-error">{{ $message }}</span>@enderror
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <input type="checkbox" id="privacy" name="privacy" {{ old('privacy') ? 'checked' : '' }} required>
                             <label for="privacy">
                                 I have read and accept the
-                                <a href="" class="contact-link">Terms of Use and Privacy Policy</a>.
+                                <a href="{{ route('privacy') }}" class="contact-link">Privacy Policy</a>
+                                and
+                                <a href="{{ route('terms') }}" class="contact-link">Terms of Use</a>.
                             </label>
+                            @error('privacy')<span class="field-error">{{ $message }}</span>@enderror
                         </div>
                         <button type="submit" class="btn btn-primary btn-full">
                             Send Message
@@ -1118,12 +953,14 @@
                TYPEWRITER — unchanged from original
             ══════════════════════════════════════════════ */
             const phrases = [
-                'Embedded firmware and hardware on ESP32, STM32, Raspberry Pi, and FPGA',
+                'Embedded Firmware & Edge AI',
+                'ESP32, STM32, Raspberry Pi & FPGA',
                 'Automation and robotics',
                 'Production monitoring and Industrial IoT',
                 'Computer vision and ML models for edge deployment',
                 'Test rigs and setups for defense equipment',
-                'Rehabilitation and upgrades for industrial and defense electronics',
+                'Industrial & Defense Electronics',
+                'Rehabilitation & System Upgrades',
             ];
 
             const el     = document.getElementById('heroTypewriter');
@@ -1213,306 +1050,5 @@
             });
         })();
 
-        (function () {
-            'use strict';
-
-            /* ══════════════════════════════════════════════
-               COSMOS BACKGROUND — star field, nebulae, grid,
-               shooting stars, network canvas
-            ══════════════════════════════════════════════ */
-            const bg = document.createElement('div');
-            bg.id = 'cosmos-bg';
-            for (let i = 1; i <= 4; i++) {
-                const o = document.createElement('div');
-                o.className = `cosmos-nebula cosmos-nebula-${i}`;
-                bg.appendChild(o);
-            }
-            [
-                {top:'10%',left:'5%',delay:'2s',dur:'4s'},
-                {top:'30%',left:'60%',delay:'7s',dur:'3s'},
-                {top:'60%',left:'20%',delay:'12s',dur:'5s'},
-                {top:'80%',left:'75%',delay:'4s',dur:'3.5s'},
-                {top:'15%',left:'40%',delay:'18s',dur:'4s'}
-            ].forEach(c => {
-                const s = document.createElement('div');
-                s.className = 'shooting-star';
-                s.style.cssText = `top:${c.top};left:${c.left};animation-delay:${c.delay};animation-duration:${c.dur}`;
-                bg.appendChild(s);
-            });
-            document.body.insertBefore(bg, document.body.firstChild);
-
-            const grid = document.createElement('div');
-            grid.id = 'algo-grid';
-            document.body.insertBefore(grid, document.body.firstChild);
-
-            /* ── Network Canvas ── */
-            const canvas = document.createElement('canvas');
-            canvas.id = 'network-canvas';
-            document.body.insertBefore(canvas, document.body.firstChild);
-            const ctx = canvas.getContext('2d');
-            let W, H, nodes;
-            const COLORS = ['rgba(224,37,26,','rgba(0,212,255,','rgba(123,94,167,','rgba(255,183,71,'];
-
-            function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
-            function makeNodes() {
-                nodes = Array.from({length: 55}, () => ({
-                    x: Math.random() * W, y: Math.random() * H,
-                    vx: (Math.random() - 0.5) * 0.35, vy: (Math.random() - 0.5) * 0.35,
-                    r: Math.random() * 2 + 1,
-                    color: COLORS[Math.floor(Math.random() * 4)],
-                    pulse: Math.random() * Math.PI * 2
-                }));
-            }
-            function drawNet() {
-                ctx.clearRect(0, 0, W, H);
-                nodes.forEach(n => {
-                    n.x += n.vx; n.y += n.vy; n.pulse += 0.02;
-                    if (n.x < 0 || n.x > W) n.vx *= -1;
-                    if (n.y < 0 || n.y > H) n.vy *= -1;
-                    const g = 0.6 + Math.sin(n.pulse) * 0.4;
-                    ctx.beginPath(); ctx.arc(n.x, n.y, n.r * g, 0, Math.PI * 2);
-                    ctx.fillStyle = n.color + g + ')'; ctx.fill();
-                });
-                for (let i = 0; i < nodes.length; i++) {
-                    for (let j = i + 1; j < nodes.length; j++) {
-                        const a = nodes[i], b = nodes[j];
-                        const dx = a.x - b.x, dy = a.y - b.y;
-                        const d = Math.sqrt(dx * dx + dy * dy);
-                        if (d < 160) {
-                            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
-                            ctx.strokeStyle = `rgba(40,44,70,${(1 - d / 160) * 0.35})`;
-                            ctx.lineWidth = 0.8; ctx.stroke();
-                        }
-                    }
-                }
-                requestAnimationFrame(drawNet);
-            }
-            resize(); makeNodes(); drawNet();
-            window.addEventListener('resize', () => { resize(); makeNodes(); });
-
-            /* ══════════════════════════════════════════════
-               SCROLL PROGRESS BAR
-            ══════════════════════════════════════════════ */
-            const prog = document.createElement('div');
-            prog.id = 'scroll-progress';
-            document.body.insertBefore(prog, document.body.firstChild);
-            window.addEventListener('scroll', () => {
-                prog.style.width = (scrollY / (document.body.scrollHeight - innerHeight) * 100) + '%';
-            }, {passive: true});
-
-            /* ══════════════════════════════════════════════
-               CUSTOM CURSOR + TRAILING RING + COMET TAIL
-            ══════════════════════════════════════════════ */
-            if (!window.matchMedia('(max-width:768px)').matches) {
-                const cur = document.createElement('div');
-                cur.id = 'cosmos-cursor';
-                document.body.appendChild(cur);
-                const trail = document.createElement('div');
-                trail.id = 'cosmos-cursor-trail';
-                document.body.appendChild(trail);
-
-                let mx = -100, my = -100, tx = -100, ty = -100, ct = 0;
-                document.addEventListener('mousemove', e => {
-                    mx = e.clientX; my = e.clientY;
-                    cur.style.left = mx + 'px'; cur.style.top = my + 'px';
-                });
-
-                function spawnComet(x, y) {
-                    const d = document.createElement('div');
-                    d.className = 'cursor-comet';
-                    const sz = Math.random() * 5 + 2;
-                    const hue = Math.random() > 0.6 ? '0,212,255' : '224,37,26';
-                    d.style.cssText = `width:${sz}px;height:${sz}px;left:${x}px;top:${y}px;background:rgba(${hue},${0.5 + Math.random() * 0.4});box-shadow:0 0 ${sz * 2}px rgba(${hue},0.6);animation-duration:${0.4 + Math.random() * 0.4}s;`;
-                    document.body.appendChild(d);
-                    d.addEventListener('animationend', () => d.remove());
-                }
-
-                function animTrail() {
-                    tx += (mx - tx) * 0.10; ty += (my - ty) * 0.10;
-                    trail.style.left = tx + 'px'; trail.style.top = ty + 'px';
-                    ct++;
-                    if (ct % 4 === 0) spawnComet(tx, ty);
-                    requestAnimationFrame(animTrail);
-                }
-                animTrail();
-
-                /* Hover state on interactive elements */
-                const hov = 'a,button,.btn,.service-card-item,.industry-item,.hv-card,.process-step,.testimonial-card,.tl-item,.approach-card,.trust-card,.case-study-card';
-                document.querySelectorAll(hov).forEach(el => {
-                    el.addEventListener('mouseenter', () => { cur.classList.add('cursor-hover'); trail.classList.add('cursor-hover'); });
-                    el.addEventListener('mouseleave', () => { cur.classList.remove('cursor-hover'); trail.classList.remove('cursor-hover'); });
-                });
-
-                /* Click burst */
-                document.addEventListener('click', e => {
-                    for (let i = 0; i < 6; i++) {
-                        setTimeout(() => {
-                            const b = document.createElement('div');
-                            b.className = 'cursor-comet';
-                            const ang = (i / 6) * Math.PI * 2, r = 15 + Math.random() * 20;
-                            const hue = i % 2 === 0 ? '224,37,26' : '0,212,255';
-                            b.style.cssText = `width:4px;height:4px;left:${e.clientX + Math.cos(ang) * r}px;top:${e.clientY + Math.sin(ang) * r}px;background:rgba(${hue},0.9);box-shadow:0 0 8px rgba(${hue},0.7);animation-duration:0.5s;`;
-                            document.body.appendChild(b);
-                            b.addEventListener('animationend', () => b.remove());
-                        }, i * 30);
-                    }
-                });
-
-                /* Button ripple */
-                document.querySelectorAll('.btn').forEach(btn => {
-                    btn.addEventListener('click', function (e) {
-                        const rect = btn.getBoundingClientRect();
-                        const rip  = document.createElement('span');
-                        rip.className = 'btn-ripple';
-                        const sz = Math.max(rect.width, rect.height);
-                        rip.style.cssText = `width:${sz}px;height:${sz}px;left:${e.clientX - rect.left - sz / 2}px;top:${e.clientY - rect.top - sz / 2}px;`;
-                        btn.appendChild(rip);
-                        rip.addEventListener('animationend', () => rip.remove());
-                    });
-                });
-            }
-
-            /* ══════════════════════════════════════════════
-               SCROLL REVEAL — IntersectionObserver
-            ══════════════════════════════════════════════ */
-            const io = new IntersectionObserver(entries => {
-                entries.forEach(e => {
-                    if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); }
-                });
-            }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
-            document.querySelectorAll('[data-reveal],[data-stagger]').forEach(el => io.observe(el));
-
-            /* ══════════════════════════════════════════════
-               GLITCH EFFECT on h2.glitch-ready hover
-            ══════════════════════════════════════════════ */
-            document.querySelectorAll('.glitch-ready').forEach(h => {
-                h.dataset.text = h.textContent;
-                let t;
-                h.addEventListener('mouseenter', () => { h.classList.add('glitching'); t = setTimeout(() => h.classList.remove('glitching'), 350); });
-                h.addEventListener('mouseleave', () => { clearTimeout(t); h.classList.remove('glitching'); });
-            });
-
-            /* ══════════════════════════════════════════════
-               NAVBAR SCROLL STATE
-            ══════════════════════════════════════════════ */
-            const header = document.getElementById('siteHeader');
-            if (header) {
-                window.addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 40), {passive: true});
-            }
-
-            /* ══════════════════════════════════════════════
-               COUNTER ANIMATION — .num elements
-            ══════════════════════════════════════════════ */
-            const cio = new IntersectionObserver(entries => {
-                entries.forEach(e => {
-                    if (!e.isIntersecting) return;
-                    const el = e.target;
-
-                    /* Guard: never animate the same element twice, even if this
-                       script/observer ends up running more than once. */
-                    if (el.dataset.counted === '1') { cio.unobserve(el); return; }
-                    el.dataset.counted = '1';
-                    cio.unobserve(el);
-
-                    /* Prefer the fixed data-target/data-suffix (set once in markup)
-                       over live textContent, which may already be mid-animation. */
-                    let num, suf;
-                    if (el.dataset.target !== undefined) {
-                        num = parseFloat(el.dataset.target);
-                        suf = el.dataset.suffix || '';
-                    } else {
-                        const raw = el.textContent.trim();
-                        num = parseFloat(raw.replace(/[^0-9.]/g, ''));
-                        suf = raw.replace(/[0-9.]/g, '');
-                        /* Stash it so a second run (if any) reads the same source. */
-                        el.dataset.target = String(num);
-                        el.dataset.suffix = suf;
-                    }
-                    if (isNaN(num)) return;
-
-                    const dur = 1600, start = performance.now();
-                    function step(now) {
-                        const p  = Math.min((now - start) / dur, 1);
-                        const ea = 1 - Math.pow(1 - p, 3);
-                        el.textContent = Math.round(ea * num) + suf;
-                        if (p < 1) requestAnimationFrame(step);
-                        else el.textContent = num + suf;
-                    }
-                    requestAnimationFrame(step);
-                });
-            }, {threshold: 0.5});
-            document.querySelectorAll('.num,.hv-card-num').forEach(el => {
-                if (el.dataset.counted === '1') return;
-                cio.observe(el);
-            });
-
-            /* ══════════════════════════════════════════════
-               3D TILT on cards (desktop only)
-            ══════════════════════════════════════════════ */
-            if (!window.matchMedia('(max-width:768px)').matches) {
-                document.querySelectorAll('.service-card-item,.testimonial-card,.process-step,.approach-card,.trust-card').forEach(card => {
-                    card.addEventListener('mousemove', e => {
-                        const r = card.getBoundingClientRect();
-                        const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
-                        const dx = (e.clientX - cx) / (r.width / 2);
-                        const dy = (e.clientY - cy) / (r.height / 2);
-                        card.style.transform = `perspective(600px) rotateX(${dy * -6}deg) rotateY(${dx * 6}deg) translateY(-4px) scale(1.02)`;
-                    });
-                    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
-                });
-
-                /* Magnetic buttons */
-                document.querySelectorAll('.btn-primary,.btn-ghost').forEach(btn => {
-                    btn.addEventListener('mousemove', e => {
-                        const r = btn.getBoundingClientRect();
-                        const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
-                        btn.style.transform = `translate(${(e.clientX - cx) * 0.2}px,${(e.clientY - cy) * 0.2}px) translateY(-2px)`;
-                    });
-                    btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
-                });
-            }
-
-            /* ══════════════════════════════════════════════
-               PARALLAX NEBULAE on scroll
-            ══════════════════════════════════════════════ */
-            const neb = document.querySelectorAll('.cosmos-nebula,.hero-orb');
-            let ticking = false;
-            window.addEventListener('scroll', () => {
-                if (!ticking) {
-                    requestAnimationFrame(() => {
-                        neb.forEach((n, i) => n.style.transform = `translateY(${scrollY * (0.04 + i * 0.015)}px)`);
-                        ticking = false;
-                    });
-                    ticking = true;
-                }
-            }, {passive: true});
-
-            /* ══════════════════════════════════════════════
-               CONSTELLATION SVG overlay on hero
-            ══════════════════════════════════════════════ */
-            const heroBg = document.querySelector('.hero-bg');
-            if (heroBg) {
-                const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-                svg.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0.15;';
-                svg.setAttribute('aria-hidden', 'true');
-                const pts = [[15,20],[30,10],[45,30],[60,15],[75,25],[20,45],[35,60],[50,50],[65,65],[80,40],[10,70],[25,80],[55,75],[70,85],[90,60]];
-                [[0,1],[1,2],[2,3],[3,4],[0,5],[5,6],[6,7],[7,8],[8,9],[5,10],[10,11],[11,12],[12,13],[13,14],[9,14]].forEach(([a, b]) => {
-                    const l = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-                    l.setAttribute('x1', pts[a][0] + '%'); l.setAttribute('y1', pts[a][1] + '%');
-                    l.setAttribute('x2', pts[b][0] + '%'); l.setAttribute('y2', pts[b][1] + '%');
-                    l.setAttribute('stroke', 'rgba(0,212,255,0.6)'); l.setAttribute('stroke-width', '0.5');
-                    svg.appendChild(l);
-                });
-                pts.forEach(([x, y], i) => {
-                    const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-                    c.setAttribute('cx', x + '%'); c.setAttribute('cy', y + '%');
-                    c.setAttribute('r', i % 4 === 0 ? '2' : '1.2');
-                    c.setAttribute('fill', i % 3 === 0 ? 'rgba(224,37,26,0.8)' : 'rgba(0,212,255,0.7)');
-                    svg.appendChild(c);
-                });
-                heroBg.appendChild(svg);
-            }
-
-        })();
     </script>
 @endpush

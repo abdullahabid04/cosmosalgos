@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Case Studies — ' . $company['name'])
-@section('meta_description', 'Explore real-world projects built by Cosmos Algos — from cognitive IoT systems and AI-powered firmware to SaaS platforms and embedded intelligence. Results, not promises.')
-@section('og_title', 'Case Studies — Cosmos Algos')
-@section('og_description', 'Deep dives into our most impactful projects. Real problems. Real solutions. Real outcomes.')
+@section('meta_description', 'Documented engineering work from Cosmos Algos, CARE Lab, and a DeepEmbed research contract — with the delivery context and attribution stated plainly.')
 
 @section('content')
 
@@ -20,30 +18,42 @@
             <div class="cs-hero-inner" data-reveal="fade-up">
                 <span class="tag-label">Case Studies</span>
                 <h1 class="cs-hero-h1 glitch-ready">
-                    Real Problems.<br>
-                    <span class="cs-h1-accent">Real Solutions.</span>
+                    Engineering Work,<br>
+                    <span class="cs-h1-accent">Documented.</span>
                 </h1>
-                <p class="cs-hero-sub">We don't just ship code — we engineer outcomes. Each project below is a deep dive into a challenge we solved, the technology we chose, and the measurable results we delivered.</p>
+                <p class="cs-hero-sub">
+                    These are systems that were actually built. Where the work was delivered
+                    through CARE Lab or under a research contract, this page says so — including
+                    which organisation holds the client relationship.
+                </p>
 
                 <div class="cs-hero-stats" data-stagger>
                     <div class="cs-hero-stat">
-                        <span class="num cs-stat-num">40</span><span class="cs-stat-unit">+</span>
-                        <span class="cs-stat-label">Projects Shipped</span>
+                        <span class="cs-stat-value">
+                            <span class="num cs-stat-num" data-target="{{ $stats['projects'] }}">{{ $stats['projects'] }}</span><span class="cs-stat-unit" aria-hidden="true">+</span>
+                        </span>
+                        <span class="cs-stat-label">Projects &amp; Engagements</span>
                     </div>
                     <div class="cs-hero-stat-divider" aria-hidden="true"></div>
                     <div class="cs-hero-stat">
-                        <span class="num cs-stat-num">12</span><span class="cs-stat-unit">+</span>
+                        <span class="cs-stat-value">
+                            <span class="num cs-stat-num" data-target="{{ $stats['industries'] }}">{{ $stats['industries'] }}</span>
+                        </span>
                         <span class="cs-stat-label">Industries Served</span>
                     </div>
                     <div class="cs-hero-stat-divider" aria-hidden="true"></div>
                     <div class="cs-hero-stat">
-                        <span class="num cs-stat-num">98</span><span class="cs-stat-unit">%</span>
-                        <span class="cs-stat-label">Client Satisfaction</span>
+                        <span class="cs-stat-value">
+                            <span class="num cs-stat-num" data-target="{{ $stats['years_experience'] }}">{{ $stats['years_experience'] }}</span><span class="cs-stat-unit" aria-hidden="true">+</span>
+                        </span>
+                        <span class="cs-stat-label">Years of Engineering</span>
                     </div>
                     <div class="cs-hero-stat-divider" aria-hidden="true"></div>
                     <div class="cs-hero-stat">
-                        <span class="num cs-stat-num">5</span><span class="cs-stat-unit">+</span>
-                        <span class="cs-stat-label">Countries Reached</span>
+                        <span class="cs-stat-value">
+                            <span class="num cs-stat-num" data-target="{{ $stats['care_rnd_projects'] }}">{{ $stats['care_rnd_projects'] }}</span>
+                        </span>
+                        <span class="cs-stat-label">CARE Lab R&amp;D Projects</span>
                     </div>
                 </div>
             </div>
@@ -56,76 +66,75 @@
     <section class="cs-filter-bar-section">
         <div class="container">
             <div class="cs-filter-bar" id="csFilterBar" data-reveal="fade-up">
-                <button class="cs-filter-btn is-active" data-filter="all">All Projects</button>
-                <button class="cs-filter-btn" data-filter="iot">IoT Systems</button>
-                <button class="cs-filter-btn" data-filter="ai-ml">AI / ML</button>
-                <button class="cs-filter-btn" data-filter="firmware">Firmware</button>
-                <button class="cs-filter-btn" data-filter="cloud">Cloud & SaaS</button>
+                <button class="cs-filter-btn is-active" data-filter="all">All Work</button>
+                <button class="cs-filter-btn" data-filter="defense">Defense &amp; Industrial</button>
+                <button class="cs-filter-btn" data-filter="cv">Computer Vision</button>
+                <button class="cs-filter-btn" data-filter="iot">IoT Platforms</button>
+                <button class="cs-filter-btn" data-filter="saas">SaaS &amp; Web</button>
                 <button class="cs-filter-btn" data-filter="mobile">Mobile</button>
-                <button class="cs-filter-btn" data-filter="web">Web Apps</button>
             </div>
         </div>
     </section>
 
     {{-- ═══════════════════════════════════════════════
-         FEATURED — FLUXSENSE (Full-width hero card)
+         FEATURED — PRIMER ANALYZER
     ═══════════════════════════════════════════════ --}}
     <section class="section-lg cs-featured-section">
         <div class="container">
-            <div class="cs-featured-card card" data-reveal="fade-up" data-filter-tags="iot ai-ml">
+            <div class="cs-featured-card card" data-reveal="fade-up" data-filter-tags="defense cv">
 
-                <div class="cs-featured-thumb">
-                    {{-- Replace with: <img src="{{ asset('images/case-fluxsense.webp') }}" alt="FluxSense Smart Agriculture Dashboard"> --}}
-                    <div class="cs-thumb-placeholder cs-thumb-fluxsense">
-                        <span class="cs-thumb-icon" aria-hidden="true">🌾</span>
-                        <span class="cs-thumb-label">Smart Agriculture Platform</span>
-                    </div>
+                <div class="cs-featured-thumb has-image">
+                    <img src="{{ asset('images/projects/primer-analyzer.jpg') }}"
+                         alt="Primer Analyzer test equipment used for electrical and mechanical testing"
+                         width="1200" height="900" loading="lazy">
                     <div class="cs-featured-badge">Featured Project</div>
                 </div>
 
                 <div class="cs-featured-body">
                     <div class="cs-card-meta-row">
-                        <span class="meta-chip">IoT Systems</span>
-                        <span class="meta-chip">AI / ML</span>
-                        <span class="meta-chip">Cloud</span>
+                        <span class="meta-chip">Defense Test Equipment</span>
+                        <span class="meta-chip">Desktop Software</span>
+                        <span class="meta-chip">Hardware Integration</span>
                         <span class="cs-card-year">2024</span>
                     </div>
 
-                    <h2 class="cs-featured-title glitch-ready">FluxSense — Cognitive IoT Platform for Precision Agriculture</h2>
-                    <p class="cs-featured-desc">A Pakistani agri-tech startup needed to move beyond manual crop monitoring. We designed and built FluxSense: a full-stack IoT platform with edge-AI sensors, MQTT telemetry, and a real-time ML inference engine that predicts soil health, irrigation need, and pest risk — all visible through a single farmer-facing dashboard.</p>
+                    <h2 class="cs-featured-title glitch-ready">Primer Analyzer — Test &amp; Reporting System</h2>
+                    <p class="cs-featured-desc">
+                        A software-assisted test system for primers that performs four electrical
+                        tests and one mechanical test, then generates structured reports. The system
+                        was delivered for Pakistan Army Ordnance Corps through CARE Lab at The Islamia
+                        University of Bahawalpur.
+                    </p>
 
                     <div class="cs-result-pills">
                         <div class="cs-result-pill">
-                            <span class="cs-result-num">34<span class="cs-result-unit">%</span></span>
-                            <span class="cs-result-text">Reduction in water usage</span>
+                            <span class="cs-result-num">5</span>
+                            <span class="cs-result-text">Test routines</span>
                         </div>
                         <div class="cs-result-pill">
-                            <span class="cs-result-num">2.1<span class="cs-result-unit">×</span></span>
-                            <span class="cs-result-text">Crop yield improvement</span>
+                            <span class="cs-result-num">1</span>
+                            <span class="cs-result-text">Reporting workflow</span>
                         </div>
                         <div class="cs-result-pill">
-                            <span class="cs-result-num">99<span class="cs-result-unit">%</span></span>
-                            <span class="cs-result-text">Sensor uptime over 6 months</span>
+                            <span class="cs-result-num">CARE</span>
+                            <span class="cs-result-text">Delivery attribution</span>
                         </div>
                     </div>
 
                     <div class="cs-tech-stack-row">
                         <span class="cs-stack-label">Stack:</span>
-                        <span class="ts-chip">ESP32</span>
-                        <span class="ts-chip">MQTT</span>
                         <span class="ts-chip">Python</span>
-                        <span class="ts-chip">TensorFlow Lite</span>
-                        <span class="ts-chip">Laravel</span>
-                        <span class="ts-chip">AWS IoT Core</span>
-                        <span class="ts-chip">React</span>
+                        <span class="ts-chip">PyQt5</span>
+                        <span class="ts-chip">Hardware Comms</span>
+                        <span class="ts-chip">Report Generation</span>
                     </div>
 
                     <div class="cs-featured-actions">
-                        <a href="#fluxsense-detail" class="btn btn-primary">
-                            Read Full Case Study <span aria-hidden="true">↗</span>
+                        <a href="#primer-detail" class="btn btn-primary">
+                            Read the Case Study <span aria-hidden="true">↗</span>
                         </a>
                         <a href="{{ route('contact') }}" class="btn btn-ghost">
-                            Start a Similar Project
+                            Discuss a Similar System
                         </a>
                     </div>
                 </div>
@@ -135,195 +144,308 @@
     </section>
 
     {{-- ═══════════════════════════════════════════════
-         CASE STUDY GRID — All Projects
+         CASE STUDY GRID
     ═══════════════════════════════════════════════ --}}
     <section class="section-lg cs-grid-section">
         <div class="container">
 
             <div class="section-head" data-reveal="fade-up">
-                <span class="tag-label">All Projects</span>
-                <h2 class="glitch-ready">The Work That Defines Us</h2>
-                <p class="section-head-sub">Every project in this grid is a problem that kept someone up at night — until we solved it.</p>
+                <span class="tag-label">More Work</span>
+                <h2 class="glitch-ready">Selected Projects</h2>
+                <p class="section-head-sub">
+                    A mix of commercial, research, and CARE Lab work. The delivery context is
+                    included because it changes what the project actually demonstrates.
+                </p>
             </div>
 
             <div class="cs-grid" id="csGrid" data-stagger>
 
-                {{-- CARD 1: VFD Control System --}}
-                <article class="cs-card card" data-filter-tags="firmware iot" data-reveal="fade-up">
-                    <div class="cs-card-thumb cs-thumb-vfd">
-                        {{-- Replace: <img src="{{ asset('images/case-vfd.webp') }}" alt="VFD Control System"> --}}
-                        <span class="cs-thumb-icon" aria-hidden="true">⚙️</span>
+                {{-- Shell Analyzer --}}
+                <article class="cs-card card" data-filter-tags="defense cv" data-reveal="fade-up">
+                    <div class="cs-card-thumb has-image">
+                        <img src="{{ asset('images/projects/shell-analyzer-dashboard.png') }}"
+                             alt="Shell Analyzer inspection dashboard"
+                             width="1200" height="640" loading="lazy">
+                    </div>
+                    <div class="cs-card-body">
+                        <div class="cs-card-meta-row">
+                            <span class="meta-chip">Defense</span>
+                            <span class="meta-chip">Computer Vision</span>
+                            <span class="cs-card-year">2024</span>
+                        </div>
+                        <h3 class="cs-card-title">Shell Analyzer — Corrosion Inspection</h3>
+                        <p class="cs-card-desc">
+                            Image-processing software that analyses shell surfaces, identifies
+                            corrosion types and grades, and produces inspection reports. Delivered
+                            for Pakistan Army Ordnance Corps through CARE Lab.
+                        </p>
+                        <div class="cs-card-outcomes">
+                            <span class="cs-outcome"><span class="cs-outcome-num">OpenCV</span> Image analysis</span>
+                            <span class="cs-outcome"><span class="cs-outcome-num">CARE</span> Delivery context</span>
+                        </div>
+                        <div class="cs-card-footer">
+                            <div class="cs-card-chips">
+                                <span class="ts-chip">Python</span>
+                                <span class="ts-chip">OpenCV</span>
+                                <span class="ts-chip">PyQt5</span>
+                            </div>
+                            <a href="{{ route('projects') }}" class="cs-card-link">
+                                Project Details <span aria-hidden="true">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                {{-- Christie Battery --}}
+                <article class="cs-card card" data-filter-tags="defense" data-reveal="fade-up">
+                    <div class="cs-card-thumb has-image">
+                        <img src="{{ asset('images/projects/christie-battery-analyzer.jpg') }}"
+                             alt="Christie aircraft battery charger and analyzer unit"
+                             width="1200" height="900" loading="lazy">
+                    </div>
+                    <div class="cs-card-body">
+                        <div class="cs-card-meta-row">
+                            <span class="meta-chip">Defense</span>
+                            <span class="meta-chip">Embedded</span>
+                            <span class="cs-card-year">2023</span>
+                        </div>
+                        <h3 class="cs-card-title">Aircraft Battery Charger &amp; Analyzer Upgrade</h3>
+                        <p class="cs-card-desc">
+                            Rehabilitation of a Christie aircraft battery charger/analyzer with a
+                            Raspberry Pi controller, touch display, and monitoring software. Delivered
+                            for Pakistan Army Ordnance Corps through CARE Lab.
+                        </p>
+                        <div class="cs-card-outcomes">
+                            <span class="cs-outcome"><span class="cs-outcome-num">Raspberry Pi</span> Controller</span>
+                            <span class="cs-outcome"><span class="cs-outcome-num">CARE</span> Delivery context</span>
+                        </div>
+                        <div class="cs-card-footer">
+                            <div class="cs-card-chips">
+                                <span class="ts-chip">Python</span>
+                                <span class="ts-chip">Raspberry Pi</span>
+                                <span class="ts-chip">Touch UI</span>
+                            </div>
+                            <a href="{{ route('projects') }}" class="cs-card-link">
+                                Project Details <span aria-hidden="true">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                {{-- Flock Sense AI --}}
+                <article class="cs-card card" data-filter-tags="cv" data-reveal="fade-up">
+                    <div class="cs-card-thumb has-image">
+                        <img src="{{ asset('images/projects/flock-sense-ai-poultry.jpg') }}"
+                             alt="Chicken in a farm environment, representative of the poultry imagery used for weight-estimation research"
+                             width="1200" height="800" loading="lazy">
+                    </div>
+                    <div class="cs-card-body">
+                        <div class="cs-card-meta-row">
+                            <span class="meta-chip">Computer Vision</span>
+                            <span class="meta-chip">Research Contract</span>
+                            <span class="cs-card-year">2025</span>
+                        </div>
+                        <h3 class="cs-card-title">Flock Sense AI — Broiler Weight Estimation</h3>
+                        <p class="cs-card-desc">
+                            The AI extension of the Flock Sense poultry IoT platform. A data-collection
+                            and inference pipeline estimates broiler weight from camera imagery, delivered
+                            under a research contract at DeepEmbed Research Lab.
+                        </p>
+                        <div class="cs-card-outcomes">
+                            <span class="cs-outcome"><span class="cs-outcome-num">Python</span> Data pipeline</span>
+                            <span class="cs-outcome"><span class="cs-outcome-num">DeepEmbed</span> Contract</span>
+                        </div>
+                        <div class="cs-card-footer">
+                            <div class="cs-card-chips">
+                                <span class="ts-chip">Python</span>
+                                <span class="ts-chip">OpenCV</span>
+                                <span class="ts-chip">Open3D</span>
+                            </div>
+                            <a href="{{ route('projects') }}" class="cs-card-link">
+                                Project Details <span aria-hidden="true">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                {{-- VFD --}}
+                <article class="cs-card card" data-filter-tags="defense iot" data-reveal="fade-up">
+                    <div class="cs-card-thumb has-image">
+                        <img src="{{ asset('images/projects/inverter-ac-repair.jpg') }}"
+                             alt="Inverter control board inspected during a VFD repair and testing workflow"
+                             width="450" height="600" loading="lazy">
                     </div>
                     <div class="cs-card-body">
                         <div class="cs-card-meta-row">
                             <span class="meta-chip">Firmware</span>
-                            <span class="meta-chip">IoT</span>
-                            <span class="cs-card-year">2024</span>
+                            <span class="meta-chip">Industrial</span>
+                            <span class="cs-card-year">2025</span>
                         </div>
-                        <h3 class="cs-card-title">VFD Motor Intelligence — Predictive Fault Detection</h3>
-                        <p class="cs-card-desc">Embedded a real-time vibration analysis model into STM32-based variable frequency drives. Fault warnings now appear 48 hours before mechanical failure.</p>
+                        <h3 class="cs-card-title">VFD Remote Control System</h3>
+                        <p class="cs-card-desc">
+                            ESP32 MODBUS firmware, a Laravel backend, and a Flutter client for remote
+                            monitoring and control of Variable Frequency Drives in an industrial
+                            setting.
+                        </p>
                         <div class="cs-card-outcomes">
-                            <span class="cs-outcome"><span class="cs-outcome-num">48h</span> Early fault warning</span>
-                            <span class="cs-outcome"><span class="cs-outcome-num">60%</span> Less downtime</span>
-                        </div>
-                        <div class="cs-card-footer">
-                            <div class="cs-card-chips">
-                                <span class="ts-chip">STM32</span>
-                                <span class="ts-chip">C/C++</span>
-                                <span class="ts-chip">DSP</span>
-                            </div>
-                            <a href="#vfd-detail" class="cs-card-link">
-                                View Case <span aria-hidden="true">→</span>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                {{-- CARD 2: SaaS Analytics Platform --}}
-                <article class="cs-card card" data-filter-tags="cloud ai-ml web" data-reveal="fade-up">
-                    <div class="cs-card-thumb cs-thumb-saas">
-                        <span class="cs-thumb-icon" aria-hidden="true">📊</span>
-                    </div>
-                    <div class="cs-card-body">
-                        <div class="cs-card-meta-row">
-                            <span class="meta-chip">Cloud & SaaS</span>
-                            <span class="meta-chip">AI / ML</span>
-                            <span class="cs-card-year">2023</span>
-                        </div>
-                        <h3 class="cs-card-title">PulseBoard — Real-Time Business Intelligence SaaS</h3>
-                        <p class="cs-card-desc">Built a multi-tenant analytics SaaS for e-commerce brands. Ingests Shopify + custom APIs, runs ML anomaly detection, and visualises KPIs with sub-second latency.</p>
-                        <div class="cs-card-outcomes">
-                            <span class="cs-outcome"><span class="cs-outcome-num">12ms</span> P95 dashboard load</span>
-                            <span class="cs-outcome"><span class="cs-outcome-num">3×</span> Revenue insights speed</span>
-                        </div>
-                        <div class="cs-card-footer">
-                            <div class="cs-card-chips">
-                                <span class="ts-chip">Laravel</span>
-                                <span class="ts-chip">Python</span>
-                                <span class="ts-chip">AWS</span>
-                            </div>
-                            <a href="#pulseboard-detail" class="cs-card-link">
-                                View Case <span aria-hidden="true">→</span>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                {{-- CARD 3: Mobile Health App --}}
-                <article class="cs-card card" data-filter-tags="mobile ai-ml" data-reveal="fade-up">
-                    <div class="cs-card-thumb cs-thumb-health">
-                        <span class="cs-thumb-icon" aria-hidden="true">🩺</span>
-                    </div>
-                    <div class="cs-card-body">
-                        <div class="cs-card-meta-row">
-                            <span class="meta-chip">Mobile</span>
-                            <span class="meta-chip">AI / ML</span>
-                            <span class="cs-card-year">2023</span>
-                        </div>
-                        <h3 class="cs-card-title">MediTrack — AI-Assisted Patient Monitoring App</h3>
-                        <p class="cs-card-desc">Cross-platform mobile app for a private clinic network. Wearable data feeds an on-device ML model for early deterioration alerts, with offline-first architecture for low-connectivity environments.</p>
-                        <div class="cs-card-outcomes">
-                            <span class="cs-outcome"><span class="cs-outcome-num">4.8★</span> App Store rating</span>
-                            <span class="cs-outcome"><span class="cs-outcome-num">22%</span> Faster triage time</span>
-                        </div>
-                        <div class="cs-card-footer">
-                            <div class="cs-card-chips">
-                                <span class="ts-chip">Flutter</span>
-                                <span class="ts-chip">TFLite</span>
-                                <span class="ts-chip">Firebase</span>
-                            </div>
-                            <a href="#meditrack-detail" class="cs-card-link">
-                                View Case <span aria-hidden="true">→</span>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                {{-- CARD 4: Smart Grid Monitoring --}}
-                <article class="cs-card card" data-filter-tags="iot firmware cloud" data-reveal="fade-up">
-                    <div class="cs-card-thumb cs-thumb-grid">
-                        <span class="cs-thumb-icon" aria-hidden="true">⚡</span>
-                    </div>
-                    <div class="cs-card-body">
-                        <div class="cs-card-meta-row">
-                            <span class="meta-chip">IoT Systems</span>
-                            <span class="meta-chip">Cloud</span>
-                            <span class="cs-card-year">2023</span>
-                        </div>
-                        <h3 class="cs-card-title">GridWatch — Smart Energy Monitoring Network</h3>
-                        <p class="cs-card-desc">Deployed 200+ edge nodes across a regional utility's distribution network. Each node streams power quality data to a central cloud dashboard with automated anomaly reporting.</p>
-                        <div class="cs-card-outcomes">
-                            <span class="cs-outcome"><span class="cs-outcome-num">200+</span> Edge nodes live</span>
-                            <span class="cs-outcome"><span class="cs-outcome-num">18%</span> Fault resolution speed</span>
+                            <span class="cs-outcome"><span class="cs-outcome-num">ESP32</span> Edge firmware</span>
+                            <span class="cs-outcome"><span class="cs-outcome-num">Flutter</span> Mobile control</span>
                         </div>
                         <div class="cs-card-footer">
                             <div class="cs-card-chips">
                                 <span class="ts-chip">ESP32</span>
-                                <span class="ts-chip">LoRaWAN</span>
-                                <span class="ts-chip">Node.js</span>
+                                <span class="ts-chip">MODBUS</span>
+                                <span class="ts-chip">Laravel</span>
+                                <span class="ts-chip">Flutter</span>
                             </div>
-                            <a href="#gridwatch-detail" class="cs-card-link">
-                                View Case <span aria-hidden="true">→</span>
+                            <a href="{{ route('projects') }}" class="cs-card-link">
+                                Project Details <span aria-hidden="true">→</span>
                             </a>
                         </div>
                     </div>
                 </article>
 
-                {{-- CARD 5: E-commerce Web App --}}
-                <article class="cs-card card" data-filter-tags="web cloud" data-reveal="fade-up">
-                    <div class="cs-card-thumb cs-thumb-ecom">
-                        <span class="cs-thumb-icon" aria-hidden="true">🛒</span>
+                {{-- VibCare / CARE platforms --}}
+                <article class="cs-card card" data-filter-tags="iot saas" data-reveal="fade-up">
+                    <div class="cs-card-thumb has-image">
+                        <img src="{{ asset('images/projects/vibcare-vibration-analysis.jpg') }}"
+                             alt="VibCare vibration analysis visualisation"
+                             width="1200" height="900" loading="lazy">
                     </div>
                     <div class="cs-card-body">
                         <div class="cs-card-meta-row">
-                            <span class="meta-chip">Web Apps</span>
-                            <span class="meta-chip">Cloud & SaaS</span>
-                            <span class="cs-card-year">2022</span>
+                            <span class="meta-chip">IoT Platforms</span>
+                            <span class="meta-chip">CARE Lab</span>
+                            <span class="cs-card-year">2023 – 2024</span>
                         </div>
-                        <h3 class="cs-card-title">NestMart — High-Performance Multi-Vendor Marketplace</h3>
-                        <p class="cs-card-desc">Built a scalable multi-vendor marketplace from scratch for a Middle East retail group. Handles 50k+ daily sessions with a sub-200ms TTFB, full payment gateway integration, and Arabic RTL support.</p>
+                        <h3 class="cs-card-title">VibCare, PowerEye, Sentron &amp; SolaCon</h3>
+                        <p class="cs-card-desc">
+                            Contributions to four CARE Lab monitoring platforms: VibCare (vibration
+                            diagnostics), PowerEye (energy monitoring), Sentron (sensor monitoring),
+                            and SolaCon (solar/VFD automation).
+                        </p>
                         <div class="cs-card-outcomes">
-                            <span class="cs-outcome"><span class="cs-outcome-num">50k+</span> Daily active sessions</span>
-                            <span class="cs-outcome"><span class="cs-outcome-num">190ms</span> Average TTFB</span>
+                            <span class="cs-outcome"><span class="cs-outcome-num">4</span> Platforms</span>
+                            <span class="cs-outcome"><span class="cs-outcome-num">CARE</span> Delivery context</span>
                         </div>
                         <div class="cs-card-footer">
                             <div class="cs-card-chips">
                                 <span class="ts-chip">Laravel</span>
-                                <span class="ts-chip">Vue.js</span>
-                                <span class="ts-chip">Redis</span>
+                                <span class="ts-chip">MySQL</span>
+                                <span class="ts-chip">Flutter</span>
                             </div>
-                            <a href="#nestmart-detail" class="cs-card-link">
-                                View Case <span aria-hidden="true">→</span>
+                            <a href="{{ route('projects') }}" class="cs-card-link">
+                                Project Details <span aria-hidden="true">→</span>
                             </a>
                         </div>
                     </div>
                 </article>
 
-                {{-- CARD 6: R&D Firmware --}}
-                <article class="cs-card card" data-filter-tags="firmware ai-ml" data-reveal="fade-up">
-                    <div class="cs-card-thumb cs-thumb-rd">
-                        <span class="cs-thumb-icon" aria-hidden="true">🔬</span>
+                {{-- RealSense --}}
+                <article class="cs-card card" data-filter-tags="cv" data-reveal="fade-up">
+                    <div class="cs-card-thumb has-image">
+                        <img src="{{ asset('images/projects/rgbd-point-cloud.png') }}"
+                             alt="Illustration of an RGB-D point cloud and depth-sensing grid"
+                             width="1200" height="800" loading="lazy">
                     </div>
                     <div class="cs-card-body">
                         <div class="cs-card-meta-row">
-                            <span class="meta-chip">Firmware</span>
-                            <span class="meta-chip">AI / ML</span>
-                            <span class="cs-card-year">2022</span>
+                            <span class="meta-chip">Computer Vision</span>
+                            <span class="meta-chip">R&amp;D</span>
+                            <span class="cs-card-year">2025</span>
                         </div>
-                        <h3 class="cs-card-title">AeroSense — On-Device Air Quality Classification</h3>
-                        <p class="cs-card-desc">Developed a quantised neural network running directly on Cortex-M4 to classify air quality from multi-gas sensor arrays — no cloud dependency, no latency, 3µA average current draw.</p>
+                        <h3 class="cs-card-title">Intel RealSense RGB-D Pipeline</h3>
+                        <p class="cs-card-desc">
+                            Python acquisition and streaming pipeline for the Intel RealSense D435i:
+                            RGB-D frame capture, point-cloud generation, surface reconstruction, and
+                            clustering with OpenCV and Open3D.
+                        </p>
                         <div class="cs-card-outcomes">
-                            <span class="cs-outcome"><span class="cs-outcome-num">3µA</span> Average draw</span>
-                            <span class="cs-outcome"><span class="cs-outcome-num">94%</span> Classification accuracy</span>
+                            <span class="cs-outcome"><span class="cs-outcome-num">RGB-D</span> Camera capture</span>
+                            <span class="cs-outcome"><span class="cs-outcome-num">Open3D</span> Point clouds</span>
                         </div>
                         <div class="cs-card-footer">
                             <div class="cs-card-chips">
-                                <span class="ts-chip">Cortex-M4</span>
-                                <span class="ts-chip">Edge Impulse</span>
-                                <span class="ts-chip">C</span>
+                                <span class="ts-chip">Python</span>
+                                <span class="ts-chip">OpenCV</span>
+                                <span class="ts-chip">Open3D</span>
+                                <span class="ts-chip">RealSense SDK</span>
                             </div>
-                            <a href="#aerosense-detail" class="cs-card-link">
-                                View Case <span aria-hidden="true">→</span>
+                            <a href="{{ route('projects') }}" class="cs-card-link">
+                                Project Details <span aria-hidden="true">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                {{-- Mobile apps --}}
+                <article class="cs-card card" data-filter-tags="mobile iot" data-reveal="fade-up">
+                    <div class="cs-card-thumb has-image">
+                        <img src="{{ asset('images/projects/smart-door-lock.jpg') }}"
+                             alt="Smart door lock prototype used in an IoT device-control project"
+                             width="1200" height="900" loading="lazy">
+                    </div>
+                    <div class="cs-card-body">
+                        <div class="cs-card-meta-row">
+                            <span class="meta-chip">Mobile</span>
+                            <span class="meta-chip">IoT</span>
+                            <span class="cs-card-year">2023 – 2024</span>
+                        </div>
+                        <h3 class="cs-card-title">IoT Device Control Mobile Apps</h3>
+                        <p class="cs-card-desc">
+                            Flutter applications for monitoring and controlling connected devices —
+                            including electric bikes, smart water dispensers, and home automation
+                            systems — paired with backends for device communication and state.
+                        </p>
+                        <div class="cs-card-outcomes">
+                            <span class="cs-outcome"><span class="cs-outcome-num">Flutter</span> Cross-platform</span>
+                            <span class="cs-outcome"><span class="cs-outcome-num">Real-time</span> Device control</span>
+                        </div>
+                        <div class="cs-card-footer">
+                            <div class="cs-card-chips">
+                                <span class="ts-chip">Flutter</span>
+                                <span class="ts-chip">Dart</span>
+                                <span class="ts-chip">REST APIs</span>
+                            </div>
+                            <a href="{{ route('projects') }}" class="cs-card-link">
+                                Project Details <span aria-hidden="true">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                {{-- SaaS --}}
+                <article class="cs-card card" data-filter-tags="saas cloud" data-reveal="fade-up">
+                    <div class="cs-card-thumb has-image">
+                        <img src="{{ asset('images/projects/saas-server-infrastructure.jpg') }}"
+                             alt="Server infrastructure representing multi-tenant SaaS backend work"
+                             width="1200" height="800" loading="lazy">
+                    </div>
+                    <div class="cs-card-body">
+                        <div class="cs-card-meta-row">
+                            <span class="meta-chip">SaaS</span>
+                            <span class="meta-chip">Platform Engineering</span>
+                            <span class="cs-card-year">2023 – 2024</span>
+                        </div>
+                        <h3 class="cs-card-title">Multi-Tenant SaaS Platform Work</h3>
+                        <p class="cs-card-desc">
+                            Backend work across five SaaS platforms: tenant isolation, role-based
+                            access, Stripe subscriptions, OTA update management, and time-series
+                            aggregation for connected devices.
+                        </p>
+                        <div class="cs-card-outcomes">
+                            <span class="cs-outcome"><span class="cs-outcome-num">5</span> Platforms</span>
+                            <span class="cs-outcome"><span class="cs-outcome-num">Laravel</span> Backend</span>
+                        </div>
+                        <div class="cs-card-footer">
+                            <div class="cs-card-chips">
+                                <span class="ts-chip">Laravel</span>
+                                <span class="ts-chip">Stripe</span>
+                                <span class="ts-chip">MySQL</span>
+                                <span class="ts-chip">AWS</span>
+                            </div>
+                            <a href="{{ route('projects') }}" class="cs-card-link">
+                                Project Details <span aria-hidden="true">→</span>
                             </a>
                         </div>
                     </div>
@@ -334,7 +456,7 @@
             {{-- No results state (shown by JS when filter returns nothing) --}}
             <div class="cs-no-results" id="csNoResults" style="display:none;">
                 <span class="cs-no-results-icon" aria-hidden="true">🔭</span>
-                <p>No case studies match that filter yet — more are being added.</p>
+                <p>No case studies match that filter yet.</p>
                 <a href="{{ route('contact') }}" class="btn btn-ghost">Discuss Your Project</a>
             </div>
 
@@ -342,14 +464,14 @@
     </section>
 
     {{-- ═══════════════════════════════════════════════
-         DEEP DIVE — FluxSense Detail
+         DEEP DIVE — PRIMER ANALYZER
     ═══════════════════════════════════════════════ --}}
-    <section class="section-lg section-alt cs-detail-section" id="fluxsense-detail">
+    <section class="section-lg section-alt cs-detail-section" id="primer-detail">
         <div class="container">
 
             <div class="cs-detail-header" data-reveal="fade-up">
                 <span class="tag-label">Deep Dive</span>
-                <h2 class="glitch-ready">FluxSense — Full Case Study</h2>
+                <h2 class="glitch-ready">Primer Analyzer — Full Case Study</h2>
             </div>
 
             <div class="cs-detail-grid">
@@ -359,24 +481,39 @@
 
                     <div class="cs-detail-block">
                         <h3 class="cs-detail-h3">The Problem</h3>
-                        <p>A Lahore-based agri-tech startup had 800+ smallholder farmers using paper-based irrigation logs. Crop losses from over-watering and delayed pest response were running at 15–20% per season. They needed a system that a farmer with no technical background could trust and use.</p>
+                        <p>
+                            Defense test workflows depend on repeatable measurements and consistent
+                            reporting. When test steps are performed manually, results are harder to
+                            compare across batches and harder to audit later. The Primer Analyzer was
+                            built to give operators a guided sequence for five tests and a structured
+                            report at the end.
+                        </p>
                     </div>
 
                     <div class="cs-detail-block">
-                        <h3 class="cs-detail-h3">Our Approach</h3>
-                        <p>We broke the challenge into three layers: edge hardware that survives a Pakistani summer (55°C+), a cloud pipeline that works on 2G, and a dashboard a non-literate farmer can read in Urdu.</p>
+                        <h3 class="cs-detail-h3">The Approach</h3>
+                        <p>
+                            The system is a desktop application that communicates with the test
+                            hardware, runs the required test routines, and records the results. The
+                            scope covered four electrical tests and one mechanical test.
+                        </p>
                         <ul class="cs-detail-list">
-                            <li>Designed custom PCB with soil NPK, moisture, temperature, and humidity sensors.</li>
-                            <li>Wrote bare-metal firmware in C with deep-sleep scheduling (3-minute wake cycles, 18-month battery life on 3×AA).</li>
-                            <li>Built MQTT broker on AWS IoT Core with retry logic for lossy 2G networks.</li>
-                            <li>Trained a TensorFlow Lite model on 18 months of historical crop data for irrigation and pest risk prediction.</li>
-                            <li>Deployed a Laravel API + React dashboard with Urdu i18n and SMS alert fallback.</li>
+                            <li>Desktop operator interface built with Python and PyQt5.</li>
+                            <li>Hardware communication for test execution and result capture.</li>
+                            <li>Four electrical test routines and one mechanical test routine.</li>
+                            <li>Structured report generation from the captured results.</li>
+                            <li>Delivered through CARE Lab for Pakistan Army Ordnance Corps.</li>
                         </ul>
                     </div>
 
                     <div class="cs-detail-block">
                         <h3 class="cs-detail-h3">The Outcome</h3>
-                        <p>After a 6-month pilot across 120 farms, water usage dropped by 34%, average yield improved by 2.1×, and the platform achieved 99% sensor uptime despite challenging field conditions. The client secured Series A funding citing FluxSense as a core differentiator.</p>
+                        <p>
+                            The Primer Analyzer was delivered as a working test and reporting system.
+                            It gives operators a defined test sequence and produces a report from the
+                            captured measurements. The project is presented here as CARE Lab work;
+                            the client relationship belongs to CARE Lab, not Cosmos Algos.
+                        </p>
                     </div>
 
                 </div>
@@ -385,58 +522,52 @@
                 <aside class="cs-detail-sidebar" data-reveal="fade-left">
 
                     <div class="cs-sidebar-block card">
-                        <h4 class="cs-sidebar-title">Project Snapshot</h4>
+                        <h3 class="cs-sidebar-title">Project Snapshot</h3>
                         <dl class="cs-snapshot-list">
                             <div class="cs-snapshot-row">
                                 <dt>Client</dt>
-                                <dd>Agri-tech startup, Lahore</dd>
+                                <dd>Pakistan Army Ordnance Corps (via CARE Lab)</dd>
                             </div>
                             <div class="cs-snapshot-row">
-                                <dt>Duration</dt>
-                                <dd>9 months (Aug 2023 – Apr 2024)</dd>
+                                <dt>Platform</dt>
+                                <dd>Desktop test &amp; reporting software</dd>
                             </div>
                             <div class="cs-snapshot-row">
-                                <dt>Team Size</dt>
-                                <dd>4 engineers + 1 PM</dd>
+                                <dt>Role</dt>
+                                <dd>Software development</dd>
                             </div>
                             <div class="cs-snapshot-row">
-                                <dt>Delivery</dt>
-                                <dd>On time, within budget</dd>
+                                <dt>Status</dt>
+                                <dd>Delivered, 2024</dd>
                             </div>
                             <div class="cs-snapshot-row">
                                 <dt>Region</dt>
-                                <dd>Punjab, Pakistan</dd>
+                                <dd>Pakistan</dd>
                             </div>
                         </dl>
                     </div>
 
                     <div class="cs-sidebar-block card">
-                        <h4 class="cs-sidebar-title">Technology Stack</h4>
+                        <h3 class="cs-sidebar-title">Technology Stack</h3>
                         <div class="cs-sidebar-chips">
-                            <span class="ts-chip">ESP32</span>
-                            <span class="ts-chip">FreeRTOS</span>
-                            <span class="ts-chip">C / C++</span>
-                            <span class="ts-chip">MQTT</span>
-                            <span class="ts-chip">AWS IoT Core</span>
                             <span class="ts-chip">Python</span>
-                            <span class="ts-chip">TensorFlow Lite</span>
-                            <span class="ts-chip">Laravel 11</span>
-                            <span class="ts-chip">React</span>
-                            <span class="ts-chip">MySQL</span>
-                            <span class="ts-chip">Redis</span>
-                            <span class="ts-chip">Twilio SMS</span>
+                            <span class="ts-chip">PyQt5</span>
+                            <span class="ts-chip">Hardware Comms</span>
+                            <span class="ts-chip">Report Generation</span>
                         </div>
                     </div>
 
-                    <div class="cs-sidebar-block card cs-sidebar-quote">
-                        <blockquote class="cs-quote-text">
-                            "FluxSense changed how our farmers think about data. They don't call it a sensor anymore — they call it their extra worker."
-                        </blockquote>
-                        <cite class="cs-quote-cite">— CEO, FluxSense (client)</cite>
+                    <div class="cs-sidebar-block card">
+                        <h3 class="cs-sidebar-title">Attribution Note</h3>
+                        <p style="color:var(--muted);font-size:.85rem;line-height:1.65;margin:0;">
+                            This project was delivered through the Center of Automation, Robotics
+                            &amp; Embedded Systems (CARE Lab) at The Islamia University of Bahawalpur.
+                            Cosmos Algos does not claim the client relationship as its own.
+                        </p>
                     </div>
 
                     <a href="{{ route('contact') }}" class="btn btn-primary btn-full" style="text-align:center;">
-                        Build Something Like This <span aria-hidden="true">↗</span>
+                        Discuss a Similar System <span aria-hidden="true">↗</span>
                     </a>
 
                 </aside>
@@ -446,89 +577,107 @@
     </section>
 
     {{-- ═══════════════════════════════════════════════
-         PROCESS CALLOUT
+         PROCESS
     ═══════════════════════════════════════════════ --}}
     <section class="section-lg cs-process-section">
         <div class="container">
             <div class="section-head-center" data-reveal="fade-up">
                 <span class="tag-label">How We Work</span>
-                <h2 class="glitch-ready">The Cosmos Algos Method</h2>
-                <p class="section-head-sub">Every project in this page followed the same rigorous process — and got the same quality of output.</p>
+                <h2 class="glitch-ready">A Practical Delivery Process</h2>
+                <p class="section-head-sub">
+                    A general description of how an engagement is run — not a claim that every
+                    project used an identical process.
+                </p>
             </div>
 
             <div class="cs-process-grid" data-stagger>
                 <div class="cs-process-step card">
                     <div class="cs-process-num">01</div>
                     <div class="cs-process-icon" aria-hidden="true">🔍</div>
-                    <h4>Discovery & Scoping</h4>
-                    <p>We dig into your problem before touching a line of code. Root cause analysis, constraint mapping, and technology selection happen here.</p>
+                    <h3>Discovery &amp; Scoping</h3>
+                    <p>We define the problem, the constraints, and the riskiest assumptions before committing to a build.</p>
                 </div>
                 <div class="cs-process-step card">
                     <div class="cs-process-num">02</div>
                     <div class="cs-process-icon" aria-hidden="true">🏗️</div>
-                    <h4>Architecture & Design</h4>
-                    <p>System architecture, data flows, API contracts, and UI wireframes are locked before a sprint begins. No surprises mid-build.</p>
+                    <h3>Architecture &amp; Design</h3>
+                    <p>System boundaries, data flows, interfaces, and the hardware/software split are agreed early.</p>
                 </div>
                 <div class="cs-process-step card">
                     <div class="cs-process-num">03</div>
                     <div class="cs-process-icon" aria-hidden="true">🔧</div>
-                    <h4>Agile Build</h4>
-                    <p>Two-week sprints, weekly demos, and a shared project board you can check any time. You see progress — not promises.</p>
+                    <h3>Iterative Build</h3>
+                    <p>Work is delivered in reviewable increments, with demos and written status where the engagement allows.</p>
                 </div>
                 <div class="cs-process-step card">
                     <div class="cs-process-num">04</div>
                     <div class="cs-process-icon" aria-hidden="true">🚀</div>
-                    <h4>Launch & Support</h4>
-                    <p>Production deployment, documentation, and a support window. We don't disappear at go-live — we make sure it sticks.</p>
+                    <h3>Handover</h3>
+                    <p>Deployment, documentation, and an agreed support window. The goal is a system the client can operate.</p>
                 </div>
             </div>
         </div>
     </section>
 
     {{-- ═══════════════════════════════════════════════
-         TESTIMONIAL STRIP
+         ATTRIBUTION & EVIDENCE
     ═══════════════════════════════════════════════ --}}
     <section class="section-lg section-alt cs-testimonials-section">
         <div class="container">
             <div class="section-head-center" data-reveal="fade-up">
-                <span class="tag-label">What Clients Say</span>
-                <h2 class="glitch-ready">Don't Take Our Word for It</h2>
+                <span class="tag-label">Attribution &amp; Evidence</span>
+                <h2 class="glitch-ready">Who Delivered What</h2>
+                <p class="section-head-sub">
+                    We do not publish invented testimonials. Here is what can be verified instead.
+                </p>
             </div>
 
             <div class="cs-testimonial-grid" data-stagger>
 
                 <div class="cs-testimonial-card card">
-                    <div class="cs-testi-stars" aria-label="5 stars">★★★★★</div>
-                    <blockquote class="cs-testi-quote">"The team at Cosmos Algos didn't just build what we asked for — they challenged our assumptions and delivered something far better than we envisioned."</blockquote>
+                    <div class="cs-testi-stars" aria-hidden="true">CARE</div>
+                    <blockquote class="cs-testi-quote">
+                        Defense and industrial projects shown here were delivered through CARE Lab
+                        at The Islamia University of Bahawalpur. The client relationships belong to
+                        CARE Lab.
+                    </blockquote>
                     <div class="cs-testi-author">
-                        <div class="cs-testi-avatar" aria-hidden="true">AK</div>
+                        <div class="cs-testi-avatar" aria-hidden="true">CL</div>
                         <div>
-                            <strong>Ahmed Khan</strong>
-                            <span>CTO, NestMart</span>
+                            <strong>CARE Lab</strong>
+                            <span>Center of Automation, Robotics &amp; Embedded Systems</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="cs-testimonial-card card">
-                    <div class="cs-testi-stars" aria-label="5 stars">★★★★★</div>
-                    <blockquote class="cs-testi-quote">"Their embedded engineers know things that most software houses have never even heard of. The firmware they wrote for our VFD system has been running flawlessly for 14 months."</blockquote>
+                    <div class="cs-testi-stars" aria-hidden="true">R&amp;D</div>
+                    <blockquote class="cs-testi-quote">
+                        Flock Sense AI was delivered as an extension of the Flock Sense platform under
+                        a research contract at DeepEmbed Research Lab (July–August 2025). It is an AI
+                        research pipeline, not a client SaaS deployment.
+                    </blockquote>
                     <div class="cs-testi-author">
-                        <div class="cs-testi-avatar" aria-hidden="true">SR</div>
+                        <div class="cs-testi-avatar" aria-hidden="true">DE</div>
                         <div>
-                            <strong>Sana Rehman</strong>
-                            <span>Head of Engineering, Industrial client</span>
+                            <strong>DeepEmbed Research Lab</strong>
+                            <span>Research contract</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="cs-testimonial-card card">
-                    <div class="cs-testi-stars" aria-label="5 stars">★★★★★</div>
-                    <blockquote class="cs-testi-quote">"Six months in, we had a product our investors called 'the most technically impressive demo they'd seen from a Pakistani startup'. That's Cosmos Algos."</blockquote>
+                    <div class="cs-testi-stars" aria-hidden="true">REF</div>
+                    <blockquote class="cs-testi-quote">
+                        Need a reference? We will ask a past client whether they are willing to
+                        speak with you. Their consent comes first, and their contact details are
+                        not shared without it.
+                    </blockquote>
                     <div class="cs-testi-author">
-                        <div class="cs-testi-avatar" aria-hidden="true">FA</div>
+                        <div class="cs-testi-avatar" aria-hidden="true">→</div>
                         <div>
-                            <strong>Farhan Ali</strong>
-                            <span>CEO, FluxSense</span>
+                            <strong>Reference Requests</strong>
+                            <span><a href="{{ route('testimonials') }}" class="contact-link">How references work →</a></span>
                         </div>
                     </div>
                 </div>
@@ -545,11 +694,14 @@
             <div class="cs-cta-inner" data-reveal="zoom-in">
                 <div class="cs-cta-orb" aria-hidden="true"></div>
                 <span class="tag-label">Start Your Project</span>
-                <h2 class="cs-cta-h2 glitch-ready">Your Case Study Starts with a Conversation</h2>
-                <p class="cs-cta-sub">Every project above began with someone describing a problem they couldn't solve. Tell us yours.</p>
+                <h2 class="cs-cta-h2 glitch-ready">Tell Us About the Problem</h2>
+                <p class="cs-cta-sub">
+                    We will scope it, identify the technical risks, and tell you honestly whether
+                    we are the right fit.
+                </p>
                 <div class="cs-cta-actions">
                     <a href="{{ route('contact') }}" class="btn btn-primary">
-                        Get a Free Consultation <span aria-hidden="true">↗</span>
+                        Start a Conversation <span aria-hidden="true">↗</span>
                     </a>
                     <a href="{{ route('services') }}" class="btn btn-ghost">
                         Explore Our Services

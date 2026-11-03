@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Projects | Cosmos Algos')
-@section('meta_description', 'Explore real-world projects built by Cosmos Algos — IoT SaaS platforms, AI pipelines, industrial automation, embedded systems, and data acquisition.')
+@section('meta_description', 'Documented projects across IoT SaaS, applied AI, industrial automation, embedded systems, and data acquisition — with delivery context and attribution.')
 
 @section('content')
 
@@ -17,7 +17,7 @@
             <span class="tag-label">Our Work</span>
             <h1 class="page-hero-title">Projects & <span class="hero-h1-accent">Case Studies</span></h1>
             <p class="lead" style="max-width:640px;margin-top:1.2rem;">
-                From industrial automation to AI-powered pipelines — real systems built, shipped, and operating in the field.
+                From industrial automation to applied AI — documented systems built for industrial, research, and product environments.
             </p>
         </div>
     </section>
@@ -27,21 +27,29 @@
          ═══════════════════════════════════════════ --}}
     <section class="section section-alt section-sm">
         <div class="container">
-            <div class="proj-stats-row" data-reveal-group>
+            <div class="proj-stats-row" data-stagger>
                 <div class="proj-stat-item">
-                    <span class="proj-stat-num num" data-target="5">0</span><span class="proj-stat-unit">+</span>
+                    <span class="proj-stat-value">
+                        <span class="proj-stat-num num" data-target="{{ $stats['saas_platforms'] }}">0</span>
+                    </span>
                     <span class="proj-stat-label">SaaS Platforms Contributed</span>
                 </div>
                 <div class="proj-stat-item">
-                    <span class="proj-stat-num num" data-target="10">0</span><span class="proj-stat-unit">+</span>
-                    <span class="proj-stat-label">Industrial Projects Delivered</span>
+                    <span class="proj-stat-value">
+                        <span class="proj-stat-num num" data-target="{{ $stats['projects'] }}">0</span><span class="proj-stat-unit" aria-hidden="true">+</span>
+                    </span>
+                    <span class="proj-stat-label">Projects &amp; Engagements</span>
                 </div>
                 <div class="proj-stat-item">
-                    <span class="proj-stat-num num" data-target="3">0</span><span class="proj-stat-unit"></span>
-                    <span class="proj-stat-label">Research Collaborations</span>
+                    <span class="proj-stat-value">
+                        <span class="proj-stat-num num" data-target="{{ $stats['care_platforms'] }}">0</span>
+                    </span>
+                    <span class="proj-stat-label">CARE Lab Platforms</span>
                 </div>
                 <div class="proj-stat-item">
-                    <span class="proj-stat-num num" data-target="5">0</span><span class="proj-stat-unit">+</span>
+                    <span class="proj-stat-value">
+                        <span class="proj-stat-num num" data-target="{{ $stats['years_experience'] }}">0</span><span class="proj-stat-unit" aria-hidden="true">+</span>
+                    </span>
                     <span class="proj-stat-label">Years of Engineering</span>
                 </div>
             </div>
@@ -49,60 +57,67 @@
     </section>
 
     {{-- ═══════════════════════════════════════════
-         FEATURED PROJECT — FluxSense AI
+         FEATURED PROJECT — Flock Sense + Flock Sense AI
          ═══════════════════════════════════════════ --}}
     <section class="section section-lg">
         <div class="container">
             <div class="section-head" data-reveal="up">
-                <span class="tag-label">Featured Project</span>
-                <h2>Spotlight: FluxSense AI</h2>
+                <span class="tag-label">Featured Platform</span>
+                <h2>Spotlight: Flock Sense + Flock Sense AI</h2>
             </div>
 
             <div class="proj-featured-card card" data-reveal="up">
                 <div class="proj-featured-inner">
                     <div class="proj-featured-left">
-                        <div class="proj-featured-thumb">
-                            <div class="proj-thumb-icon">🧠</div>
+                        <div class="proj-featured-thumb has-image">
+                            <img src="{{ asset('images/projects/flock-sense-poultry.jpg') }}"
+                                 alt="Broiler chickens in a poultry house, representative of the Flock Sense platform environment"
+                                 width="1200" height="1600" loading="lazy">
                             <div class="proj-thumb-glow"></div>
                         </div>
                     </div>
                     <div class="proj-featured-right">
                         <div class="badge-row" style="margin-bottom:1rem;">
-                            <span class="badge">AI / ML</span>
-                            <span class="badge">IoT SaaS</span>
-                            <span class="badge">Laravel</span>
-                            <span class="badge">Poultry Tech</span>
+                            <span class="badge">Poultry IoT SaaS</span>
+                            <span class="badge">Computer Vision</span>
+                            <span class="badge">Research Contract</span>
+                            <span class="badge">Python</span>
                         </div>
-                        <h3 class="proj-featured-title">FluxSense AI — Poultry Farm Intelligence Platform</h3>
+                        <h3 class="proj-featured-title">Flock Sense + Flock Sense AI</h3>
                         <p class="proj-featured-desc">
-                            A full-stack IoT SaaS platform for intelligent poultry farm management. Built backend APIs,
-                            sensor data pipelines, and an AI inference layer for poultry growth prediction. The system
-                            connects IoT devices to a central cloud platform serving mobile apps and farm managers with
-                            real-time analytics and automated alerts.
+                            <strong>Flock Sense</strong> is the poultry IoT SaaS platform.
+                            <strong>Flock Sense AI</strong> is its AI-enabled extension: a
+                            data-collection and inference pipeline that estimates broiler weight from
+                            camera imagery. The AI work was delivered under a research contract at
+                            DeepEmbed Research Lab, while the platform remains the broader product context.
                         </p>
                         <div class="proj-meta-grid">
                             <div class="proj-meta-item">
-                                <span class="proj-meta-label">Role</span>
-                                <span class="proj-meta-val">Backend & API Engineer</span>
+                                <span class="proj-meta-label">Platform</span>
+                                <span class="proj-meta-val">Flock Sense · Poultry IoT SaaS</span>
+                            </div>
+                            <div class="proj-meta-item">
+                                <span class="proj-meta-label">AI Extension</span>
+                                <span class="proj-meta-val">Broiler weight estimation</span>
                             </div>
                             <div class="proj-meta-item">
                                 <span class="proj-meta-label">Stack</span>
-                                <span class="proj-meta-val">Laravel · MySQL · AWS · Flutter</span>
+                                <span class="proj-meta-val">Python · OpenCV · Open3D · RealSense</span>
                             </div>
                             <div class="proj-meta-item">
-                                <span class="proj-meta-label">Year</span>
-                                <span class="proj-meta-val">2024 – Present</span>
-                            </div>
-                            <div class="proj-meta-item">
-                                <span class="proj-meta-label">Type</span>
-                                <span class="proj-meta-val">IoT SaaS Platform</span>
+                                <span class="proj-meta-label">Delivery</span>
+                                <span class="proj-meta-val">DeepEmbed research contract · 2025</span>
                             </div>
                         </div>
                         <div class="proj-highlights">
-                            <div class="proj-highlight-item">✦ AI/ML growth prediction pipeline for poultry flocks</div>
-                            <div class="proj-highlight-item">✦ Real-time sensor data ingestion & time-series aggregation</div>
-                            <div class="proj-highlight-item">✦ Role-based access for farm managers, operators & admins</div>
-                            <div class="proj-highlight-item">✦ Reduced data query time from minutes to near-instant</div>
+                            <div class="proj-highlight-item">✦ Flock Sense provides the poultry operations and IoT platform context</div>
+                            <div class="proj-highlight-item">✦ Flock Sense AI adds camera-based broiler weight estimation</div>
+                            <div class="proj-highlight-item">✦ Structured RGB-D capture, dataset preparation, and inference workflow</div>
+                            <div class="proj-highlight-item">✦ AI work attributed to the DeepEmbed research contract</div>
+                        </div>
+                        <div class="proj-featured-actions">
+                            <a href="#all-projects" class="btn btn-primary">Explore Both Projects <span aria-hidden="true">↓</span></a>
+                            <a href="{{ route('contact') }}" class="btn btn-ghost">Discuss a Similar System</a>
                         </div>
                     </div>
                 </div>
@@ -117,7 +132,7 @@
         <div class="container">
             <div class="section-head" data-reveal="up">
                 <span class="tag-label">All Projects</span>
-                <h2>Work Across Every Domain</h2>
+                <h2>Work Across Several Domains</h2>
             </div>
 
             {{-- Filter tabs --}}
@@ -131,12 +146,14 @@
                 <button class="proj-filter-btn" data-filter="cloud">Cloud / APIs</button>
             </div>
 
-            <div class="proj-grid" id="projGrid" data-reveal-group>
+            <div class="proj-grid" id="projGrid" data-stagger>
 
                 {{-- ── 1. VFD Remote Control System ── --}}
                 <div class="proj-card card" data-category="embedded saas mobile">
-                    <div class="proj-card-thumb">
-                        <span class="proj-card-icon">⚙️</span>
+                    <div class="proj-card-thumb has-image">
+                        <img src="{{ asset('images/projects/inverter-ac-repair.jpg') }}"
+                             alt="Inverter control board inspected during a VFD repair and testing workflow"
+                             width="450" height="600" loading="lazy">
                         <div class="proj-card-glow"></div>
                     </div>
                     <div class="proj-card-body">
@@ -156,15 +173,17 @@
                         </div>
                     </div>
                     <div class="proj-card-footer">
-                        <span class="proj-card-year">2024</span>
+                        <span class="proj-card-year">2025</span>
                         <span class="proj-card-type">Industrial Automation</span>
                     </div>
                 </div>
 
                 {{-- ── 2. Intel RealSense Data Acquisition Pipeline ── --}}
                 <div class="proj-card card" data-category="ai desktop">
-                    <div class="proj-card-thumb">
-                        <span class="proj-card-icon">📷</span>
+                    <div class="proj-card-thumb has-image">
+                        <img src="{{ asset('images/projects/rgbd-point-cloud.png') }}"
+                             alt="Illustration of an RGB-D point cloud and depth-sensing grid"
+                             width="1200" height="800" loading="lazy">
                         <div class="proj-card-glow"></div>
                     </div>
                     <div class="proj-card-body">
@@ -177,7 +196,7 @@
                         <p class="proj-card-desc">
                             Python-based acquisition system built for DeepEmbed Research Lab. Captures RGB-D chicken
                             images using Intel RealSense D435i with automated session handling, gesture controls,
-                            and point-cloud generation. Delivered structured datasets for AI-powered poultry growth analysis.
+                            and point-cloud generation. Delivered structured datasets for AI-assisted poultry weight analysis.
                         </p>
                         <div class="proj-card-stack">
                             <span>Python</span><span>RealSense SDK</span><span>OpenCV</span><span>Open3D</span>
@@ -189,10 +208,12 @@
                     </div>
                 </div>
 
-                {{-- ── 3. Poultry Farm Management SaaS ── --}}
+                {{-- ── 3. Flock Sense — Poultry IoT SaaS ── --}}
                 <div class="proj-card card" data-category="saas">
-                    <div class="proj-card-thumb">
-                        <span class="proj-card-icon">🌾</span>
+                    <div class="proj-card-thumb has-image">
+                        <img src="{{ asset('images/projects/flock-sense-poultry.jpg') }}"
+                             alt="Broiler chickens in a poultry house, representative of the Flock Sense platform environment"
+                             width="1200" height="1600" loading="lazy">
                         <div class="proj-card-glow"></div>
                     </div>
                     <div class="proj-card-body">
@@ -201,11 +222,11 @@
                             <span class="badge">Laravel</span>
                             <span class="badge">AWS</span>
                         </div>
-                        <h3 class="proj-card-title">Poultry Farm Management IoT SaaS</h3>
+                        <h3 class="proj-card-title">Flock Sense — Poultry IoT SaaS</h3>
                         <p class="proj-card-desc">
-                            Full-stack IoT SaaS platform for poultry farm operations. Built backend APIs,
-                            role-based access (managers, operators, admins), Stripe payment integration,
-                            OTA firmware update system for IoT devices, and time-series sensor data aggregation.
+                            The poultry IoT SaaS platform behind Flock Sense AI. Work covered backend APIs,
+                            role-based access for managers, operators, and admins, Stripe payment integration,
+                            OTA firmware updates for connected devices, and time-series sensor aggregation.
                         </p>
                         <div class="proj-card-stack">
                             <span>Laravel</span><span>MySQL</span><span>Stripe</span><span>Flutter</span>
@@ -213,14 +234,47 @@
                     </div>
                     <div class="proj-card-footer">
                         <span class="proj-card-year">2023 – Present</span>
-                        <span class="proj-card-type">IoT SaaS Platform</span>
+                        <span class="proj-card-type">Poultry IoT SaaS Platform</span>
+                    </div>
+                </div>
+
+                {{-- ── 3b. Flock Sense AI — Broiler Weight Estimation ── --}}
+                <div class="proj-card card" data-category="ai saas">
+                    <div class="proj-card-thumb has-image">
+                        <img src="{{ asset('images/projects/flock-sense-ai-poultry.jpg') }}"
+                             alt="Chicken in a farm environment, representative of the poultry imagery used for weight-estimation research"
+                             width="1200" height="800" loading="lazy">
+                        <div class="proj-card-glow"></div>
+                    </div>
+                    <div class="proj-card-body">
+                        <div class="badge-row" style="margin-bottom:.75rem;">
+                            <span class="badge">Computer Vision</span>
+                            <span class="badge">Poultry</span>
+                            <span class="badge">Research Contract</span>
+                        </div>
+                        <h3 class="proj-card-title">Flock Sense AI — Broiler Weight Estimation</h3>
+                        <p class="proj-card-desc">
+                            The AI extension of Flock Sense. A data-collection and inference pipeline
+                            estimates broiler weight from camera imagery, with structured image capture,
+                            dataset preparation, and an inference workflow. Delivered under a research
+                            contract at DeepEmbed Research Lab.
+                        </p>
+                        <div class="proj-card-stack">
+                            <span>Python</span><span>OpenCV</span><span>Open3D</span><span>RealSense</span>
+                        </div>
+                    </div>
+                    <div class="proj-card-footer">
+                        <span class="proj-card-year">2025</span>
+                        <span class="proj-card-type">AI Extension · DeepEmbed Contract</span>
                     </div>
                 </div>
 
                 {{-- ── 4. Climate Monitoring APIs on AWS ── --}}
                 <div class="proj-card card" data-category="cloud saas">
-                    <div class="proj-card-thumb">
-                        <span class="proj-card-icon">🌡️</span>
+                    <div class="proj-card-thumb has-image">
+                        <img src="{{ asset('images/projects/climate-monitoring-sensors.png') }}"
+                             alt="Illustration of temperature and humidity sensor telemetry feeding a cloud API"
+                             width="1200" height="800" loading="lazy">
                         <div class="proj-card-glow"></div>
                     </div>
                     <div class="proj-card-body">
@@ -245,10 +299,132 @@
                     </div>
                 </div>
 
+                {{-- ── 4b. Primer Analyzer ── --}}
+                <div class="proj-card card" data-category="desktop embedded">
+                    <div class="proj-card-thumb has-image">
+                        <img src="{{ asset('images/projects/primer-analyzer.jpg') }}"
+                             alt="Primer Analyzer test equipment"
+                             loading="lazy" width="1200" height="900">
+                        <div class="proj-card-glow"></div>
+                    </div>
+                    <div class="proj-card-body">
+                        <div class="badge-row" style="margin-bottom:.75rem;">
+                            <span class="badge">Defense</span>
+                            <span class="badge">Desktop App</span>
+                            <span class="badge">Hardware</span>
+                        </div>
+                        <h3 class="proj-card-title">Primer Analyzer</h3>
+                        <p class="proj-card-desc">
+                            Software-assisted test system that performs four electrical tests and one
+                            mechanical test on primers, then generates structured reports. Delivered for
+                            Pakistan Army Ordnance Corps through CARE Lab.
+                        </p>
+                        <div class="proj-card-stack">
+                            <span>Python</span><span>PyQt5</span><span>Hardware Comms</span><span>Reporting</span>
+                        </div>
+                    </div>
+                    <div class="proj-card-footer">
+                        <span class="proj-card-year">2024</span>
+                        <span class="proj-card-type">Defense Test Equipment · CARE</span>
+                    </div>
+                </div>
+
+                {{-- ── 4c. Shell Analyzer ── --}}
+                <div class="proj-card card" data-category="desktop ai">
+                    <div class="proj-card-thumb has-image">
+                        <img src="{{ asset('images/projects/shell-analyzer-dashboard.png') }}"
+                             alt="Shell Analyzer inspection dashboard"
+                             loading="lazy" width="1200" height="640">
+                        <div class="proj-card-glow"></div>
+                    </div>
+                    <div class="proj-card-body">
+                        <div class="badge-row" style="margin-bottom:.75rem;">
+                            <span class="badge">Defense</span>
+                            <span class="badge">Computer Vision</span>
+                            <span class="badge">Desktop App</span>
+                        </div>
+                        <h3 class="proj-card-title">Shell Analyzer</h3>
+                        <p class="proj-card-desc">
+                            Image-processing system that analyses shells, identifies corrosion types
+                            and grades, and produces inspection reports. Delivered for Pakistan Army
+                            Ordnance Corps through CARE Lab.
+                        </p>
+                        <div class="proj-card-stack">
+                            <span>Python</span><span>OpenCV</span><span>Image Processing</span><span>Reporting</span>
+                        </div>
+                    </div>
+                    <div class="proj-card-footer">
+                        <span class="proj-card-year">2024</span>
+                        <span class="proj-card-type">Defense Inspection · CARE</span>
+                    </div>
+                </div>
+
+                {{-- ── 4d. Aircraft Battery Charger & Analyzer ── --}}
+                <div class="proj-card card" data-category="desktop embedded">
+                    <div class="proj-card-thumb has-image">
+                        <img src="{{ asset('images/projects/christie-battery-analyzer.jpg') }}"
+                             alt="Christie aircraft battery charger and analyzer unit"
+                             loading="lazy" width="1200" height="900">
+                        <div class="proj-card-glow"></div>
+                    </div>
+                    <div class="proj-card-body">
+                        <div class="badge-row" style="margin-bottom:.75rem;">
+                            <span class="badge">Defense</span>
+                            <span class="badge">Embedded</span>
+                            <span class="badge">Raspberry Pi</span>
+                        </div>
+                        <h3 class="proj-card-title">Aircraft Battery Charger &amp; Analyzer Upgrade</h3>
+                        <p class="proj-card-desc">
+                            Rehabilitation of a Christie aircraft battery charger/analyzer with a
+                            Raspberry Pi controller, touch display, and modern monitoring software.
+                            Delivered for Pakistan Army Ordnance Corps through CARE Lab.
+                        </p>
+                        <div class="proj-card-stack">
+                            <span>Raspberry Pi</span><span>Python</span><span>Touch UI</span><span>Hardware Control</span>
+                        </div>
+                    </div>
+                    <div class="proj-card-footer">
+                        <span class="proj-card-year">2023</span>
+                        <span class="proj-card-type">Defense Aviation · CARE</span>
+                    </div>
+                </div>
+
+                {{-- ── 4e. CARE Lab monitoring platforms ── --}}
+                <div class="proj-card card" data-category="saas cloud">
+                    <div class="proj-card-thumb has-image">
+                        <img src="{{ asset('images/projects/vibcare-vibration-analysis.jpg') }}"
+                             alt="VibCare vibration analysis visualisation"
+                             loading="lazy" width="1200" height="900">
+                        <div class="proj-card-glow"></div>
+                    </div>
+                    <div class="proj-card-body">
+                        <div class="badge-row" style="margin-bottom:.75rem;">
+                            <span class="badge">IoT SaaS</span>
+                            <span class="badge">CARE Lab</span>
+                            <span class="badge">Laravel</span>
+                        </div>
+                        <h3 class="proj-card-title">CARE Lab Monitoring Platforms</h3>
+                        <p class="proj-card-desc">
+                            Contributions to four CARE Lab platforms: VibCare (vibration monitoring),
+                            PowerEye (energy monitoring), Sentron (sensor monitoring), and SolaCon
+                            (solar/VFD automation).
+                        </p>
+                        <div class="proj-card-stack">
+                            <span>Laravel</span><span>MySQL</span><span>Flutter</span><span>Sensor Data</span>
+                        </div>
+                    </div>
+                    <div class="proj-card-footer">
+                        <span class="proj-card-year">2023 – 2024</span>
+                        <span class="proj-card-type">IoT Platforms · CARE</span>
+                    </div>
+                </div>
+
                 {{-- ── 5. Battery Charger Health Monitor ── --}}
                 <div class="proj-card card" data-category="desktop embedded">
-                    <div class="proj-card-thumb">
-                        <span class="proj-card-icon">🔋</span>
+                    <div class="proj-card-thumb has-image">
+                        <img src="{{ asset('images/projects/battery-charger-manager.png') }}"
+                             alt="Illustration of battery cells, charge cycles, and a health-monitoring dashboard"
+                             width="1200" height="800" loading="lazy">
                         <div class="proj-card-glow"></div>
                     </div>
                     <div class="proj-card-body">
@@ -275,8 +451,10 @@
 
                 {{-- ── 6. Industrial Equipment Testing Platform ── --}}
                 <div class="proj-card card" data-category="desktop embedded">
-                    <div class="proj-card-thumb">
-                        <span class="proj-card-icon">🛠️</span>
+                    <div class="proj-card-thumb has-image">
+                        <img src="{{ asset('images/projects/industrial-test-rig.jpg') }}"
+                             alt="Engineer working with an industrial test rig and control equipment"
+                             width="1200" height="800" loading="lazy">
                         <div class="proj-card-glow"></div>
                     </div>
                     <div class="proj-card-body">
@@ -288,8 +466,8 @@
                         <h3 class="proj-card-title">Automated Industrial Equipment Testing Platform</h3>
                         <p class="proj-card-desc">
                             Desktop software that communicates with industrial hardware to trigger automated equipment
-                            tests, fetch results, and visualize pass/fail outcomes on a real-time dashboard. Reduced
-                            manual testing overhead significantly for field engineering teams.
+                            tests, fetch results, and visualise pass/fail outcomes on a real-time dashboard. It replaced
+                            repeated manual steps in the test workflow for field engineering teams.
                         </p>
                         <div class="proj-card-stack">
                             <span>Python</span><span>PyQt5</span><span>Hardware Comms</span><span>Data Visualization</span>
@@ -303,8 +481,10 @@
 
                 {{-- ── 7. Oscilloscope Data Viewer ── --}}
                 <div class="proj-card card" data-category="desktop embedded">
-                    <div class="proj-card-thumb">
-                        <span class="proj-card-icon">📈</span>
+                    <div class="proj-card-thumb has-image">
+                        <img src="{{ asset('images/projects/oscilloscope-signal-viewer.png') }}"
+                             alt="Illustration of a waveform viewer with oscilloscope-style signal traces"
+                             width="1200" height="800" loading="lazy">
                         <div class="proj-card-glow"></div>
                     </div>
                     <div class="proj-card-body">
@@ -315,7 +495,7 @@
                         <h3 class="proj-card-title">Oscilloscope Signal Visualization Tool</h3>
                         <p class="proj-card-desc">
                             Fetches recorded waveform data from oscilloscopes and renders it in a clean, interactive
-                            desktop interface — making signal analysis far clearer and faster than reading raw oscilloscope
+                            desktop interface — making signal analysis easier to inspect than raw oscilloscope
                             output. Built for electronics engineers at CARE lab.
                         </p>
                         <div class="proj-card-stack">
@@ -330,8 +510,10 @@
 
                 {{-- ── 8. Flutter Mobile Apps + CodeIgniter Backends ── --}}
                 <div class="proj-card card" data-category="mobile saas">
-                    <div class="proj-card-thumb">
-                        <span class="proj-card-icon">📱</span>
+                    <div class="proj-card-thumb has-image">
+                        <img src="{{ asset('images/projects/smart-door-lock.jpg') }}"
+                             alt="Smart door lock prototype used in an IoT device-control project"
+                             width="1200" height="900" loading="lazy">
                         <div class="proj-card-glow"></div>
                     </div>
                     <div class="proj-card-body">
@@ -358,8 +540,10 @@
 
                 {{-- ── 9. Multi-SaaS Platform Contributions ── --}}
                 <div class="proj-card card" data-category="saas cloud">
-                    <div class="proj-card-thumb">
-                        <span class="proj-card-icon">🏗️</span>
+                    <div class="proj-card-thumb has-image">
+                        <img src="{{ asset('images/projects/saas-server-infrastructure.jpg') }}"
+                             alt="Server infrastructure representing multi-tenant SaaS backend work"
+                             width="1200" height="800" loading="lazy">
                         <div class="proj-card-glow"></div>
                     </div>
                     <div class="proj-card-body">
@@ -387,8 +571,10 @@
 
                 {{-- ── 10. Python Automation Toolkit ── --}}
                 <div class="proj-card card" data-category="desktop">
-                    <div class="proj-card-thumb">
-                        <span class="proj-card-icon">🤖</span>
+                    <div class="proj-card-thumb has-image">
+                        <img src="{{ asset('images/projects/automation-toolkit.jpg') }}"
+                             alt="Code editor and terminal representing engineering automation scripts"
+                             width="1200" height="800" loading="lazy">
                         <div class="proj-card-glow"></div>
                     </div>
                     <div class="proj-card-body">
@@ -415,8 +601,10 @@
 
                 {{-- ── 11. Port Reform SaaS ── --}}
                 <div class="proj-card card" data-category="saas">
-                    <div class="proj-card-thumb">
-                        <span class="proj-card-icon">🚢</span>
+                    <div class="proj-card-thumb has-image">
+                        <img src="{{ asset('images/projects/port-logistics.jpg') }}"
+                             alt="Container port and logistics infrastructure"
+                             width="1200" height="800" loading="lazy">
                         <div class="proj-card-glow"></div>
                     </div>
                     <div class="proj-card-body">
@@ -443,8 +631,10 @@
 
                 {{-- ── 12. 2D Multiplayer Game ── --}}
                 <div class="proj-card card" data-category="desktop">
-                    <div class="proj-card-thumb">
-                        <span class="proj-card-icon">🎮</span>
+                    <div class="proj-card-thumb has-image">
+                        <img src="{{ asset('images/projects/multiplayer-game-controller.jpg') }}"
+                             alt="Game controller representing the 2D multiplayer game project"
+                             width="1200" height="800" loading="lazy">
                         <div class="proj-card-glow"></div>
                     </div>
                     <div class="proj-card-body">
@@ -481,10 +671,10 @@
             <div class="section-head-center">
                 <span class="tag-label">Technology</span>
                 <h2>Stack Used Across Projects</h2>
-                <p class="section-subhead">Every tool chosen for a reason — reliability, scale, and real-world fit.</p>
+                <p class="section-subhead">Tools chosen for the constraint in front of the project — reliability, maintainability, and fit.</p>
             </div>
 
-            <div class="tech-stack-grid" data-reveal-group>
+            <div class="tech-stack-grid" data-stagger>
                 <div class="tech-stack-item"><span class="tech-stack-icon">🐘</span><span>PHP / Laravel</span></div>
                 <div class="tech-stack-item"><span class="tech-stack-icon">🐍</span><span>Python</span></div>
                 <div class="tech-stack-item"><span class="tech-stack-icon">📱</span><span>Flutter / Dart</span></div>
@@ -512,7 +702,7 @@
                 <h2>Have an Idea? Let's Build It.</h2>
                 <p>
                     Whether it's an IoT product, an AI pipeline, a SaaS platform, or an embedded system —
-                    we take ideas from concept to production.
+                    we scope the work, build it, and hand it over with documentation.
                 </p>
                 <div class="hero-cta-row" style="justify-content:center;margin-top:2rem;">
                     <a href="{{ route('contact') }}" class="btn btn-primary">Start the Conversation</a>
@@ -555,40 +745,6 @@
                     });
                 });
             });
-
-            /* ── Counter animation ── */
-            function animateCount(el) {
-                const target = parseInt(el.dataset.target, 10);
-                const duration = 1600;
-                const start = performance.now();
-                function step(now) {
-                    const p = Math.min((now - start) / duration, 1);
-                    const ease = 1 - Math.pow(1 - p, 3);
-                    el.textContent = Math.round(ease * target);
-                    if (p < 1) requestAnimationFrame(step);
-                }
-                requestAnimationFrame(step);
-            }
-            const io = new IntersectionObserver(entries => {
-                entries.forEach(e => {
-                    if (e.isIntersecting) {
-                        e.target.querySelectorAll('.num').forEach(animateCount);
-                        io.unobserve(e.target);
-                    }
-                });
-            }, { threshold: 0.3 });
-            document.querySelectorAll('[data-reveal-group]').forEach(el => io.observe(el));
-
-            /* ── Scroll reveal ── */
-            const revealIO = new IntersectionObserver(entries => {
-                entries.forEach(e => {
-                    if (e.isIntersecting) {
-                        e.target.classList.add('is-visible');
-                        revealIO.unobserve(e.target);
-                    }
-                });
-            }, { threshold: 0.10 });
-            document.querySelectorAll('[data-reveal], [data-reveal-group]').forEach(el => revealIO.observe(el));
 
         })();
     </script>

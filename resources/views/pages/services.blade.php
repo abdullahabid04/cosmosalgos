@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Our Services — Cosmos Algos')
-@section('meta_description', 'Explore Cosmos Algos\' full suite of AI, IoT, embedded systems, mobile, web, and engineering services. Tailored solutions that drive efficiency, growth, and innovation.')
+@section('meta_description', 'Software, embedded systems, IoT, applied AI, and SaaS engineering services from Cosmos Algos in Bahawalpur, Pakistan.')
 
 @push('styles')
     {{-- Services page styles are included below — paste into app.css --}}
@@ -27,26 +27,26 @@
                 </div>
                 <span class="tag-label">What We Build</span>
                 <h1 class="svc-hero-h1">
-                    Full-Spectrum<br>
-                    <span class="svc-hero-accent">Engineering Services</span>
+                    Engineering<br>
+                    <span class="svc-hero-accent">Services</span>
                 </h1>
                 <p class="svc-hero-lead">
-                    From firmware to cloud — we design, build, and deploy intelligent systems
-                    that connect devices, data, and decisions into a single cohesive ecosystem.
+                    From firmware to cloud — we design and build systems that connect devices,
+                    data, and the people operating them.
                 </p>
                 <div class="svc-hero-stats">
                     <div class="svc-stat">
-                        <span class="svc-stat-num">9+</span>
-                        <span class="svc-stat-label">Service Domains</span>
+                        <span class="svc-stat-num">12</span>
+                        <span class="svc-stat-label">Service Areas</span>
                     </div>
                     <div class="svc-stat-divider"></div>
                     <div class="svc-stat">
-                        <span class="svc-stat-num">20+</span>
-                        <span class="svc-stat-label">Projects Delivered</span>
+                        <span class="svc-stat-num">{{ $stats['projects'] }}+</span>
+                        <span class="svc-stat-label">Projects &amp; Engagements</span>
                     </div>
                     <div class="svc-stat-divider"></div>
                     <div class="svc-stat">
-                        <span class="svc-stat-num">10+</span>
+                        <span class="svc-stat-num">{{ $stats['industries'] }}</span>
                         <span class="svc-stat-label">Industries Served</span>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
 
             <div class="svc-cards-grid">
 
-                {{-- ── 1. Cognitive IoT Systems ── --}}
+                {{-- ── 1. IoT Systems & Connected Products ── --}}
                 <article class="svc-card" data-category="hardware" id="svc-iot">
                     <div class="svc-card-header">
                         <div class="svc-card-icon-wrap">
@@ -85,19 +85,18 @@
                         </div>
                         <div class="svc-card-meta">
                             <span class="svc-card-tag">Hardware & IoT</span>
-                            <h2 class="svc-card-title">Cognitive IoT Systems</h2>
+                            <h2 class="svc-card-title">IoT Systems &amp; Connected Products</h2>
                         </div>
                     </div>
                     <p class="svc-card-desc">
-                        Real-time data exchange and optimised processes — our IoT solutions connect
-                        devices, systems, and services to elevate your operational performance and
-                        unlock new growth opportunities across any industry.
+                        Connected products and monitoring systems — device firmware, telemetry
+                        pipelines, dashboards, and the backend that ties them together.
                     </p>
                     <ul class="svc-feature-list">
-                        <li>Custom IoT device & platform development</li>
-                        <li>Seamless integration with existing infrastructure</li>
-                        <li>Real-time monitoring & predictive maintenance</li>
-                        <li>Secure, scalable connectivity architecture</li>
+                        <li>Custom IoT device &amp; platform development</li>
+                        <li>Integration with existing infrastructure where APIs allow</li>
+                        <li>Real-time monitoring &amp; alerting</li>
+                        <li>Connectivity architecture for devices and backends</li>
                     </ul>
                     <div class="svc-card-footer">
                         <a href="{{ route('contact') }}" class="btn btn-ghost svc-cta-btn">Start a Project</a>
@@ -113,23 +112,24 @@
                         </div>
                         <div class="svc-card-meta">
                             <span class="svc-card-tag">Hardware & IoT</span>
-                            <h2 class="svc-card-title">AI-Enabled Firmware</h2>
+                            <h2 class="svc-card-title">Firmware &amp; Device Integration</h2>
                         </div>
                     </div>
                     <p class="svc-card-desc">
-                        On-device intelligence that thinks and acts without cloud dependency.
-                        Transform your embedded hardware with firmware that learns, adapts, and
-                        makes autonomous decisions at the edge — reducing latency and operating costs.
+                        Firmware and device integration for ESP32, STM32, Raspberry Pi, and FPGA
+                        platforms. We write the drivers, protocol handling, and control logic that
+                        connect software to real hardware — including field devices and industrial
+                        controllers.
                     </p>
                     <ul class="svc-feature-list">
-                        <li>TinyML & on-device inference</li>
-                        <li>Low-power microcontroller optimisation</li>
-                        <li>OTA (Over-the-Air) update pipelines</li>
-                        <li>Hardware-software co-design</li>
+                        <li>Sensor drivers and device communication</li>
+                        <li>MODBUS, serial, USB, and wireless protocols</li>
+                        <li>OTA firmware update flows</li>
+                        <li>Hardware-software integration and testing</li>
                     </ul>
                     <div class="svc-card-footer">
                         <a href="{{ route('contact') }}" class="btn btn-ghost svc-cta-btn">Start a Project</a>
-                        <span class="svc-card-tag-pill">C/C++ · FreeRTOS · ESP-IDF</span>
+                        <span class="svc-card-tag-pill">C/C++ · ESP32 · MODBUS</span>
                     </div>
                 </article>
 
@@ -145,16 +145,15 @@
                         </div>
                     </div>
                     <p class="svc-card-desc">
-                        Expertly designed embedded systems that enhance the functionality,
-                        reliability, and performance of your products. From Raspberry Pi
-                        prototypes to production-grade microcontroller solutions — built for
-                        the real world.
+                        Embedded systems built around the hardware and environment they run in.
+                        From Raspberry Pi prototypes to microcontroller-based devices, with
+                        firmware written for the constraints of the equipment.
                     </p>
                     <ul class="svc-feature-list">
-                        <li>Microcontroller & SBC prototyping</li>
-                        <li>PCB-level design and integration</li>
-                        <li>RTOS and bare-metal firmware</li>
-                        <li>Serial comms: MODBUS, I²C, SPI, UART</li>
+                        <li>Microcontroller &amp; SBC prototyping</li>
+                        <li>Hardware-software integration</li>
+                        <li>Embedded firmware development in C/C++</li>
+                        <li>Serial comms: MODBUS, UART, USB</li>
                     </ul>
                     <div class="svc-card-footer">
                         <a href="{{ route('contact') }}" class="btn btn-ghost svc-cta-btn">Start a Project</a>
@@ -175,19 +174,19 @@
                         </div>
                     </div>
                     <p class="svc-card-desc">
-                        Stay ahead in a competitive landscape with intelligent automation,
-                        predictive insights, and decision-support systems built on proven ML
-                        frameworks — transforming your raw data into a strategic advantage.
+                        Applied AI work: computer vision, data pipelines, and decision-support
+                        tools built around the problem rather than a framework. AI is used where
+                        it earns its place in the workflow.
                     </p>
                     <ul class="svc-feature-list">
-                        <li>Custom model training & deployment</li>
-                        <li>Computer vision & RGB-D pipelines</li>
-                        <li>Predictive analytics & anomaly detection</li>
-                        <li>LLM integration & AI-powered automation</li>
+                        <li>Computer vision &amp; RGB-D pipelines</li>
+                        <li>Dataset preparation &amp; model evaluation</li>
+                        <li>Predictive analytics &amp; anomaly detection</li>
+                        <li>Inference integration into desktop and web tools</li>
                     </ul>
                     <div class="svc-card-footer">
                         <a href="{{ route('contact') }}" class="btn btn-primary svc-cta-btn">Start a Project</a>
-                        <span class="svc-card-tag-pill">Python · TensorFlow · OpenCV</span>
+                        <span class="svc-card-tag-pill">Python · OpenCV · Open3D</span>
                     </div>
                 </article>
 
@@ -203,9 +202,8 @@
                         </div>
                     </div>
                     <p class="svc-card-desc">
-                        Empower strategic decision-making with actionable insights. We build
-                        end-to-end data pipelines — from ingestion and storage to visualisation
-                        and reporting — so every metric is available at a glance.
+                        Data pipelines that move telemetry from device to storage to a usable
+                        dashboard — ingestion, aggregation, querying, and reporting.
                     </p>
                     <ul class="svc-feature-list">
                         <li>Real-time telemetry ingestion (DynamoDB, MySQL)</li>
@@ -231,19 +229,19 @@
                         </div>
                     </div>
                     <p class="svc-card-desc">
-                        Reliable, scalable, and secure cloud environments engineered to grow
-                        with your business. From initial architecture to full deployment on
-                        AWS and beyond — managed by a team with cloud-native experience.
+                        Reliable cloud backends engineered for connected products. We work with
+                        AWS services we have actually deployed — IoT ingestion, serverless
+                        processing, managed databases, and documented APIs.
                     </p>
                     <ul class="svc-feature-list">
-                        <li>Cloud architecture design & deployment</li>
-                        <li>Serverless functions & managed services</li>
-                        <li>CI/CD pipelines & DevOps automation</li>
-                        <li>Security hardening & cost optimisation</li>
+                        <li>Cloud architecture design &amp; deployment</li>
+                        <li>Serverless functions &amp; managed services</li>
+                        <li>API security and access control</li>
+                        <li>Cost and performance optimisation</li>
                     </ul>
                     <div class="svc-card-footer">
                         <a href="{{ route('contact') }}" class="btn btn-ghost svc-cta-btn">Start a Project</a>
-                        <span class="svc-card-tag-pill">AWS · Lambda · Docker</span>
+                        <span class="svc-card-tag-pill">AWS · Lambda · DynamoDB</span>
                     </div>
                 </article>
 
@@ -259,15 +257,15 @@
                         </div>
                     </div>
                     <p class="svc-card-desc">
-                        Scalable, performant, and fully documented web platforms built
-                        API-first. Whether you need a SaaS dashboard, a customer-facing portal,
-                        or a complex multi-tenant system — we ship production-ready software.
+                        Web platforms built API-first with Laravel: SaaS dashboards,
+                        customer-facing portals, and multi-tenant systems, delivered with
+                        documentation for the parts that matter.
                     </p>
                     <ul class="svc-feature-list">
-                        <li>Laravel API backends with OpenAPI specs</li>
-                        <li>Role-based access & multi-tenant architecture</li>
+                        <li>Laravel API backends with documented endpoints</li>
+                        <li>Role-based access &amp; multi-tenant architecture</li>
                         <li>SaaS platforms with real-time dashboards</li>
-                        <li>Spatie QueryBuilder for filtering & pagination</li>
+                        <li>Subscription billing and OTA update modules</li>
                     </ul>
                     <div class="svc-card-footer">
                         <a href="{{ route('contact') }}" class="btn btn-ghost svc-cta-btn">Start a Project</a>
@@ -287,23 +285,23 @@
                         </div>
                     </div>
                     <p class="svc-card-desc">
-                        Enhance your efficiency and customer satisfaction with custom mobile
-                        apps offering seamless performance and intuitive design across both
-                        Android and iOS — from a single codebase with Flutter.
+                        Flutter applications for field monitoring, device control, and
+                        customer-facing workflows, built for Android and iOS from one codebase
+                        where the backend supports it.
                     </p>
                     <ul class="svc-feature-list">
                         <li>Cross-platform Flutter development</li>
-                        <li>Native hardware integrations (BLE, camera, sensors)</li>
-                        <li>Real-time data sync & push notifications</li>
-                        <li>Remote control & telemetry mobile clients</li>
+                        <li>Device and sensor integrations</li>
+                        <li>Real-time data sync where the backend supports it</li>
+                        <li>Remote control &amp; telemetry mobile clients</li>
                     </ul>
                     <div class="svc-card-footer">
                         <a href="{{ route('contact') }}" class="btn btn-ghost svc-cta-btn">Start a Project</a>
-                        <span class="svc-card-tag-pill">Flutter · Dart · Firebase</span>
+                        <span class="svc-card-tag-pill">Flutter · Dart · REST</span>
                     </div>
                 </article>
 
-                {{-- ── 9. Engineering Solutions ── --}}
+                {{-- ── 9. Hardware-Software Engineering ── --}}
                 <article class="svc-card" data-category="engineering" id="svc-engineering">
                     <div class="svc-card-header">
                         <div class="svc-card-icon-wrap">
@@ -311,23 +309,23 @@
                         </div>
                         <div class="svc-card-meta">
                             <span class="svc-card-tag">Engineering</span>
-                            <h2 class="svc-card-title">Engineering Solutions</h2>
+                            <h2 class="svc-card-title">Hardware-Software Engineering</h2>
                         </div>
                     </div>
                     <p class="svc-card-desc">
-                        Comprehensive hardware-software integration, system design, and product
-                        development. Robust, efficient, and innovative solutions built to meet
-                        the precise requirements of your project — from PCB to production.
+                        Hardware-software integration, system design, and product development for
+                        industrial and defense environments. We work with the constraints of real
+                        equipment, not just a clean development machine.
                     </p>
                     <ul class="svc-feature-list">
-                        <li>PLC & VFD implementation and commissioning</li>
-                        <li>PV/solar system integration</li>
-                        <li>Industrial automation control systems</li>
-                        <li>Biomedical & scientific equipment development</li>
+                        <li>VFD &amp; MODBUS integration</li>
+                        <li>Solar and energy system integration</li>
+                        <li>Industrial monitoring and control</li>
+                        <li>Defense test and analysis equipment</li>
                     </ul>
                     <div class="svc-card-footer">
                         <a href="{{ route('contact') }}" class="btn btn-ghost svc-cta-btn">Start a Project</a>
-                        <span class="svc-card-tag-pill">PLC · VFD · SCADA</span>
+                        <span class="svc-card-tag-pill">MODBUS · VFD · Solar</span>
                     </div>
                 </article>
 
@@ -343,15 +341,15 @@
                         </div>
                     </div>
                     <p class="svc-card-desc">
-                        Drive innovation with dedicated R&D that absorbs technical risk before
-                        you commit a serious budget. We validate feasibility, build proof-of-concepts,
-                        and explore uncharted technology domains so your roadmap stays solid.
+                        Applied R&amp;D for problems where the path is not obvious: feasibility
+                        checks, proof-of-concepts, and short studies that reduce technical risk
+                        before a larger build.
                     </p>
                     <ul class="svc-feature-list">
                         <li>Proof-of-concept & rapid prototyping</li>
                         <li>Technical feasibility assessments</li>
                         <li>Computer vision & RGB-D research (RealSense)</li>
-                        <li>Full technical documentation as a deliverable</li>
+                        <li>Technical documentation scoped as a deliverable</li>
                     </ul>
                     <div class="svc-card-footer">
                         <a href="{{ route('contact') }}" class="btn btn-ghost svc-cta-btn">Start a Project</a>
@@ -359,31 +357,31 @@
                     </div>
                 </article>
 
-                {{-- ── 11. UI/UX Design ── --}}
-                <article class="svc-card" data-category="software" id="svc-design">
+                {{-- ── 11. SaaS Product Engineering ── --}}
+                <article class="svc-card" data-category="software" id="svc-saas">
                     <div class="svc-card-header">
                         <div class="svc-card-icon-wrap">
-                            <span class="svc-card-icon">🎨</span>
+                            <span class="svc-card-icon">🧩</span>
                         </div>
                         <div class="svc-card-meta">
                             <span class="svc-card-tag">Software</span>
-                            <h2 class="svc-card-title">UI/UX Design</h2>
+                            <h2 class="svc-card-title">SaaS Product Engineering</h2>
                         </div>
                     </div>
                     <p class="svc-card-desc">
-                        Interfaces that users actually enjoy using. We design clear, efficient,
-                        and satisfying experiences for web, mobile, and embedded touchscreen
-                        systems — backed by usability principles and real user thinking.
+                        Multi-tenant product engineering for connected devices and operational
+                        data: tenant isolation, subscriptions, role-based access, and the
+                        background jobs that keep a platform usable as it grows.
                     </p>
                     <ul class="svc-feature-list">
-                        <li>UX research & user flow mapping</li>
-                        <li>Wireframes, prototypes & design systems</li>
-                        <li>Responsive web & cross-platform mobile UI</li>
-                        <li>Embedded touchscreen GUI design</li>
+                        <li>Multi-tenant architecture &amp; tenant isolation</li>
+                        <li>Stripe subscription billing</li>
+                        <li>OTA firmware update management</li>
+                        <li>Time-series aggregation &amp; alerting</li>
                     </ul>
                     <div class="svc-card-footer">
                         <a href="{{ route('contact') }}" class="btn btn-ghost svc-cta-btn">Start a Project</a>
-                        <span class="svc-card-tag-pill">Figma · Flutter UI · Blade</span>
+                        <span class="svc-card-tag-pill">Laravel · Stripe · MySQL</span>
                     </div>
                 </article>
 
@@ -401,7 +399,7 @@
                     <p class="svc-card-desc">
                         Purpose-built desktop tools for industrial, scientific, and business
                         contexts. Real-time data acquisition, signal visualisation, hardware
-                        control interfaces, and automation utilities — all production-grade.
+                        control interfaces, and automation utilities built for operational use.
                     </p>
                     <ul class="svc-feature-list">
                         <li>PyQt5 GUI applications for data acquisition</li>
@@ -432,45 +430,45 @@
         <div class="container">
             <div class="section-head-center" data-reveal="fade-up">
                 <span class="tag-label">Our Approach</span>
-                <h2>How We Deliver Every Engagement</h2>
+                <h2>How a Typical Engagement Runs</h2>
                 <p class="section-head-sub" style="margin-inline:auto;">
-                    A pragmatic, architecture-first process — from the first call to the final handoff.
+                    A general process. The depth of each step is adapted to the engagement.
                 </p>
             </div>
             <div class="svc-process-row" data-stagger>
                 <div class="svc-process-item">
                     <div class="svc-process-num">01</div>
                     <div class="svc-process-icon">🎯</div>
-                    <h4>Discovery</h4>
+                    <h3>Discovery</h3>
                     <p>We map your goals, constraints, and success criteria before writing a single line of code.</p>
                 </div>
                 <div class="svc-process-connector" aria-hidden="true"></div>
                 <div class="svc-process-item">
                     <div class="svc-process-num">02</div>
                     <div class="svc-process-icon">🏗️</div>
-                    <h4>Architecture</h4>
-                    <p>A scalable system design is produced — covering hardware, firmware, APIs, and cloud layers.</p>
+                    <h3>Architecture</h3>
+                    <p>A system design is produced — covering hardware, firmware, APIs, and cloud layers where relevant.</p>
                 </div>
                 <div class="svc-process-connector" aria-hidden="true"></div>
                 <div class="svc-process-item">
                     <div class="svc-process-num">03</div>
                     <div class="svc-process-icon">🧪</div>
-                    <h4>Proof of Concept</h4>
+                    <h3>Proof of Concept</h3>
                     <p>We validate the riskiest assumptions with a working prototype before full commitment.</p>
                 </div>
                 <div class="svc-process-connector" aria-hidden="true"></div>
                 <div class="svc-process-item">
                     <div class="svc-process-num">04</div>
                     <div class="svc-process-icon">🚀</div>
-                    <h4>Build & Deploy</h4>
-                    <p>Full-cycle development — end-to-end implementation with testing, documentation, and launch.</p>
+                    <h3>Build & Deploy</h3>
+                    <p>Implementation with testing, documentation, and handover — scoped to what was agreed.</p>
                 </div>
                 <div class="svc-process-connector" aria-hidden="true"></div>
                 <div class="svc-process-item">
                     <div class="svc-process-num">05</div>
                     <div class="svc-process-icon">🔄</div>
-                    <h4>Optimise & Support</h4>
-                    <p>Continuous monitoring, iterative improvements, and ongoing support as your system scales.</p>
+                    <h3>Optimise & Support</h3>
+                    <p>Where support is agreed, monitoring and iterative improvements follow handover.</p>
                 </div>
             </div>
         </div>
@@ -483,7 +481,7 @@
         <div class="container">
             <div class="section-head-center" data-reveal="fade-up">
                 <span class="tag-label">Technologies</span>
-                <h2>Built With Production-Grade Tools</h2>
+                <h2>Built With Tools We Use</h2>
             </div>
             <div class="svc-tech-groups" data-stagger>
                 <div class="svc-tech-group">
@@ -497,43 +495,44 @@
                     </div>
                 </div>
                 <div class="svc-tech-group">
-                    <div class="svc-tech-group-label">Frameworks & Platforms</div>
+                    <div class="svc-tech-group-label">Frameworks &amp; Platforms</div>
                     <div class="svc-tech-chips">
                         <span class="svc-tech-chip">Laravel</span>
                         <span class="svc-tech-chip">Flutter</span>
                         <span class="svc-tech-chip">PyQt5</span>
-                        <span class="svc-tech-chip">Django</span>
-                        <span class="svc-tech-chip">FreeRTOS</span>
+                        <span class="svc-tech-chip">Blade</span>
+                        <span class="svc-tech-chip">Vite</span>
                     </div>
                 </div>
                 <div class="svc-tech-group">
                     <div class="svc-tech-group-label">AI / Data</div>
                     <div class="svc-tech-chips">
-                        <span class="svc-tech-chip">TensorFlow</span>
                         <span class="svc-tech-chip">OpenCV</span>
                         <span class="svc-tech-chip">Open3D</span>
                         <span class="svc-tech-chip">Intel RealSense</span>
-                        <span class="svc-tech-chip">Gemini API</span>
+                        <span class="svc-tech-chip">Python</span>
                     </div>
                 </div>
                 <div class="svc-tech-group">
-                    <div class="svc-tech-group-label">Cloud & Infra</div>
+                    <div class="svc-tech-group-label">Cloud &amp; Infra</div>
                     <div class="svc-tech-chips">
                         <span class="svc-tech-chip">AWS</span>
+                        <span class="svc-tech-chip">Lambda</span>
                         <span class="svc-tech-chip">DynamoDB</span>
                         <span class="svc-tech-chip">MySQL</span>
-                        <span class="svc-tech-chip">Docker</span>
-                        <span class="svc-tech-chip">MongoDB</span>
+                        <span class="svc-tech-chip">API Gateway</span>
                     </div>
                 </div>
                 <div class="svc-tech-group">
-                    <div class="svc-tech-group-label">Hardware & Protocols</div>
+                    <div class="svc-tech-group-label">Hardware &amp; Protocols</div>
                     <div class="svc-tech-chips">
                         <span class="svc-tech-chip">ESP32</span>
+                        <span class="svc-tech-chip">STM32</span>
                         <span class="svc-tech-chip">Raspberry Pi</span>
+                        <span class="svc-tech-chip">FPGA</span>
                         <span class="svc-tech-chip">MODBUS</span>
                         <span class="svc-tech-chip">MQTT</span>
-                        <span class="svc-tech-chip">I²C / SPI</span>
+                        <span class="svc-tech-chip">UART / USB</span>
                     </div>
                 </div>
             </div>
@@ -547,28 +546,28 @@
         <div class="container">
             <div class="section-head-center" data-reveal="fade-up">
                 <span class="tag-label">Why Us</span>
-                <h2>Built Different — By Design</h2>
+                <h2>How We Reduce Delivery Risk</h2>
             </div>
             <div class="svc-pillars-grid" data-stagger>
                 <div class="svc-pillar-card">
                     <div class="svc-pillar-icon">🛡️</div>
-                    <h4>Risk-First Thinking</h4>
-                    <p>Our R&D process absorbs technical risk before you commit a serious budget. Launching a complex project shouldn't feel like a gamble.</p>
+                    <h3>Risk-First Scoping</h3>
+                    <p>We identify the riskiest assumptions early and test them before the full build, rather than discovering them at launch.</p>
                 </div>
                 <div class="svc-pillar-card">
                     <div class="svc-pillar-icon">🔗</div>
-                    <h4>End-to-End Ownership</h4>
-                    <p>One team. Device to cloud. We manage the full architecture so you don't have to coordinate across multiple vendors.</p>
+                    <h3>End-to-End Ownership</h3>
+                    <p>One team from device to cloud. You do not have to coordinate firmware, backend, and app vendors against each other.</p>
                 </div>
                 <div class="svc-pillar-card">
                     <div class="svc-pillar-icon">📄</div>
-                    <h4>Documentation as a Deliverable</h4>
-                    <p>Every engagement ships with full technical and operational documentation. Your system stays yours — not locked into a single supplier.</p>
+                    <h3>Documentation as a Deliverable</h3>
+                    <p>Architecture, setup, and handover notes are part of the scope, so the system can be maintained after the engagement.</p>
                 </div>
                 <div class="svc-pillar-card">
                     <div class="svc-pillar-icon">🎯</div>
-                    <h4>No Hype. Real Results.</h4>
-                    <p>We set realistic goals, communicate complexity clearly, and deliver what we promise. Technology is a powerful tool — not a magic pill.</p>
+                    <h3>No Inflated Claims</h3>
+                    <p>We state what the system does, what it does not do, and where the limitations are. No invented metrics.</p>
                 </div>
             </div>
         </div>
@@ -581,29 +580,29 @@
         <div class="container">
             <div class="section-head" data-reveal="fade-up">
                 <span class="tag-label">Case Studies</span>
-                <h2>What We've Shipped</h2>
+                <h2>Selected Project Highlights</h2>
                 <p class="section-head-sub">
-                    Real projects. Measurable outcomes.
+                    Documented work with clear attribution — including research contracts and CARE Lab projects.
                 </p>
             </div>
             <div class="svc-case-grid" data-stagger>
 
                 <article class="svc-case-card">
                     <div class="svc-case-thumb">
-                        <span class="svc-case-thumb-emoji">📡</span>
+                        <span class="svc-case-thumb-emoji">🐔</span>
                         <div class="svc-case-chips">
-                            <span class="meta-chip">IoT</span>
-                            <span class="meta-chip">AI</span>
-                            <span class="meta-chip">Cloud</span>
+                            <span class="meta-chip">Computer Vision</span>
+                            <span class="meta-chip">Agriculture</span>
+                            <span class="meta-chip">Research</span>
                         </div>
                     </div>
                     <div class="svc-case-body">
-                        <h4>FluxSense AI — Smart Environmental Monitoring</h4>
-                        <p>End-to-end IoT platform for real-time sensor monitoring with AI anomaly detection. Reduced manual inspection cycles by providing autonomous alerts and live dashboards accessible from any device.</p>
+                        <h3>Flock Sense AI — Broiler Weight Estimation</h3>
+                        <p>The AI extension of the Flock Sense poultry IoT platform: a data-collection and inference pipeline that estimates broiler weight from camera imagery, delivered under a research contract at DeepEmbed Research Lab.</p>
                         <div class="svc-case-stats">
-                            <div class="svc-case-stat"><span class="svc-case-stat-val">Real-time</span><span class="svc-case-stat-label">Data Pipeline</span></div>
-                            <div class="svc-case-stat"><span class="svc-case-stat-val">ESP32</span><span class="svc-case-stat-label">Edge Hardware</span></div>
-                            <div class="svc-case-stat"><span class="svc-case-stat-val">AWS IoT</span><span class="svc-case-stat-label">Cloud Backend</span></div>
+                            <div class="svc-case-stat"><span class="svc-case-stat-val">Python</span><span class="svc-case-stat-label">Language</span></div>
+                            <div class="svc-case-stat"><span class="svc-case-stat-val">Computer Vision</span><span class="svc-case-stat-label">Approach</span></div>
+                            <div class="svc-case-stat"><span class="svc-case-stat-val">DeepEmbed</span><span class="svc-case-stat-label">Contract</span></div>
                         </div>
                     </div>
                 </article>
@@ -618,8 +617,8 @@
                         </div>
                     </div>
                     <div class="svc-case-body">
-                        <h4>VFD Remote Control System — Industrial Automation</h4>
-                        <p>ESP32-based MODBUS controller with a Flutter mobile client and Laravel backend, enabling fully remote operation of Variable Frequency Drives with live telemetry and historical logs — from anywhere.</p>
+                        <h3>VFD Remote Control System — Industrial Automation</h3>
+                        <p>ESP32-based MODBUS controller with a Flutter mobile client and Laravel backend, allowing remote monitoring and control of Variable Frequency Drives with live telemetry and historical logs.</p>
                         <div class="svc-case-stats">
                             <div class="svc-case-stat"><span class="svc-case-stat-val">MODBUS</span><span class="svc-case-stat-label">Protocol</span></div>
                             <div class="svc-case-stat"><span class="svc-case-stat-val">Flutter</span><span class="svc-case-stat-label">Mobile Client</span></div>
@@ -646,12 +645,12 @@
                     <span class="tag-label">Let's Talk</span>
                     <h2 class="svc-cta-heading">Have a Project in Mind?</h2>
                     <p class="svc-cta-sub">
-                        Tell us about your challenge. We'll scope it, de-risk it,
-                        and ship it — on time, documented, and ready to scale.
+                        Tell us about the problem. We'll scope it, identify the technical
+                        risks, and tell you honestly whether we are the right fit.
                     </p>
                 </div>
                 <div class="svc-cta-actions">
-                    <a href="{{ route('contact') }}" class="btn btn-primary">Get a Free Consultation</a>
+                    <a href="{{ route('contact') }}" class="btn btn-primary">Start a Conversation</a>
                     <a href="{{ route('projects') }}" class="btn btn-ghost">View All Projects</a>
                 </div>
             </div>
